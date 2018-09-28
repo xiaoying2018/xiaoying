@@ -74,32 +74,80 @@
                             <div class="mm_header">
                                 <h3>学校简介</h3>
                             </div>
-                            <div class="mm_content" v-html="detail.description | filtercontent"></div>
+                            <div class="mm_content" v-html="detail.description"></div>
                         </div>
+                        <div class="mm_main" v-if="detail.request_en">
+                            <div class="mm_header">
+                                <h3>申请条件</h3>
+                            </div>
+                            <div class="mm_content" v-html="detail.request_en"></div>
+                        </div>
+                        <div class="mm_main" v-if="detail.request_lang">
+                            <div class="mm_header">
+                                <h3>申请条件-小语种</h3>
+                            </div>
+                            <div class="mm_content" v-html="detail.request_lang"></div>
+                        </div>
+                        <div class="mm_main" v-if="detail.request_doclist">
+                            <div class="mm_header">
+                                <h3>申请条件-提及材料</h3>
+                            </div>
+                            <div class="mm_content" v-html="detail.request_doclist"></div>
+                        </div>
+
+                        <div class="mm_main" v-if="detail.academic_info">
+                            <div class="mm_header">
+                                <h3>学术信息</h3>
+                            </div>
+                            <div class="mm_content" v-html="detail.academic_info"></div>
+                        </div>
+                        <div class="mm_main" v-if="detail.zige">
+                            <div class="mm_header">
+                                <h3>考试资格</h3>
+                            </div>
+                            <div class="mm_content" v-html="detail.zige"></div>
+                        </div>
+                        <div class="mm_main" v-if="detail.apply_method">
+                            <div class="mm_header">
+                                <h3>选拔办法</h3>
+                            </div>
+                            <div class="mm_content" v-html="detail.apply_method"></div>
+                        </div>
+
+
                         <div class="mm_main" v-if="detail.schoolhistory">
                             <div class="mm_header">
                                 <h3>学校历史</h3>
                             </div>
-                            <div class="mm_content" v-html="detail.schoolhistory | filtercontent"></div>
+                            <div class="mm_content" v-html="detail.schoolhistory"></div>
                         </div>
                         <div class="mm_main" v-if="detail.schoolspecial != null">
                             <div class="mm_header">
                                 <h3>学校特色</h3>
                             </div>
-                            <div class="mm_content" v-html="detail.schoolspecial | filtercontent"></div>
+                            <div class="mm_content" v-html="detail.schoolspecial"></div>
                         </div>
                         <div class="mm_main" v-if="detail.schoolmanage != null">
                             <div class="mm_header">
                                 <h3>学校管理</h3>
                             </div>
-                            <div class="mm_content" v-html="detail.schoolmanage | filtercontent"></div>
+                            <div class="mm_content" v-html="detail.schoolmanage"></div>
                         </div>
                         <div class="mm_main" v-if="detail.schoolgoods != null">
                             <div class="mm_header">
                                 <h3>学校设施</h3>
                             </div>
-                            <div class="mm_content" v-html="detail.schoolgoods | filtercontent"></div>
+                            <div class="mm_content" v-html="detail.schoolgoods"></div>
                         </div>
+                    </div>
+                    <div class="maincontent" id="tab3">
+                        <ul class="imgUl">
+                            <li class="img_li" v-for="(n,index) in detail.allpic">
+                                <div class="imgDv">
+                                    <img :src="'http://manage.xiaoying.net'+n" alt="">
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

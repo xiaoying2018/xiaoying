@@ -64,13 +64,13 @@ var _hmt = _hmt || [];
             <div class="searchGroup container copy">
                 <a href="/mall" class="logo" style="margin-top: 15px;"><img src="../../Public/Mall/img/logo.svg" style="width: 142px"></a>
                 <ul class="s_nav  clearfix" style="padding-right: 210px;">
-                    <li><a href="/" >首页</a></li>
-                    <li><a href="/studyingabroad" >留学申请</a></li>
-                    <li><a href="/cases" >案例中心</a></li>
-                    <li><a href="/school/jpyy" >院校库</a></li>
-                    <li><a href="/news" >申请攻略</a></li>
-                    <li><a href="/onlinemall" data-flag="onlinemall">服务商城</a></li>
-                    <li><a href="/advantage" data-flag="advantage">核心优势</a></li>
+                    <li data-nav="index"><a href="/" >首页</a></li>
+                    <li data-nav="studyingabroad"><a href="/studyingabroad" >留学申请</a></li>
+                    <li data-nav="cases"><a href="/cases" >案例中心</a></li>
+                    <li data-nav="jpyy"><a href="/school/jpyy" >院校库</a></li>
+                    <li data-nav="news"><a href="/news" >申请攻略</a></li>
+                    <li data-nav="onlinemall"><a href="/onlinemall" data-flag="onlinemall">服务商城</a></li>
+                    <li data-nav="advantage"><a href="/advantage" data-flag="advantage">核心优势</a></li>
                     <li><a href="http://class.xiaoying.net" >留学网校</a></li>
                 </ul>
                 <div class="btng" style="top: 28px;">
@@ -248,6 +248,17 @@ var _hmt = _hmt || [];
                 }
             },
             mounted:function() {
+                //初始化导航
+                $('.s_nav li').each(function () {
+                    var $nav = $(this).data('nav');
+                    if($('body').data('nav') == $nav) {
+                        $(this).addClass('active').siblings().removeClass('active');
+                    }
+                })
+                $('.s_nav li').click(function () {
+                    $(this).addClass('active').siblings().removeClass('active');
+                })
+
             	if (utily.getStore('xy_nickname') && utily.getStore('xy_headpic') != '') {
             		this.info.nickname = utily.getStore('xy_nickname')
             		this.info.headpic = utily.getStore('xy_headpic')

@@ -7,37 +7,41 @@ span {
     .banner {
         overflow: hidden;
         height: 575px;
-        .bannerItem {
-            background-color: #ffd900;
-            height: 575px;
-            background-image: url("../img/opacity_block.png");
-            .container {
-                height: 450px;
-                position: relative;
-                top: 60px;
+        background-color: #ffd900;
+        // .bannerItem {
+        //     background-color: #ffd900;
+        //     height: 575px;
+        //     background-image: url("../img/opacity_block.png");
+        //     .container {
+        //         height: 450px;
+        //         position: relative;
+        //         top: 60px;
                 
-                .mainpart {
-                    width: 596px;
-                    float: left;
-                    margin-left: 35px;
-                    position: relative;
-                    .bird {
-                        position: absolute;
-                        right: -120px;
-                        bottom: -30px;
-                    }
-                    .banner_a {
-                        margin-top: 15px;
-                    }
-                    .banner_b {
-                        margin-top: 25px;
-                    }
-                    .banner_c {
-                        margin-top: 35px;
-                    }
-                }
+        //         .mainpart {
+        //             width: 596px;
+        //             float: left;
+        //             margin-left: 35px;
+        //             position: relative;
+        //             .bird {
+        //                 position: absolute;
+        //                 right: -120px;
+        //                 bottom: -30px;
+        //             }
+        //             .banner_a {
+        //                 margin-top: 15px;
+        //             }
+        //             .banner_b {
+        //                 margin-top: 25px;
+        //             }
+        //             .banner_c {
+        //                 margin-top: 35px;
+        //             }
+        //         }
                 
-            }
+        //     }
+        // }
+        .swiper-slide {
+            height: 580px;
         }
         .swiper-button-next {
             background: url('../img/swiper_button_004.png') no-repeat -30px center;
@@ -49,6 +53,8 @@ span {
         .swipe-bannerr-pagination {
             left: 50%;
             width: auto;
+            padding: 0 5px;
+            
             .transparent-bgcolor(#000,.15);
             .transform(translateX(-50%));
             .border-radius(10px);

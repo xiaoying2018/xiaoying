@@ -228,10 +228,19 @@ $(function() {
                 });
 
                 new Swiper('.swiper-banner', {
+                    // loop: true,
+                    // autoplay: 5000,//可选选项，自动滑动
+                    paginationClickable: true,
+                    prevButton:'.swiper-banner-button-prev',
+                    nextButton:'.swiper-banner-button-next',
+                    pagination : '.swipe-bannerr-pagination',
+                })
+
+                new Swiper('.swiper-banner', {
                     paginationClickable: true,
                 });
                 new Swiper('.swiper-ad', {
-                    pagination: '.swiper-pagination',
+                    // pagination: '.swiper-pagination',
                     slidesPerView: 5,
                     paginationClickable: true,
                     spaceBetween: 20

@@ -70,44 +70,46 @@
                         <li class="item_li tab5">留学攻略</li>
                     </ul>
                     <div class="maincontent" id="tab1">
-                        <div class="mm_main" v-if="detail.description">
+                        <div class="mm_main" v-if="detail.description != null && detail.description != ''">
                             <div class="mm_header">
                                 <h3>学校简介</h3>
                             </div>
                             <div class="mm_content" v-html="detail.description"></div>
                         </div>
-                        <div class="mm_main" v-if="detail.request_en">
+                        <div class="mm_main" v-if="detail.request_en != null && detail.request_en != ''">
                             <div class="mm_header">
                                 <h3>申请条件</h3>
                             </div>
                             <div class="mm_content" v-html="detail.request_en"></div>
                         </div>
-                        <div class="mm_main" v-if="detail.request_lang">
+                        <div class="mm_main" v-if="detail.request_lang != null && detail.request_lang != ''">
                             <div class="mm_header">
                                 <h3>申请条件-小语种</h3>
                             </div>
                             <div class="mm_content" v-html="detail.request_lang"></div>
                         </div>
-                        <div class="mm_main" v-if="detail.request_doclist">
+                        <div class="mm_main" v-if="detail.request_doclist != null && detail.request_doclist != ''">
                             <div class="mm_header">
                                 <h3>申请条件-提及材料</h3>
                             </div>
                             <div class="mm_content" v-html="detail.request_doclist"></div>
                         </div>
 
-                        <div class="mm_main" v-if="detail.academic_info">
+                        <div class="mm_main" v-if="detail.academic_info != null && detail.academic_info != ''">
                             <div class="mm_header">
                                 <h3>学术信息</h3>
                             </div>
                             <div class="mm_content" v-html="detail.academic_info"></div>
                         </div>
-                        <div class="mm_main" v-if="detail.zige">
+
+                        <div class="mm_main" v-if="detail.zige != null && detail.zige != ''">
                             <div class="mm_header">
                                 <h3>考试资格</h3>
                             </div>
                             <div class="mm_content" v-html="detail.zige"></div>
                         </div>
-                        <div class="mm_main" v-if="detail.apply_method">
+
+                        <div class="mm_main" v-if="detail.apply_method != null  && detail.apply_method != ''">
                             <div class="mm_header">
                                 <h3>选拔办法</h3>
                             </div>
@@ -115,25 +117,28 @@
                         </div>
 
 
-                        <div class="mm_main" v-if="detail.schoolhistory">
+                        <div class="mm_main" v-if="detail.schoolhistory != null  && detail.schoolhistory != ''">
                             <div class="mm_header">
                                 <h3>学校历史</h3>
                             </div>
                             <div class="mm_content" v-html="detail.schoolhistory"></div>
                         </div>
-                        <div class="mm_main" v-if="detail.schoolspecial != null">
+
+                        <div class="mm_main" v-if="detail.schoolspecial != null && detail.schoolspecial != ''">
                             <div class="mm_header">
                                 <h3>学校特色</h3>
                             </div>
                             <div class="mm_content" v-html="detail.schoolspecial"></div>
                         </div>
-                        <div class="mm_main" v-if="detail.schoolmanage != null">
+
+                        <div class="mm_main" v-if="detail.schoolmanage != null && detail.schoolmanage != ''">
                             <div class="mm_header">
                                 <h3>学校管理</h3>
                             </div>
                             <div class="mm_content" v-html="detail.schoolmanage"></div>
                         </div>
-                        <div class="mm_main" v-if="detail.schoolgoods != null">
+
+                        <div class="mm_main" v-if="detail.schoolgoods != null && detail.schoolgoods != ''">
                             <div class="mm_header">
                                 <h3>学校设施</h3>
                             </div>
@@ -142,11 +147,15 @@
                     </div>
                     <div class="maincontent" id="tab3">
                         <ul class="imgUl">
-                            <li class="img_li" v-for="(n,index) in detail.allpic">
+                            <li class="img_li clearfix" v-for="(n,index) in detail.allpic">
                                 <div class="imgDv">
                                     <img :src="'http://manage.xiaoying.net'+n" alt="">
                                 </div>
+                                <div class="numDv">
+                                    <p>{{index+1}}</p>
+                                </div>
                             </li>
+                            <li class="border_li"></li>
                         </ul>
                     </div>
                 </div>

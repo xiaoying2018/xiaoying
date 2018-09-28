@@ -181,7 +181,9 @@
                         width: 90%;
                         display: block;
                         margin: 0 auto;
+                        padding-top: 28px;
                         .imgDv {
+                            position: relative;
                             width: 300px;
                             border-radius: 8px;
                             float: left;
@@ -192,8 +194,10 @@
                                 border-radius: 5px;
                                 vertical-align: top;
                             }
+                            
                         }
                         .numDv {
+                            position: relative;
                             background-color: #ffd900;
                             font-size: 18px;
                             color: #000000;
@@ -205,18 +209,104 @@
                             display: block;
                             float: left;
                             box-shadow: 0px 0px 21px 0px #f5d222;
-                            margin-left: 40px;
                             margin-top: 40px;
                         }
                         &:nth-child(odd){
                             .imgDv{
+                                margin-left: -16px;
+                                .arrow {
+                                    position: absolute;
+                                    top: 60px;
+                                    right: -17px;
+                                    width: 22px;
+                                    height: 22px;
+                                    background-color: #f00;
+                                    background: url('../../img/arrow_r.png') no-repeat 0 0;
+                                    // margin-top: -11px;
+                                }
+                            }
+                            .numDv{
+                                margin-left: 54px;
+                                .circle {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: -39px;
+                                    width: 34px;
+                                    height: 34px;
+                                    z-index: 3;
+                                    background-color: #ffd900;
+                                    border-radius: 50%;
+                                    border: 10px solid #fff;
+                                    margin-top: -17px;
+                                }
+                            }
+                        }
+                        &:nth-child(even){
+                            .imgDv{
                                 float: right;
+                                margin-right: -16px;
+                                .arrow {
+                                    position: absolute;
+                                    top: 60px;
+                                    left: -17px;
+                                    width: 22px;
+                                    height: 22px;
+                                    background-color: #f00;
+                                    background: url('../../img/arrow_l.png') no-repeat 0 0;
+                                    // margin-top: -11px;
+                                }
                             }
                             .numDv{
                                 float: right;
-                                margin-right: 40px;
+                                margin-right: 54px;
+                                .circle {
+                                    position: absolute;
+                                    top: 50%;
+                                    right: -39px;
+                                    width: 34px;
+                                    height: 34px;
+                                    z-index: 3;
+                                    background-color: #ffd900;
+                                    border-radius: 50%;
+                                    border: 10px solid #fff;
+                                    margin-top: -17px;
+                                }
                             }
                         }
+                    }
+                }
+                .schoolCircle {
+                    position: relative;
+                    z-index: 3;
+                    display: table;
+                    font-size: 20px;
+                    width: 106px;
+                    height: 106px;
+                    // line-height: 106px;
+                    border-radius: 50%;
+                    background-color: #ffd900;
+                    margin: 0 auto;
+                    p {
+                        display: table-cell;
+                        text-align: center;
+                        vertical-align: middle;
+                        line-height: 30px;
+                        height: 106px;
+                        color: #0d0d0d;
+                        width: 98px;
+                    }
+                    span {
+                        position: absolute;
+                        top: 50%;
+                        left: 100%;
+                        line-height: 30px;
+                        font-size: 18px;
+                        color: #0d0d0d;
+                        width: 290px;
+                        background-color: #ffd900;
+                        margin-top: -15px;
+                        margin-left: -8px;
+                        padding-left: 56px;
                     }
                 }
             }

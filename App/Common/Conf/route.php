@@ -32,13 +32,12 @@ return [
         'news'       =>  'Zixun/Index/index', //资讯列表
         'news/detail'       =>  'Zixun/Index/detail', //资讯详情
 
+        'consultant'       =>  'Consultant/Index/index', //顾问认证
 
         'cases'                      =>  'Cases/Index/index',      // 主页 案例
         'cases/thanks'               =>  'Cases/Index/thanks',      // 主页 案例
         'cases/admission'            =>  'Cases/Index/admission',      // 主页 案例
         'cases/detail'               =>  'Cases/Index/casedetails',      // 主页 案例
-
-
 
         'school/jpyy'       =>  'School/Index/jpyy', //日本语言学校
         'school/jp'       =>  'School/Index/jp', //日本大学

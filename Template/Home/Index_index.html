@@ -215,16 +215,16 @@
                         </div>
                         <ul class="schoolul">
                             <li class="item">
-                                <a href="">东京大学</a>
+                                <a href="/school/jp/detail?id=1">东京大学</a>
                             </li>
                             <li class="item">
-                                <a href="">YMCA东京日本語学校</a>
+                                <a href="/school/jpyy">YMCA东京日本語学校</a>
                             </li>
                             <li class="item">
-                                <a href="">早稻田EDU日本语学校</a>
+                                <a href="/school/jpyy">早稻田EDU日本语学校</a>
                             </li>
                             <li class="item">
-                                <a href="">赤门会日本语学校</a>
+                                <a href="/school/jpyy">赤门会日本语学校</a>
                             </li>
                             <li class="item">
                                 <a href="">东京大学</a>
@@ -245,12 +245,12 @@
                     </div>
                     <div class="newspart clearfix">
                         <h3 class="p_title">热门日本留学攻略
-                            <font>more+</font></h3>
+                            <a href="/news">more+</a></h3>
                         <ul class="newsul">
-                            <li class="item" v-for="(n,index) in 5">
-                                <a href="" class="clearfix">
+                            <li class="item" v-for="(n,index) in newslist">
+                                <a :href="'/news/detail?id='+n.id" class="clearfix">
                                     <span class="num">0{{index+1}}</span>
-                                    <span class="t_font">留学 | 日语常用会话1000句！1、はじめまして。初次见面。2、どうぞよろしく。请多关照。3、よろしくお願（ねが）いします</span>
+                                    <span class="t_font">{{n.categoryname}} | {{n.title}}</span>
                                 </a>
                             </li>
                         </ul>
@@ -319,9 +319,10 @@
                 </div>
                 <div class="swiper-container swiper-case">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" v-for="n in caselist">
+                        <div class="swiper-slide" v-for="(n,index) in caselist" :data-id="n.id">
                             <div class="imgDv">
-                                <img :src="'../../Public/xiaoying/img/case/'+n.img" alt="">
+                                <img :src="'../../Public/xiaoying/img/case/stu'+(index+1)+'.jpg'" alt="">
+                                <!-- <img :src="'../../Public/xiaoying/img/case/'+n.img" alt=""> -->
                             </div>
                         </div>
                     </div>
@@ -330,10 +331,10 @@
                 <div class="swiper-button-prev"></div>
                 <div class="intro_info">
                     <ul class="list">
-                        <li class="item w_100 name">王小青同学</li>
-                        <li class="item w_33"><p class="stitle">录取学校：</p>成功录取东京大学</li>
-                        <li class="item w_33"><p class="stitle">录取专业：</p>经济学</li>
-                        <li class="item w_33"><p class="stitle">托福：</p>93</li>
+                        <li class="item w_100 name">{{currentcase.name}}同学</li>
+                        <li class="item w_33"><p class="stitle">录取学校：</p>成功录取{{currentcase.univ}}</li>
+                        <li class="item w_33"><p class="stitle">录取专业：</p>{{currentcase.college}}</li>
+                        <li class="item w_33"><p class="stitle">托福：</p>{{currentcase.score_en}}</li>
                         <li class="item w_100 info">
                             <i></i>
                             <p class="stitle">感想：</p>“小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,“

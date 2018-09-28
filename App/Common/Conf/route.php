@@ -47,5 +47,9 @@ return [
         'advantage'     =>  'Advantage/Index/index',
         'onlinemall'     =>  'OnlineMall/Index/index',
         'api/getgoods'     =>  'OnlineMall/Index/getProduct',// 
+
+        'aboutus'       =>  'AboutUs/Index/index', //关于我们
+        'fee'       =>  'Fee/Index/index', //学费支付
+
     ],
 ];

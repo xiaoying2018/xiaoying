@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="ie lt-ie9 lt-ie8 lt-ie7" lang="zh-CN" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if IE 7]>
+<html class="ie lt-ie9 lt-ie8" lang="zh-CN" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if lt IE 10]>
+<html class="ie ltie10" lang="zh-CN" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>留学申请-小莺出国</title>
+    <link rel="stylesheet" href="__PUBLIC__/Common/css/reset.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/Common/css/common.css">
+    <link rel="stylesheet" href="__PUBLIC__/Open/css/animate.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/studying/css/index.css">
+    <script type="text/javascript" src="__PUBLIC__/Open/js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+    <include file="./Template/Common/Index_header_home.html" />
+    <div id="studying" class="marginTop">
+        <include file="./Template/Studying/View_Banner.html" />
+        <ul class="resultDv container">
+            <li class="green" data-flag="green"></li>
+            <li class="time" data-flag="time"></li>
+            <li class="course" data-flag="course"></li>
+            <li class="project" data-flag="project"></li>
+        </ul>
+        <div class="main container result">
+            <div id="green" class="mm_content active">
+                <h3 class="h3_title">学校推荐</h3>
+                <ul class="list">
+                    <li class="item clearfix" v-for="n in 4">
+                        <div class="imgDv">
+                            <img src="../../Public/Studying/img/school_logo.png" alt="">
+                        </div>
+                        <div class="info">
+                            <table>
+                                <tr>
+                                    <td colspan="2" class="td_name">
+                                        <span>东京大学  <font>University of Tokyo</font></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="td_title">学校排名:</span>
+                                        <span class="td_content">TOP1</span>
+                                    </td>
+                                    <td>
+                                        <span class="td_title">学校性质:</span>
+                                        <span class="td_content">国立大学</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="td_title">学校地址:</span>
+                                        <span class="td_content">东京都文京区本郷七丁目3番1号</span>
+                                    </td>
+                                    <td>
+                                        <span class="td_title">学校亮点:</span>
+                                        <span class="td_content">精英的摇篮</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="td_title">包含专业:</span>
+                                        <span class="td_content ul">
+                                            <ul class="major_list">
+                                                <li class="s_item">经营学</li>
+                                                <li class="s_item">数理科学研究科</li>
+                                                <li class="s_item">经营学</li>
+                                                <li class="s_item">数理科学研究科</li>
+                                                <li class="s_item">经营学</li>
+                                                <li class="s_item">数理科学研究科</li>
+                                                <li class="s_item">经营学</li>
+                                            </ul>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="dedtail_desc">东京大学（The University of Tokyo，日文平假名：とうきょうだいがく），简称东大（とうだい），是一所本部位于日本东京都文京区的世界级著名研究型综合大学。作为日本最高学术殿堂和七所旧帝国大学之首，其在全球都享有极高的声誉。</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="time" class="mm_content">
+                <h3 class="h3_title">时间规划</h3>
+                <ul class="timeguihua">
+                    <li class="item" v-for="(n,index) in 6">
+                        <div class="block">0{{index+1}}</div>
+                        <p class="desv">
+                            <font>2018年6月-2018年10月</font>
+                            <br /> 留学课程国内学习
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div id="course" class="mm_content">
+                <h3 class="h3_title">课程推荐</h3>
+                <ul class="course_ullist">
+                    <li class="li" v-for="n in 6">
+                        <a href="http://class.xiaoying.net/detail?id=82" style="display: block;">
+                            <div class="imgDv"><img src="http://class.xiaoying.net/Public/Common/img/class/class.jpg" alt=""></div>
+                            <div class="inner">
+                                <h4 title="EJU冲刺课程 数学">EJU冲刺课程 数学</h4>
+                                <p>开始时间：2018-09-01 | 1课时
+                                    <br>小莺出国官方教务</p>
+                                <div class="detailinfo clearfix">
+                                    <div class="price">
+                                        立即报名
+                                    </div>
+                                    <div class="enroll">100人报名</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="project" class="mm_content">
+                <h3 class="h3_title">项目推荐</h3>
+                <p style="text-align: center;margin-top: 30px;display: block;font-size: 14px;">暂无数据</p>
+            </div>
+        </div>
+    </div>
+    <include file="./Template/Common/Index_loading.html" />
+    <include file="./Template/Common/Index_footer.html" />
+    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+    <script src="__PUBLIC__/Mall/js/scrollReveal.min.js"></script>
+    <script src="../../Public/Studying/js/detail.js"></script>
+</body>
+
+</html>

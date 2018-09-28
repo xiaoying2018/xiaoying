@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="ie lt-ie9 lt-ie8 lt-ie7" lang="zh-CN" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if IE 7]>
+<html class="ie lt-ie9 lt-ie8" lang="zh-CN" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if lt IE 10]>
+<html class="ie ltie10" lang="zh-CN" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>留学申请-小莺出国</title>
+    <link rel="stylesheet" href="__PUBLIC__/Common/css/reset.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/Common/css/common.css">
+    <link rel="stylesheet" href="__PUBLIC__/Open/css/animate.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/studying/css/index.css">
+    <script type="text/javascript" src="__PUBLIC__/Open/js/jquery-1.9.1.min.js"></script>
+    <script src="__PUBLIC__/studying/js/index.js"></script>
+    <script src="__PUBLIC__/studying/js/application.js"></script>
+</head>
+
+<body>
+    <include file="./Template/Common/Index_header_home.html" />
+    <div id="studying" class="marginTop">
+        <include file="./Template/Studying/View_Banner.html" />
+        <div class="main container">
+            <div class="titleDv">
+                测一测你能否考入日本名校？
+            </div>
+            <div class="innerPart s_content">
+                <h3 class="notice">请完善你的个人信息及教育背景，这些信息我们将严格保密！</h3>
+                <div class="lineDv">
+                    <div class="s_title">
+                        <span>学习信息</span>
+                    </div>
+                    <div class="itemFill clearfix">
+                        <span class="ss_title field">日语能力</span>
+                        <ul class="chooselist chooseItem" id="japaneseAbility">
+                            <li><span>N1</span></li>
+                        </ul>
+                        <i class="icon"></i>
+                    </div>
+                    <div class="itemFill clearfix">
+                        <span class="ss_title field">英语能力</span>
+                        <ul class="chooselist chooseItem" id="englishAbility">
+                            <li><span>托福</span></li>
+                        </ul>
+                        <i class="icon"></i>
+                    </div>
+                    <div class="itemFill clearfix">
+                        <span class="ss_title field">当前学校</span>
+                        <ul class="chooselist chooseItem" id="currentSchool">
+                            <li><span>985</span></li>
+                        </ul>
+                        <i class="icon"></i>
+                    </div>
+                    <div class="itemFill clearfix">
+                        <span class="ss_title field">GPA</span>
+                        <ul class="chooselist chooseItem" id="gpa">
+                            <li><span>3.5分以上</span></li>
+                        </ul>
+                        <i class="icon"></i>
+                    </div>
+                    <div class="itemFill clearfix">
+                        <span class="ss_title field">在读年级</span>
+                        <select name="" id="grade" class="chooseItem">
+                            <option value="">请选择</option>
+                        </select>
+                        <i class="icon"></i>
+                    </div>
+                </div>
+                <h4 class="sTitle">目标信息</h4>
+                <div class="itemFill clearfix">
+                    <span class="ss_title field">当前专业</span>
+                    <select name="" id="currentMajor" class="chooseItem">
+                        <option value="">请选择</option>
+                    </select>
+                    <i class="icon"></i>
+                </div>
+                <div class="itemFill clearfix">
+                    <span class="ss_title field">目标专业</span>
+                    <select name="" id="targetMajor" class="chooseItem">
+                        <option value="">请选择</option>
+                    </select>
+                    <i class="icon"></i>
+                </div>
+                <h4 class="sTitle">基础信息</h4>
+                <div class="itemFill clearfix">
+                    <span class="ss_title">姓名</span>
+                    <input type="text" id="name" class="input_form">
+                    <i class="icon"></i>
+                </div>
+                <div class="itemFill clearfix telPart">
+                    <span class="ss_title">手机</span>
+                    <input type="text" id="tel" maxlength="11" class="input_form w_310">
+                    <button id="sendMes" class="code_btn left">获取验证码</button>
+                    <i class="icon"></i>
+                </div>
+                <div class="itemFill clearfix">
+                    <span class="ss_title">验证码</span>
+                    <input type="text" id="mesCode" maxlength="11" class="input_form">
+                    <i class="icon"></i>
+                </div>
+                <div class="btnDv">
+                    <input id="confirmSubmit" type="button" class="submit" onclick="utilystudying.validatefield();" value="提交">
+                </div>
+            </div>
+        </div>
+        <include file="./Template/Common/Index_loading.html" />
+        <include file="./Template/Common/Index_footer.html" />
+        <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+        <script src="__PUBLIC__/Mall/js/scrollReveal.min.js"></script>
+        <script src="../../Public/Studying/js/index.js"></script>
+</body>
+
+</html>

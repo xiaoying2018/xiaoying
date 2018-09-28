@@ -17,7 +17,7 @@ return [
     'URL_MAP_RULES' => [
 
         /* PC */
-        '/' => 'Home/Index/index',     // 主页
+        '/' => 'Xiaoying/View/index',     // 主页
 
         // 院校库
         'school' => 'School/Index/index',     // 院校库
@@ -26,5 +26,27 @@ return [
         /* Mobile */
         'm' => 'Mobile/Index/index', // 手机主页
 
+        'studyingabroad'       =>  'Studying/Index/index', //留学申请
+        'studyingabroad/result'       =>  'Studying/Index/result', //留学申请 结果页
+
+        'news'       =>  'Zixun/Index/index', //资讯列表
+        'news/detail'       =>  'Zixun/Index/detail', //资讯详情
+
+
+        'cases'                      =>  'Cases/Index/index',      // 主页 案例
+        'cases/thanks'               =>  'Cases/Index/thanks',      // 主页 案例
+        'cases/admission'            =>  'Cases/Index/admission',      // 主页 案例
+        'cases/detail'               =>  'Cases/Index/casedetails',      // 主页 案例
+
+
+
+        'school/jpyy'       =>  'School/Index/jpyy', //日本语言学校
+        'school/jp'       =>  'School/Index/jp', //日本大学
+        'school/kr'       =>  'School/Index/kr', //韩国大学
+        'school/sg'       =>  'School/Index/sg', //新加坡大学
+        'school/jp/detail'       =>  'School/Index/JpDetail', //学校详情
+        'advantage'     =>  'Advantage/Index/index',
+        'onlinemall'     =>  'OnlineMall/Index/index',
+        'api/getgoods'     =>  'OnlineMall/Index/getProduct',// 
     ],
 ];

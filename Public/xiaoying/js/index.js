@@ -143,39 +143,47 @@ $(function() {
                     job: '精英计划高级留学顾问',
                     desc: "985高校日语专业出身，日本知名院校交换留学。留学行业经验丰富，多年日本学习生活经验，熟知日本各项目规划及申请。擅长eju留考/修士直考/研究生/sgu等多项目规划指导，耐心细心，学员好评金牌导师。"
                 }
-            ]
+            ],
+            bannerlist:[]
         },
         methods: {
+            getBannerInit:function(){
+                var _this = this;
+                $.ajax({
+                    url:"http://manage.xiaoying.net/getrecom",
+                    type:"get",
+                    data:{recom_id:1},
+                    success:function(res){
+                        if (res.status) {
+                            _this.bannerlist = res.recomdata;
+                            _this.$nextTick(function(){
+                                new Swiper('.swiper-banner', {
+                                    loop: true,
+                                    autoplay: 5000,//可选选项，自动滑动
+                                    paginationClickable: true,
+                                    prevButton:'.swiper-banner-button-prev',
+                                    nextButton:'.swiper-banner-button-next',
+                                    pagination : '.swipe-bannerr-pagination',
+                                })
+                            })
+                        }
+                        console.log("xxx",res);
+                    }
+                })                
+            },
             initevent: function() {
                 $(".xy_form_a").xiaoyingForm({
                     parameter: [
                         { errorMes: "请选择出国时间", id: "XY_b09", rename: "出国时间", reg: "required", placeholder: "出国时间" },
-                        { errorMes: "请选择目前学历", id: "XY_b19", rename: "目前学历", reg: "required", placeholder: "目前学历" },
                         { errorMes: "姓名格式不正确", id: "XY_a01", rename: "姓名", reg: "required", placeholder: "姓名" },
+                        { errorMes: "手机格式不正确", id: "XY_a02", rename: "手机", reg: "required", placeholder: "手机" },
                     ],
                     submitBtn: ".xy_submit_a",
                     beforeSendData: function(_data, cb) {
                         utily.setStore('xy_logined_href', window.location.href);
-                        var _m = utily.getStore('xy_tel');
-                        if (_m == "" || _m == null) {
-                            var _t = {
-                                'XY_a01': _data['XY_a01'],
-                                'XY_b09': _data['XY_b09'],
-                                'XY_b19': _data['XY_b19'],
-                                'XY_c01': _data['XY_c01'],
-                                'city': $("#nationselect").val(),
-                                'serviceselect': $("#serviceselect").select2("data")[0].id
-                            }
-                            utily.setStore('xy_banenr_form', JSON.stringify(_t));
-                            alert('请登录或注册您的账户，方便顾问老师更加及时的跟进您的信息。')
-                            location.href = '/user/#/login?a=register';
-                            return false
-                        } else {
-                            _data['XY_b20'] = $("#nationselect").select2("data")[0].text;
-                            _data['XY_b21'] = '该客户选择的服务是:' + $("#serviceselect").select2("data")[0].text;
-                            _data['XY_a02'] = _m;
-                            cb(_data);
-                        }
+                        _data['XY_b20'] = $("#nationselect").select2("data")[0].text;
+                        _data['XY_b21'] = '该客户选择的服务是:' + $("#serviceselect").select2("data")[0].text;
+                        cb(_data);
                     },
                     beforeLoadField: function(res) {
                         return res;
@@ -227,14 +235,6 @@ $(function() {
                     submitError: function() {}
                 });
 
-                new Swiper('.swiper-banner', {
-                    // loop: true,
-                    // autoplay: 5000,//可选选项，自动滑动
-                    paginationClickable: true,
-                    prevButton:'.swiper-banner-button-prev',
-                    nextButton:'.swiper-banner-button-next',
-                    pagination : '.swipe-bannerr-pagination',
-                })
 
                 new Swiper('.swiper-banner', {
                     paginationClickable: true,
@@ -284,6 +284,7 @@ $(function() {
         },
         mounted: function() {
             this.initevent();
+            this.getBannerInit();
         }
     })
     // api/mall

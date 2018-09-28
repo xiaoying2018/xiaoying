@@ -41,7 +41,14 @@ span {
         //     }
         // }
         .swiper-slide {
-            height: 580px;
+            .a_href{
+                height: 580px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 100%;
+                display: block;
+            }
         }
         .swiper-button-next {
             background: url('../img/swiper_button_004.png') no-repeat -30px center;
@@ -76,8 +83,9 @@ span {
             width: 170px;
             background-color: #fff;
             box-shadow: 0 0px 5px 0px #7a7a7a;
-            float: left;
-            position: relative;
+            left: 0;
+            position: absolute;
+            top: 0px;
             .li {
                 text-align: left;
                 position: relative;
@@ -111,9 +119,10 @@ span {
         }
         .rightpart {
             width: 300px;
-            float: right;
+            right: 0;
             width: 290px;
-           
+            position: absolute;
+            top: 0;
             .p-title {
                 font-size: 18px;
                 color: #fff;

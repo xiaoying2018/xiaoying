@@ -28,7 +28,9 @@
         <div class="banner clearfix">
             <div class="swiper-container swiper-banner">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" v-for="n in bannerlist">
+                        <a class="a_href" target="_blank" :href="n.link_url" v-bind:style="{backgroundImage:'url(http://manage.xiaoying.net/Uploads/' + n.file_path + ')'}"></a>
+                        <!-- <img :src="'http://manage.xiaoying.net/Uploads/'+n.file_path" alt=""> -->
                         <!-- <div class="bannerItem">
                             <div class="container clearfix">
                                 <div class="mainpart">
@@ -40,8 +42,6 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="swiper-slide">22222</div>
-                    <div class="swiper-slide">333</div>
                     
                 </div>
                 <div class="swiper-button-prev swiper-banner-button-prev"></div>

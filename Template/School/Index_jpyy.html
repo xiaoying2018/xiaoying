@@ -61,20 +61,24 @@
         <div class="resultPart container">
             <h3 class="search_title">共找到<font>{{count}}</font>所学校</h3>
             <ul class="schoolList">
-                <li class="item_school clearfix" v-for="n in lists">
+                <li class="item_school clearfix" v-for="n in lists" :key="n.id">
                     <div class="imgDv left">
+                        <a href="javascript:;">
                         <img :src="'http://www.xiaoying.net'+n.logo_sqr" alt="">
+                        </a>
                     </div>
                     <div class="info left">
-                        <h3 class="name">{{n.name_cn}}</h3>
-                        <ul class="slistDv">
-                            <li class="slineDv">学校类型：{{n.category_school}}</li>
-                            <li class="slineDv">每年学费：{{n.cost_fee | filterfee}}万(日元)</li>
-                            <li class="slineDv">学校性质：{{n.xingzhi_name}}</li>
-                            <li class="slineDv">电话：{{n.contact}}</li>
-                            <li class="slineDv">录取比例：{{n.competition}}%</li>
-                            <li class="slineDv full">学校地址：{{n.address}}</li>
-                        </ul>
+                        <a :href="'/JpDetail?id=' + n.id">
+                            <h3 class="name">{{n.name_cn}}</h3>
+                            <ul class="slistDv">
+                                <li class="slineDv">学校类型：{{n.category_school}}</li>
+                                <li class="slineDv">每年学费：{{n.cost_fee | filterfee}}万(日元)</li>
+                                <li class="slineDv">学校性质：{{n.xingzhi_name}}</li>
+                                <li class="slineDv">电话：{{n.contact}}</li>
+                                <li class="slineDv">录取比例：{{n.competition}}%</li>
+                                <li class="slineDv full">学校地址：{{n.address}}</li>
+                            </ul>
+                        </a>
                     </div>
                     <div class="btn-wapper left">
                         <a href="" class="admissions">领取官方招生手册</a>

@@ -78,7 +78,7 @@ $(function() {
 			    duration: 1000,
 			    endOpacity : 1
 			});
-			this.getdata(this.getQueryString('id'));
+			// this.getdata(this.getQueryString('id'));
         }
     });
 })

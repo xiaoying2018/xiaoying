@@ -62,7 +62,7 @@ var _hmt = _hmt || [];
         <div class="head_effect">
 
             <div class="searchGroup container copy">
-                <a href="/mall" class="logo" style="margin-top: 3px;"><img src="../../Public/Mall/img/logo.svg" style="width: 142px"></a>
+                <a href="/" class="logo" style="margin-top: 3px;"><img src="../../Public/Mall/img/logo.svg" style="width: 142px"></a>
                 <ul class="s_nav  clearfix" style="padding-right: 210px;">
                     <li data-nav="index"><a href="/" >首页</a></li>
                     <li data-nav="studyingabroad"><a href="/studyingabroad" >留学申请</a></li>
@@ -86,7 +86,7 @@ var _hmt = _hmt || [];
             </div>
             <div class="searchGroup container t_main">
                 <div class="clearfix">
-                    <a href="/mall" class="logo" style="margin-top: -13px;"><img src="../../Public/Mall/img/logo.svg" style="width: 142px"></a>
+                    <a href="/" class="logo" style="margin-top: -13px;"><img src="../../Public/Mall/img/logo.svg" style="width: 142px"></a>
                     <div class="searchPart">
                         <div>
                             <input type="text" name="" v-model="inputval" @keyup.13="ready()" id="ssinput">
@@ -164,13 +164,13 @@ var _hmt = _hmt || [];
             methods: {
                 ready: function(){
                     if ($("#searchOp").val() == '0') {
-                        window.location.href = '/Result?type=banji&keywords='+encodeURI(this.inputval)
+                        window.location.href = 'http://class.xiaoying.net/Result?type=banji&keywords='+encodeURI(this.inputval)
                     }
                     if ($("#searchOp").val() == '1') {
-                        window.location.href = '/Result?type=course&keywords='+encodeURI(this.inputval)
+                        window.location.href = 'http://class.xiaoying.net/Result?type=course&keywords='+encodeURI(this.inputval)
                     }
                     if ($("#searchOp").val() == '2') {
-                        window.location.href = '/DownLoadCenter?keywords='+encodeURI(this.inputval)
+                        window.location.href = 'http://class.xiaoying.net/DownLoadCenter?keywords='+encodeURI(this.inputval)
                     }
                 },
                 getInfo: function() {
@@ -279,16 +279,23 @@ var _hmt = _hmt || [];
                 //点击城市
                 $(".areaBtn #tiyan").click(function(){
                     $(".overlay_city").fadeIn();
-                    $("#a.areaPart").addClass("in");
+                    $("#a.areaPart").show();
+                    window.setTimeout(function(){
+                        $("#a.areaPart").addClass("in")
+                    },100)
                 });
 
                 $(".areaBtn #guojia").click(function(){
                     $(".overlay_city").fadeIn();
-                    $("#b.areaPart").addClass("in");
+                    $("#b.areaPart").show();
+
+                    window.setTimeout(function(){
+                        $("#b.areaPart").addClass("in")
+                    },100)
                 }); 
                 $(".closeImg").click(function(){
                     $(".overlay_city").hide();
-                    $(".areaPart").removeClass("in");
+                    $(".areaPart").hide().removeClass("in");
                 });
 
                 $('body [data-nav="'+ $('body').attr('data-nav')+'"]').addClass('active').siblings().removeClass('active');

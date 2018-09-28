@@ -14,63 +14,8 @@ $(function() {
                 { "name": "早稻田EDU学校", "imgUrl": "jz1" },
                 { "name": "千驮谷日本语学校", "imgUrl": "jz2" }
             ],
-            caselist: [{
-                    img: "stu1.jpg",
-                    name: "王小青同学",
-                    major: "经济学",
-                    tuofu: "93",
-                    desc: "小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,"
-                },
-                {
-                    img: "stu2.jpg",
-                    name: "王小青同学",
-                    major: "经济学",
-                    tuofu: "93",
-                    desc: "小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,"
-                },
-                {
-                    img: "stu3.jpg",
-                    name: "王小青同学",
-                    major: "经济学",
-                    tuofu: "93",
-                    desc: "小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,"
-                },
-                {
-                    img: "stu4.jpg",
-                    name: "王小青同学",
-                    major: "经济学",
-                    tuofu: "93",
-                    desc: "小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,"
-                },
-                {
-                    img: "stu5.jpg",
-                    name: "王小青同学",
-                    major: "经济学",
-                    tuofu: "93",
-                    desc: "小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,"
-                },
-                {
-                    img: "stu6.jpg",
-                    name: "王小青同学",
-                    major: "经济学",
-                    tuofu: "93",
-                    desc: "小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,"
-                },
-                {
-                    img: "stu7.jpg",
-                    name: "王小青同学",
-                    major: "经济学",
-                    tuofu: "93",
-                    desc: "小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,"
-                },
-                {
-                    img: "stu8.jpg",
-                    name: "王小青同学",
-                    major: "经济学",
-                    tuofu: "93",
-                    desc: "小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,小莺是一个很温暖的大家庭,"
-                },
-            ],
+            caselist: [],
+            currentcase:{},
             teacher: [{
                     img: "cyy.jpg",
                     name: "陈远英",
@@ -144,9 +89,64 @@ $(function() {
                     desc: "985高校日语专业出身，日本知名院校交换留学。留学行业经验丰富，多年日本学习生活经验，熟知日本各项目规划及申请。擅长eju留考/修士直考/研究生/sgu等多项目规划指导，耐心细心，学员好评金牌导师。"
                 }
             ],
-            bannerlist:[]
+            bannerlist:[],
+            newslist:[]
         },
         methods: {
+            getcase:function(){
+                var _this = this;
+                $.ajax({
+                    url:"http://crm.xiaoying.net/?m=casedata&a=search",
+                    data:{
+                        rows:8
+                    },
+                    type:"post",
+                    success:function(res){
+                        _this.caselist = res.data.list;
+                        _this.$nextTick(function(){
+                            var swiper_case = new Swiper('.swiper-case', {
+                                loop: true,
+                                slidesPerView: 5,
+                                paginationClickable: true,
+                                spaceBetween: 20,
+                                centeredSlides: true,
+                                navigation: {
+                                    nextEl: '.swiper-case .swiper-button-next',
+                                    prevEl: '.swiper-case .swiper-button-prev',
+                                },
+                                onSlideChangeEnd: function(swiper, event){
+                                    var _id = $(".swiper-case .swiper-slide.swiper-slide-active").attr("data-id");
+                                    for(var i = 0; i < _this.caselist.length; i++){
+                                        if (_this.caselist[i].id == _id) {
+                                            _this.currentcase = _this.caselist[i];
+                                        }
+                                    }
+                                }
+                            });
+
+                            $(".case .swiper-button-prev").click(function() {
+                                swiper_case.slidePrev();
+                            });
+                            $(".case .swiper-button-next").click(function() {
+                                swiper_case.slideNext();
+                            });
+                        });
+                    }
+                })
+            },
+            getzixun:function(){
+                var _this = this;
+                $.ajax({
+                    url:"http://manage.xiaoying.net/article/contentssearch",
+                    data:{limit:5},
+                    type:"get",
+                    success:function(res){
+                        if (res.code == 0) {
+                            _this.newslist = res.data;
+                        }
+                    }
+                })
+            },
             getBannerInit:function(){
                 var _this = this;
                 $.ajax({
@@ -167,7 +167,6 @@ $(function() {
                                 })
                             })
                         }
-                        console.log("xxx",res);
                     }
                 })                
             },
@@ -246,30 +245,12 @@ $(function() {
                     spaceBetween: 20
                 });
                 new Swiper('.swiper-team', {
+                    loop:false,
                     pagination: '.team-swiper-pagination',
                     slidesPerView: 4,
                     paginationClickable: true,
                     spaceBetween: 20
                 });
-                var swiper_case = new Swiper('.swiper-case', {
-                    loop: true,
-                    slidesPerView: 5,
-                    paginationClickable: true,
-                    spaceBetween: 20,
-                    centeredSlides: true,
-                    navigation: {
-                        nextEl: '.swiper-case .swiper-button-next',
-                        prevEl: '.swiper-case .swiper-button-prev',
-                    },
-                });
-
-                $(".case .swiper-button-prev").click(function() {
-                    swiper_case.slidePrev();
-                });
-                $(".case .swiper-button-next").click(function() {
-                    swiper_case.slideNext();
-                });
-
 
                 new Swiper('.swiper-shouquan', {
                     pagination: '.team-swiper-pagination',
@@ -284,7 +265,9 @@ $(function() {
         },
         mounted: function() {
             this.initevent();
+            this.getzixun();
             this.getBannerInit();
+            this.getcase();
         }
     })
     // api/mall

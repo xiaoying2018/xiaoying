@@ -82,9 +82,11 @@ $(function() {
                         if (res.code == 0) {
                             _this.lists = res.data;
                             _this.count = res.count
-                            $("body, html").animate({
-                                scrollTop: $(".choosepart").offset().top - 130
-                            }, 200)
+                            if ( _this.request.page != 1) {
+                                $("body, html").animate({
+                                    scrollTop: $(".choosepart").offset().top - 130
+                                }, 200)
+                            }
                             $("#jqPaginator").html("");
                             if (res.count > 0) {
                                 $('#jqPaginator').jqPaginator({

@@ -17,72 +17,9 @@ var app = new Vue({
 				cateidSecNav: '',
 				cateid: ''
 			},
-			newsTotal: 0 ,//资讯总数,
-			hotActivities: [
-				{
-					id: 1,
-					imgSrc: "../../Public/Zixun/img/hotActivities/zhanhui2018.jpg",
-					url: "http://www.xiaoying.net/zhanhui2018/"
-				},
-				{
-					id: 2,
-					imgSrc: "../../Public/Zixun/img/hotActivities/evaluation.jpg",
-					url: "http://www.xiaoying.net/evaluation?q=web"
-				},
-				{
-					id: 3,
-					imgSrc: "../../Public/Zixun/img/hotActivities/duyan.jpg",
-					url: "http://www.xiaoying.net/newdy/"
-				},
-				{
-					id: 4,
-					imgSrc: "../../Public/Zixun/img/hotActivities/yuyan.jpg",
-					url: "http://www.xiaoying.net/yuyan/"
-				}
-			],
-			parentsCare: [
-				{
-					id: 1,
-					title: "为何选择小莺",
-					imgSrc: "../../Public/Zixun/img/why_choose_icon.png"
-				},
-				{
-					id: 2,
-					title: "赴日留学费用",
-					imgSrc: "../../Public/Zixun/img/liuxue_free_icon.png"
-				},
-				{
-					id: 3,
-					title: "在日如何工作",
-					imgSrc: "../../Public/Zixun/img/how_work_icon.png"
-				},
-				{
-					id: 4,
-					title: "日本升学攻略",
-					imgSrc: "../../Public/Zixun/img/highter_school_icon.png"
-				},
-				{
-					id: 5,
-					title: "赴日调研要求",
-					imgSrc: "../../Public/Zixun/img/survey_require_icon.png"
-				},
-				{
-					id: 6,
-					title: "语言学校要求",
-					imgSrc: "../../Public/Zixun/img/language_school_icon.png"
-				},
-				{
-					id: 7,
-					title: "日常生活常识",
-					imgSrc: "../../Public/Zixun/img/life_icon.png"
-				},
-				{
-					id: 8,
-					title: "出国行前准备",
-					imgSrc: "../../Public/Zixun/img/befor_prepare_icon.png"
-				}
-
-			]
+			newsTotal: 0 //资讯总数,
+			
+			
 		}
 	},
 	// router,
@@ -253,23 +190,7 @@ var app = new Vue({
 		_this.getNewListData();
 
 
-		//热门活动轮播初始化
-		var mySwiper = new Swiper('.swiper-container',{
-            // pagination: '.pagination',
-            loop:true,
-            autoplay: 5000,
-            autoplayDisableOnInteraction: false,
-            grabCursor: true,
-            paginationClickable: true
-        })
-		$('.arrow-left').on('click', function(e){
-			e.preventDefault()
-			mySwiper.swipePrev()
-		});
-		$('.arrow-right').on('click', function(e){
-			e.preventDefault()
-			mySwiper.swipeNext()
-		});
+		
 	},
 	beforeRouteLeave (to, from, next) {
 	    // 导航离开该组件的对应路由时调用

@@ -1,0 +1,45 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Zixun/js/swiper2/idangerous.swiper.css">
+<link rel="stylesheet" href="__PUBLIC__/Zixun/css/common.css">
+<div class="hotActivitiesPart">
+    <h4 class="title">热门活动</h4>
+    <div class="hotActivitiesDv">
+        <a class="arrow-left" href="javascript:;"></a> 
+        <a class="arrow-right" href="javascript:;"></a>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="http://www.xiaoying.net/zhanhui2018/" target="_blank">
+                        <img src="../../Public/Zixun/img/hotActivities/zhanhui2018.jpg">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="http://www.xiaoying.net/evaluation?q=web" target="_blank">
+                        <img src="../../Public/Zixun/img/hotActivities/evaluation.jpg">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pagination"></div>
+    </div>
+</div>
+<script type="text/javascript" src="../../Public/Zixun/js/swiper2/idangerous.swiper.min.js"></script>
+<script type="text/javascript">
+    //热门活动轮播初始化
+        var mySwiper = new Swiper('.swiper-container',{
+            // pagination: '.pagination',
+            loop:true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false,
+            grabCursor: true,
+            paginationClickable: true
+        })
+        $('.arrow-left').on('click', function(e){
+            e.preventDefault()
+            mySwiper.swipePrev()
+        });
+        $('.arrow-right').on('click', function(e){
+            e.preventDefault()
+            mySwiper.swipeNext()
+        });
+</script>
+

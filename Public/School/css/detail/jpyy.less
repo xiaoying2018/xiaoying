@@ -311,5 +311,67 @@
                 }
             }
         }
+        .rightDv {
+            width: 340px;
+        }
+    }
+}
+
+.majorTitle {
+    position: relative;
+    z-index: 1;
+    line-height: 42px;
+    font-size: 18px;
+    padding-left: 12px;
+    background: url('../../img/facultyMajor_back.png') no-repeat 0 0;
+    span {
+        font-size: 14px;
+    }
+}
+.majorListUl {
+   
+    width: 100%;
+    border: 1px solid #ededed;
+    margin-top: -1px;
+    li {
+        display: table;
+        border-top: 1px solid #f7f7f7;
+        &:first-child {
+            border-top: none;
+        }
+        &:nth-child(even) {
+            background-color: #fffadf;
+        }
+        &>div {
+            display: table-cell;
+            border-left: 1px solid #f7f7f7;
+            height: 54px;
+            text-align: center;
+            vertical-align: middle;
+            &:first-child {
+                border-left: none;
+            }
+        }
+        .list1 {
+            width: 58px;
+        }
+        .list2 {
+            width: 319px;
+        }
+        .list3 {
+            width: 221px;
+        }
+        .list4 {
+            width: 188px;
+            a {
+                display: inline-block;
+                width: 94px;
+                line-height: 34px;
+                font-size: 16px;
+                color: #3d3c3c;
+                border-radius: 2px;
+                background-color: #fbda4c;
+            }
+        }
     }
 }

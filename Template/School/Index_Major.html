@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="__PUBLIC__/Common/css/common.css">
     <link rel="stylesheet" href="__PUBLIC__/Open/css/animate.min.css">
     <link rel="stylesheet" href="__PUBLIC__/School/css/detail/jpyy.css">
+    <link rel="stylesheet" href="__PUBLIC__/School/css/detail/major.css">
     <script type="text/javascript" src="__PUBLIC__/Open/js/jquery-1.9.1.min.js"></script>
     <script src="../../Public/plugin/background-blur.js"></script>
     <script src="/Public/Open/js/jqPaginator/jqPaginator.min.js"></script>
@@ -23,7 +24,7 @@
 
 <body data-nav="jpyy">
     <include file="./Template/Common/Index_header_home.html" />
-    <div id="jpyy_detail" class="marginTop">
+    <div id="jpyy_detail" class="majorPart marginTop">
         <div class="topDeatailPart">
             <div class="cover_banner_part"></div>
             <div class="container maininfo clearfix">
@@ -63,149 +64,59 @@
         <div style="background-color: #f7f7f7;">
             <div class="container clearfix detailInfo">
                 <div class="left leftDv">
-                    <ul class="chooseul">
-                        <li class="item_li active" data-flag="tab1">学校介绍</li>
-                        <li class="item_li" data-flag="tab3">学校图库</li>
-                        <li class="item_li" data-flag="tab4">地理交通</li>
-                        <li class="item_li" data-flag="tab5">留学攻略</li>
-                    </ul>
-                    <div class="maincontent" id="tab1">
-                        <div class="mm_main" v-if="detail.description != null && detail.description != ''">
-                            <div class="mm_header">
-                                <h3>学校简介</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.description"></div>
+                    <div class="choosemajorDV">
+                        <div class="choosemajorNav">
+                            <ul class="clearfix">
+                                <li class="item_li active" data-flag="tab1">精选成功案例</li>
+                                <li class="item_li" data-flag="tab3">入学条件</li>
+                                <li class="item_li" data-flag="tab4">考试科目</li>
+                            </ul>
+                            <span class="greyLine"></span>
                         </div>
-                        <div class="mm_main" v-if="detail.request_en != null && detail.request_en != ''">
-                            <div class="mm_header">
-                                <h3>申请条件</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.request_en"></div>
-                        </div>
-                        <div class="mm_main" v-if="detail.request_lang != null && detail.request_lang != ''">
-                            <div class="mm_header">
-                                <h3>申请条件-小语种</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.request_lang"></div>
-                        </div>
-                        <div class="mm_main" v-if="detail.request_doclist != null && detail.request_doclist != ''">
-                            <div class="mm_header">
-                                <h3>申请条件-提及材料</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.request_doclist"></div>
-                        </div>
-
-                        <div class="mm_main" v-if="detail.academic_info != null && detail.academic_info != ''">
-                            <div class="mm_header">
-                                <h3>学术信息</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.academic_info"></div>
-                        </div>
-
-                        <div class="mm_main" v-if="detail.zige != null && detail.zige != ''">
-                            <div class="mm_header">
-                                <h3>考试资格</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.zige"></div>
-                        </div>
-
-                        <div class="mm_main" v-if="detail.apply_method != null  && detail.apply_method != ''">
-                            <div class="mm_header">
-                                <h3>选拔办法</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.apply_method"></div>
-                        </div>
-
-
-                        <div class="mm_main" v-if="detail.schoolhistory != null  && detail.schoolhistory != ''">
-                            <div class="mm_header">
-                                <h3>学校历史</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.schoolhistory"></div>
-                        </div>
-
-                        <div class="mm_main" v-if="detail.schoolspecial != null && detail.schoolspecial != ''">
-                            <div class="mm_header">
-                                <h3>学校特色</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.schoolspecial"></div>
-                        </div>
-
-                        <div class="mm_main" v-if="detail.schoolmanage != null && detail.schoolmanage != ''">
-                            <div class="mm_header">
-                                <h3>学校管理</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.schoolmanage"></div>
-                        </div>
-
-                        <div class="mm_main" v-if="detail.schoolgoods != null && detail.schoolgoods != ''">
-                            <div class="mm_header">
-                                <h3>学校设施</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.schoolgoods"></div>
-                        </div>
-                    </div>
-                    <div class="maincontent" id="tab3">
-                        <div class="schoolCircle">
-                            <p>{{detail.name_cn}}</p>
-                            <span>校区图片</span>
-                        </div>
-                        <ul class="imgUl" v-if="detail.allpic && detail.allpic.length > 0">
-                            <li class="img_li clearfix" v-for="(n,index) in detail.allpic">
-                                <div class="imgDv">
-                                    <img :src="'http://manage.xiaoying.net'+n" alt="">
-                                    <span class="arrow"></span>
-                                </div>
-                                <div class="numDv">
-                                    <p>{{index+1}}</p>
-                                    <span class="circle"></span>
-                                </div>
-                            </li>
-                            <li class="border_li"></li>
-                        </ul>
-                        <div class="nodate_d" v-else>
-                            <img src="../../Public/ConsultantCertification/img/xiaoying_error.png" alt="">
-                            <p>小莺情报组拼命搜集资料中...</p>
-                        </div>
-                    </div>
-                    <div class="maincontent" id="tab4">
-                        <div class="smapDv" id="baiduMap" v-show="detail.longitude && detail.latitude"></div>
-                        <div class="nodate_d" v-show="!detail.longitude">
-                            <img src="../../Public/ConsultantCertification/img/xiaoying_error.png" alt="">
-                            <p>小莺情报组拼命搜集资料中...</p>
-                        </div>
-                    </div>
-                    <div class="maincontent" id="tab5">
-                        <ul class="newsListUl">
-                            <li v-for = "item in newsList" :key="item.id">
-                                <div class="imgDv">
-                                    <a :href="'/news/detail?id=' + item.id">
-                                        <img :src="item.picture" :alt="item.title">
-                                    </a>
-                                </div>
-                                <div class="contDv">
-                                    <h4>
-                                        <a :href="'/news/detail?id=' + item.id">{{item.title}}</a>
-                                    </h4>
-                                    <p class="time"><span></span>{{item.publishedtime}}</p>
-                                    <p class="newsDes">
-                                        <a :href="'/news/detail?id=' + item.id">{{item.des}}</a>
-                                    </p>
-                                    <div class="btnPart">
-                                        <a :href="'/news/detail?id=' + item.id">查看详情</a>
-                                        <ul class="clearfix">
-                                            <li>
-                                                <span></span>{{item.upsnum}}
+                        <div class="itenListDv">
+                            <ul class="clearfix">
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="imgDv">
+                                            <div>
+                                                <img src="../../Public/School/img/major.png">
+                                            </div>
+                                        </div>
+                                        <ul class="desList">
+                                            <li>学生：<span>王懿崚</span></li>
+                                            <li>录取院校：<span>东京大学 经济学</span></li>
+                                            <li class="clearfix">
+                                                <div>日语：<span>N1:113</span></div> 
+                                                <div>托福：<span>93</span></div>
                                             </li>
-                                            <li>
-                                                <span></span>{{item.hits}}
-                                            </li>
+                                            <li>毕业院校：<span>上海理工大学</span></li>
                                         </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="imgDv">
+                                            <div>
+                                                <img src="../../Public/School/img/major.png">
+                                            </div>
+                                        </div>
+                                        <ul class="desList">
+                                            <li>学生：<span>王懿崚</span></li>
+                                            <li>录取院校：<span>东京大学 经济学</span></li>
+                                            <li class="clearfix">
+                                                <div>日语：<span>N1:113</span></div> 
+                                                <div>托福：<span>93</span></div>
+                                            </li>
+                                            <li>毕业院校：<span>上海理工大学</span></li>
+                                        </ul>
+                                    </a>
+                                </li>
+                                <li>2134</li>
+                            </ul>
+                        </div>
                     </div>
+                    
+                   
                 </div>
                 <div class="right rightDv">
                     <include file="./Template/Zixun/Index_hotActivities.html" />

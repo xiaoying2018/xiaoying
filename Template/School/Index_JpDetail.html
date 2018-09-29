@@ -206,10 +206,15 @@
                         </div>
                     </div>
                     <div class="maincontent" id="tab4">
-                        <div class="smapDv" id="baiduMap" v-show="detail.longitude && detail.latitude"></div>
-                        <div class="nodate_d" v-show="!detail.longitude">
-                            <img src="../../Public/ConsultantCertification/img/xiaoying_error.png" alt="">
-                            <p>小莺情报组拼命搜集资料中...</p>
+                        <div class="mm_main">
+                            <div class="mm_header">
+                                <h3>地理交通</h3>
+                            </div>
+                            <div class="smapDv" id="baiduMap" v-show="detail.longitude && detail.latitude"></div>
+                            <div class="nodate_d" v-show="!detail.longitude">
+                                <img src="../../Public/ConsultantCertification/img/xiaoying_error.png" alt="">
+                                <p>小莺情报组拼命搜集资料中...</p>
+                            </div>
                         </div>
                     </div>
                     <div class="maincontent" id="tab5">

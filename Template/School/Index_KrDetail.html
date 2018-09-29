@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
-    <title>学校详情-小莺出国</title>
+    <title>韩国学校详情-小莺出国</title>
     <link rel="stylesheet" href="__PUBLIC__/Common/css/reset.min.css">
     <link rel="stylesheet" href="__PUBLIC__/Common/css/common.css">
     <link rel="stylesheet" href="__PUBLIC__/Open/css/animate.min.css">
@@ -38,19 +38,11 @@
                     <ul class="listinfo clearfix">
                         <li class="itemli clearfix">
                             <span class="s_title">学校性质：</span>
-                            <span class="s_content">{{detail.xingzhi_name}}</span>
-                        </li>
-                        <li class="itemli clearfix">
-                            <span class="s_title">每年学费：</span>
-                            <span class="s_content">{{detail.cost_fee}}万（日元）</span>
+                            <span class="s_content">{{detail.type}}</span>
                         </li>
                         <li class="itemli clearfix">
                             <span class="s_title">学校电话：</span>
-                            <span class="s_content">{{detail.contact}}</span>
-                        </li>
-                        <li class="itemli clearfix">
-                            <span class="s_title">录取比例：</span>
-                            <span class="s_content">{{detail.competition}}%</span>
+                            <span class="s_content">{{detail.mobile}}</span>
                         </li>
                         <li class="itemli clearfix full">
                             <span class="s_title">学校地址：</span>
@@ -65,28 +57,23 @@
                 <div class="left leftDv">
                     <ul class="chooseul">
                         <li class="item_li active" data-flag="tab1">学校介绍</li>
+                        <li class="item_li" data-flag="tab2">学费相关</li>
+                        <li class="item_li" data-flag="tab2b">招生相关</li>
                         <li class="item_li" data-flag="tab3">学校图库</li>
-                        <li class="item_li" data-flag="tab4">地理交通</li>
                         <li class="item_li" data-flag="tab5">留学攻略</li>
                     </ul>
                     <div class="maincontent" id="tab1">
-                        <div class="mm_main" v-if="detail.description != null && detail.description != ''">
+                        <div class="mm_main" v-if="detail.desc != null && detail.desc != ''">
                             <div class="mm_header">
                                 <h3>学校简介</h3>
                             </div>
-                            <div class="mm_content" v-html="detail.description"></div>
+                            <div class="mm_content" v-html="detail.desc"></div>
                         </div>
                         <div class="mm_main" v-if="detail.request_en != null && detail.request_en != ''">
                             <div class="mm_header">
                                 <h3>申请条件</h3>
                             </div>
                             <div class="mm_content" v-html="detail.request_en"></div>
-                        </div>
-                        <div class="mm_main" v-if="detail.request_lang != null && detail.request_lang != ''">
-                            <div class="mm_header">
-                                <h3>申请条件-小语种</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.request_lang"></div>
                         </div>
                         <div class="mm_main" v-if="detail.request_doclist != null && detail.request_doclist != ''">
                             <div class="mm_header">
@@ -95,63 +82,28 @@
                             <div class="mm_content" v-html="detail.request_doclist"></div>
                         </div>
 
-                        <div class="mm_main" v-if="detail.academic_info != null && detail.academic_info != ''">
+                        <div class="mm_main" id="tab2" v-if="detail.requret_fee != null && detail.requret_fee != ''">
                             <div class="mm_header">
-                                <h3>学术信息</h3>
+                                <h3>学费相关</h3>
                             </div>
-                            <div class="mm_content" v-html="detail.academic_info"></div>
+                            <div class="mm_content" v-html="detail.requret_fee"></div>
                         </div>
 
-                        <div class="mm_main" v-if="detail.zige != null && detail.zige != ''">
+                        <div class="mm_main" id="tab2b" v-if="detail.student != null && detail.student != ''">
                             <div class="mm_header">
-                                <h3>考试资格</h3>
+                                <h3>招生相关</h3>
                             </div>
-                            <div class="mm_content" v-html="detail.zige"></div>
+                            <div class="mm_content" v-html="detail.student"></div>
                         </div>
 
-                        <div class="mm_main" v-if="detail.apply_method != null  && detail.apply_method != ''">
-                            <div class="mm_header">
-                                <h3>选拔办法</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.apply_method"></div>
-                        </div>
-
-
-                        <div class="mm_main" v-if="detail.schoolhistory != null  && detail.schoolhistory != ''">
-                            <div class="mm_header">
-                                <h3>学校历史</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.schoolhistory"></div>
-                        </div>
-
-                        <div class="mm_main" v-if="detail.schoolspecial != null && detail.schoolspecial != ''">
-                            <div class="mm_header">
-                                <h3>学校特色</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.schoolspecial"></div>
-                        </div>
-
-                        <div class="mm_main" v-if="detail.schoolmanage != null && detail.schoolmanage != ''">
-                            <div class="mm_header">
-                                <h3>学校管理</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.schoolmanage"></div>
-                        </div>
-
-                        <div class="mm_main" v-if="detail.schoolgoods != null && detail.schoolgoods != ''">
-                            <div class="mm_header">
-                                <h3>学校设施</h3>
-                            </div>
-                            <div class="mm_content" v-html="detail.schoolgoods"></div>
-                        </div>
                     </div>
                     <div class="maincontent" id="tab3">
                         <div class="schoolCircle">
                             <p>{{detail.name_cn}}</p>
                             <span>校区图片</span>
                         </div>
-                        <ul class="imgUl" v-if="detail.allpic && detail.allpic.length > 0">
-                            <li class="img_li clearfix" v-for="(n,index) in detail.allpic">
+                        <ul class="imgUl" v-if="detail.despic && detail.despic.length > 0">
+                            <li class="img_li clearfix" v-for="(n,index) in detail.despic">
                                 <div class="imgDv">
                                     <img :src="'http://manage.xiaoying.net'+n" alt="">
                                     <span class="arrow"></span>
@@ -168,18 +120,7 @@
                             <p>小莺情报组拼命搜集资料中...</p>
                         </div>
                     </div>
-                    <div class="maincontent" id="tab4">
-                        <div class="mm_main">
-                            <div class="mm_header">
-                                <h3>地理交通</h3>
-                            </div>
-                            <div class="smapDv" id="baiduMap" v-show="detail.longitude && detail.latitude"></div>
-                            <div class="nodate_d" v-show="!detail.longitude">
-                                <img src="../../Public/ConsultantCertification/img/xiaoying_error.png" alt="">
-                                <p>小莺情报组拼命搜集资料中...</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="maincontent" id="tab5">
                         <ul class="newsListUl">
                             <li v-for = "item in newsList" :key="item.id">
@@ -221,7 +162,7 @@
     </div>
     <include file="./Template/Common/Index_loading.html" />
     <include file="./Template/Common/Index_footer.html" />
-    <script src="../../Public/School/js/detail_jpyy.js"></script>
+    <script src="../../Public/School/js/detail_kr.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
 </body>
 

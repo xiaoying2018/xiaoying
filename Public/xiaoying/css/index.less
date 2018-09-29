@@ -6,56 +6,34 @@ span {
 #xiaoying {
     .banner {
         overflow: hidden;
-        height: 575px;
+        height: 580px;
         background-color: #ffd900;
-        // .bannerItem {
-        //     background-color: #ffd900;
-        //     height: 575px;
-        //     background-image: url("../img/opacity_block.png");
-        //     .container {
-        //         height: 450px;
-        //         position: relative;
-        //         top: 60px;
-                
-        //         .mainpart {
-        //             width: 596px;
-        //             float: left;
-        //             margin-left: 35px;
-        //             position: relative;
-        //             .bird {
-        //                 position: absolute;
-        //                 right: -120px;
-        //                 bottom: -30px;
-        //             }
-        //             .banner_a {
-        //                 margin-top: 15px;
-        //             }
-        //             .banner_b {
-        //                 margin-top: 25px;
-        //             }
-        //             .banner_c {
-        //                 margin-top: 35px;
-        //             }
-        //         }
-                
-        //     }
-        // }
         .swiper-slide {
             .a_href{
                 height: 580px;
                 background-size: cover;
+                // background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
                 width: 100%;
                 display: block;
             }
         }
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 43px;
+            height: 94px;
+        }
         .swiper-button-next {
-            background: url('../img/swiper_button_004.png') no-repeat -30px center;
-            
+            right: 0;
+            background: url('../img/swiper_button_004.png') no-repeat -47px center;          
+            background-size: 90px auto;
         }
         .swiper-button-prev {
-            background: url('../img/swiper_button_004.png') no-repeat 0 center;
+            left: 0;
+            background: url('../img/swiper_button_004.png') no-repeat 0 0;
+            background-size: 90px auto;
+
         }
         .swipe-bannerr-pagination {
             left: 50%;
@@ -212,6 +190,7 @@ span {
         }
     }
     .adpart {
+        height: 188px;
         padding: 24px 0;
         background-color: #f9f9f9;
     }
@@ -311,8 +290,8 @@ span {
         }
     }
     .searchPart {
-        background-image: url("../img/searchbg.jpg");
-        background-size: cover;
+        background: url("../img/searchbg.jpg") no-repeat center center;
+        // background-size: cover;
         padding: 60px 0;
         .titleDv {
             margin-bottom: 60px;
@@ -486,7 +465,7 @@ span {
     .team{
         padding: 60px 0;
         background-color: #ffd700;
-        background-image: url("../img/team_bg.jpg");
+        background: url("../img/team_bg.jpg") no-repeat center center;
         height: 450px;
         margin-bottom: 240px;
         .titleDv {

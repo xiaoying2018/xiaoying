@@ -174,7 +174,7 @@
                                 <div class="list1">{{(request.limit*(request.page-1))+index+1}}</div>
                                 <div class="list2">{{n.name_cn}}</div>
                                 <div class="list3">招生人数：{{n.zhaosheng}}</div>
-                                <div class="list4"><a :href="'/school/major?id='+n.id">免费申请</a></div>
+                                <div class="list4"><a onclick="_MEIQIA('showPanel')" href="javascript:;">免费申请</a></div>
                             </li>
                         </ul>
                         <div id="jqPaginator" class="pageNav" style="display: block;"></div>

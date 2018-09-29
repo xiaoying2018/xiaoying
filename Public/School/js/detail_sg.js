@@ -89,10 +89,10 @@ $(function() {
         },
         mounted: function() {
             var _this = this;
-            var _s = Math.round(Math.random()*5+1);
-            this.tempimg = '../../Public/Common/img/school/random'+_s+'.jpg';
+            var _s = Math.round(Math.random()*1+1);
+            this.tempimg = '../../Public/Common/img/school/sg/random'+_s+'.jpg';
             $(".cover_banner_part").backgroundBlur({
-                imageURL : '../../Public/Common/img/school/random'+_s+'.jpg',
+                imageURL : '../../Public/Common/img/school/sg/random'+_s+'.jpg',
                 blurAmount : 50,
                 duration: 1000,
                 endOpacity : 1

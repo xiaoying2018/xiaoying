@@ -30,7 +30,7 @@ return [
         'school/sg/detail'       =>  'School/Index/SgDetail', //新加坡学校详情
         'school/kr/detail'       =>  'School/Index/KrDetail', //新加坡学校详情
 
-        'advantage'     =>  'Advantage/Index/index',// 核心优势
+        'advantage'     =>  'Advantage/Index/Index',// 核心优势
         'onlinemall'     =>  'OnlineMall/Index/index',// 网上商城
         'api/getgoods'     =>  'OnlineMall/Index/getProduct',// 商城数据接口
 

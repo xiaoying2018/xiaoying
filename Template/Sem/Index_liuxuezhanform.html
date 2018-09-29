@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>小莺出国日本留学全国巡回讲座</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="__PUBLIC__/Sempages/liuxuezhan/stylesheet/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Sempages/liuxuezhan/stylesheet/enroll.css" />
+    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+    <script src="__PUBLIC__/Sempages/liuxuezhan/js/jquery-1.9.1.min.js"></script>
+    <script src="__PUBLIC__/Sempages/liuxuezhan/js/data.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Sempages/liuxuezhan/js/enroll.js"></script>
+    <script src="http://crm.xiaoying.net/Public/js/xiaoying_form.js"></script>
+</head>
+
+<body>
+    <div id="enrollDv">
+        <div class="container">
+            <img src="__PUBLIC__/Sempages/liuxuezhan/img/paper.png" alt="" class="paper">
+            <div class="inner">
+                <h3>小莺出国</h3>
+                <div class="border"></div>
+                <h4>日本留学展&nbsp;&nbsp;——&nbsp;&nbsp;<font v-text="date.s_name"></font></h4>
+                <div class="xy_form">
+                    <div class="CRM_TEMPLET" data-templet="CRM_TEMPLET_INPUT" style="display: none;">
+                        <div class="inputDv clearfix">
+                            <span class="labeltitle left CRM_TEMPLET_NAME">姓名：</span>
+                            <input type="text" placeholder="请输入您的姓名" class="left">
+                        </div>
+                    </div>
+                </div>
+                <div class="xy_btn xy_submit">立即报名</div>
+            </div>
+            <div class="enrollinfo">
+                <h3>报名信息</h3>
+                <table>
+                    <tr>
+                        <td class="s_title">场次：</td>
+                        <td v-text="date.s_time"></td>
+                    </tr>
+                    <tr>
+                        <td class="s_title">地点：</td>
+                        <td v-text="date.s_address"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

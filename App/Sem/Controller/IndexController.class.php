@@ -62,6 +62,13 @@ class IndexController extends Controller
         $this->display();
     }
 
+    // 留学展表单页
+    public function liuxuezhanform()
+    {
+        $this->display();
+    }
+
+    // 留学展报名页
     public function liuxuezhanreservation()
     {
         $this->display();

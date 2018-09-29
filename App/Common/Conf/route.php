@@ -63,6 +63,7 @@ return [
         'eju' => 'Sem/Index/eju',// EJU
         'g30' => 'Sem/Index/g30',// G30
         'liuxuezhan' => 'Sem/Index/liuxuezhan',// 留学展
+        'liuxuezhanform' => 'Sem/Index/liuxuezhanform',// 留学展表单
         'liuxuezhanreservation' => 'Sem/Index/liuxuezhanreservation',// 留学展报名页
         'ribenliuxue' => 'Sem/Index/ribenliuxue',// 日本留学
         'feiyong' => 'Sem/Index/feiyong',// 费用

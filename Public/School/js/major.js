@@ -97,9 +97,6 @@ $(function() {
 			});
 			this.getdata(this.getQueryString('id'));
             this.request.id = this.getQueryString('id');
-            this.getcate();
-            this.getxueli();
-            this.getzhuanye();
             this.getNewListData();
 
             $(document).on('click', '.choose .item', function() {

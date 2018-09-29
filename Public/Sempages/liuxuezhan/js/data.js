@@ -75,63 +75,70 @@ var _s = [{
     item:[
         {
             id:"101",
-            s_name:"南京站",
-            s_src:"Public/Sempages/liuxuezhan/img/nanjing.jpg",
-            s_time:"10月20日 14：00~17：00",
-            s_address:"暂定"
+            s_name:"广州站",
+            s_src:"Public/Sempages/liuxuezhan/img/guangzhou.jpg",
+            s_time:"10月20日 14：00~18：00",
+            s_address:"广州市珠江新城冼村路 26 号 广州W酒店"
         },
         {
             id:"102",
-            s_name:"北京站",
-            s_src:"Public/Sempages/liuxuezhan/img/beijing.jpg",
-            s_time:"10月27日 14：00~17：00",
-            s_address:"暂定"
+            s_name:"大连站",
+            s_src:"Public/Sempages/liuxuezhan/img/dalian.jpg",
+            s_time:"10月27日 13：00~17：00",
+            s_address:"大连市中山区鲁迅路18-1号 大连雅乐轩酒店"
         },
         {
             id:"103",
-            s_name:"上海站",
-            s_src:"Public/Sempages/liuxuezhan/img/shanghai.jpg",
-            s_time:"10月27日",
-            s_address:"暂定"
-        },
-        {
-            id:"104",
             s_name:"杭州站",
             s_src:"Public/Sempages/liuxuezhan/img/hangzhou.jpg",
-            s_time:"10月28日 14:00~18:00",
-            s_address:"暂定"
+            s_time:"10月28日 14:00-18:00",
+            s_address:"杭州市下城区延安路595号 浙江大酒店"
         }
     ]
 },{
     month:"11",
     item:[
         {
+            id:"110",
+            s_name:"上海站",
+            s_src:"Public/Sempages/liuxuezhan/img/shanghai.jpg",
+            s_time:"11月03日 14：00~18：00",
+            s_address:"上海市南丹路15号 上海斯波特大酒店"
+        },
+        {
             id:"111",
-            s_name:"青岛站",
-            s_src:"Public/Sempages/liuxuezhan/img/qingdao.jpg",
-            s_time:"11月03日 14：00~17：00",
-            s_address:"暂定"
+            s_name:"武汉站",
+            s_src:"Public/Sempages/liuxuezhan/img/wuhan.jpg",
+            s_time:"11月03日 14：00~18：00",
+            s_address:"武汉市洪山区珞瑜路726号 华美达光谷大酒店"
         },
         {
             id:"112",
-            s_name:"武汉站",
-            s_src:"Public/Sempages/liuxuezhan/img/wuhan.jpg",
-            s_time:"11月03日 14：00~16：00",
-            s_address:"暂定"
+            s_name:"南京站",
+            s_src:"Public/Sempages/liuxuezhan/img/nanjing.jpg",
+            s_time:"11月04日 14：00~16：00",
+            s_address:"南京市汉中路89号 金鹰皇冠假日酒店"
         },
         {
             id:"113",
+            s_name:"北京站",
+            s_src:"Public/Sempages/liuxuezhan/img/beijing.jpg",
+            s_time:"11月10日 14：00~16：00",
+            s_address:"中关村南大街1号 北京友谊宾馆"
+        },
+        {
+            id:"114",
             s_name:"西安站",
             s_src:"Public/Sempages/liuxuezhan/img/xian.jpg",
-            s_time:"11月10日 14：00~16：00",
-            s_address:"暂定"
+            s_time:"11月10日 14:00~18:00",
+            s_address:"西安新城区东新街199号（近民公园）先富力希尔顿酒店"
         },
         {
             id:"114",
             s_name:"重庆站",
             s_src:"Public/Sempages/liuxuezhan/img/chongqing.jpg",
             s_time:"11月17日 14:00~18:00",
-            s_address:"暂定"
+            s_address:"重庆南岸区南坪新街90号 重庆光宇尚滨戴斯酒店"
         }
     ]
 }];

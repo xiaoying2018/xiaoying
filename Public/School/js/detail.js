@@ -2,12 +2,125 @@ $(function() {
     var result = new Vue({
         el: '#jpyy_detail',
         data: {
+            //专业
+            cate:[],
+            //学历
+            xueli:[],
+            request:{
+                type:"",
+                cate:"",
+                name:"",
+                id:"",
+                page:1,
+                limit:15
+            },
+            newsList: [],
+            major:[],
         	tempimg:"",
         	detail:{}
         },
         filters:{
         },
         methods: {
+            //获取专业分类
+            getcate: function(){
+                var _this = this;
+                $.ajax({
+                    url:"http://manage.xiaoying.net/school/cate",
+                    type:"get",
+                    success:function(res){
+                        if (res) {
+                            _this.cate = res
+                        }
+                    }
+                })
+            },
+            //获取学历
+            getxueli: function(){
+                var _this = this;
+                $.ajax({
+                    url:"http://manage.xiaoying.net/school/xueli",
+                    type:"get",
+                    success:function(res){
+                        if (res) {
+                            _this.xueli = res
+                        }
+                    }
+                })
+            },
+            //获取专业列表
+            getzhuanye:function(){
+                var _this = this;
+                this.major = [];
+                $.ajax({
+                    url:"http://manage.xiaoying.net/school/schoolprogram",
+                    type:"get",
+                    data:_this.request,
+                    success:function(res){
+                        $("#jqPaginator").html("");
+                        if (res.status) {
+                            for(var i = 0; i < res.data.length; i++){
+                                if (res.data[i].zhaosheng == "") {
+                                    res.data[i].zhaosheng = '若干';
+                                }
+                            }
+                            if ( _this.request.page != 1) {
+                                $("body, html").animate({
+                                    scrollTop: $(".majorTitle").offset().top - 130
+                                }, 200)
+                            }
+                            if (res.count > 0) {
+                                $('#jqPaginator').jqPaginator({
+                                    totalCounts: parseInt(res.count),
+                                    pageSize: _this.request.limit,
+                                    visiblePages: 7,
+                                    currentPage: _this.request.page,
+                                    first: "<a>首页</a>",
+                                    last: "<a>末页</a>",
+                                    prev: "<a>上一页</a>",
+                                    page: "<a class='page'>{{page}}</a>",
+                                    next: "<a>下一页</a>",
+                                    onPageChange: function(num, type) {
+                                        if (type == "change") {
+                                            _this.request.page = num;
+                                            _this.getzhuanye();
+                                        }
+                                    }
+                                })
+                            }
+                            _this.major = res.data;
+                        }
+                    }
+                })
+            },
+            //获取咨询
+            getNewListData:function () {
+                var _this = this;
+                $.ajax({
+                   url:"http://manage.xiaoying.net/article/contentssearch",
+                    data:{limit:5},
+                    type:"get",
+                    success: function(res) {
+                        var array = res.data;
+                        // 'http://xiaoying.net'+item.picture
+                        for (var i = 0; i < array.length; i++) {
+                            if(array[i].picture.indexOf('http') > -1) {
+                                array[i].picture = array[i].picture;
+                            }else if(array[i].picture == '') {
+                                array[i].picture = '/Public/Zixun/img/img.jpg'
+                            } else {
+                                array[i].picture = 'http://xiaoying.net'+ array[i].picture;
+                            }
+                            array[i].publishedtime = _this.timestampToTime(array[i].publishedtime);
+                        }
+                        _this.newsList = array;
+                    }
+                })
+            },
+            change: function(key,val){
+                this.request[key] = val;
+                this.getzhuanye();
+            },
             getdata: function(_id){
                 var _this = this;
                 $.ajax({
@@ -52,10 +165,31 @@ $(function() {
                             if (_this.detail.schoolgoods) {
                                 _this.detail.schoolgoods = utily.escapeStringHTML(res.data.schoolgoods)
                             }
+
+                            if (_this.detail.longitude && _this.detail.latitude) {
+                                _this.detail.longitude = parseFloat(_this.detail.longitude);
+                                _this.detail.latitude = parseFloat(_this.detail.latitude);
+                                _this.initmap();
+                            }
                     	}
-                        console.log("xxx",res);
                     }
                 })
+            },
+            initmap:function(){
+                var _this = this;
+                var _point = [_this.detail.longitude,_this.detail.latitude];
+                $("#baiduMap").show();
+                // 百度地图API功能
+                var map = new BMap.Map("baiduMap", {});
+                map.enableScrollWheelZoom(true);
+                var point = new BMap.Point(_point[0], _point[1]);
+                map.centerAndZoom(point, 50);
+                
+                //创建logo
+                var pt = new BMap.Point(_point[0], _point[1]);
+                var myIcon = new BMap.Icon("../../Public/Common/mappoint.png", new BMap.Size(95, 36));
+                var marker2 = new BMap.Marker(pt, { icon: myIcon }); // 创建标注
+                map.addOverlay(marker2);
             },
             getQueryString: function(name, needdecoed) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -66,6 +200,17 @@ $(function() {
                 var r = lh.substr(1).match(reg);
                 if (r != null) return unescape(r[2]);
                 return null;
+            },
+            timestampToTime:function(timestamp) {
+                var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+                var Y = date.getFullYear() + '-';
+                var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                var D = date.getDate() + ' ';
+                var h = date.getHours() + ':';
+                var m = date.getMinutes() + ':';
+                var s = date.getSeconds();
+                return Y+M+D;
+                // return Y+M+D+h+m+s;
             }
         },
         mounted: function() {
@@ -74,11 +219,41 @@ $(function() {
             this.tempimg = '../../Public/Common/img/school/random'+_s+'.jpg';
 		    $(".cover_banner_part").backgroundBlur({
 			    imageURL : '../../Public/Common/img/school/random'+_s+'.jpg',
-			    blurAmount : 10,
+			    blurAmount : 50,
 			    duration: 1000,
 			    endOpacity : 1
 			});
 			this.getdata(this.getQueryString('id'));
+            this.request.id = this.getQueryString('id');
+            this.getcate();
+            this.getxueli();
+            this.getzhuanye();
+            this.getNewListData();
+
+            $(document).on('click', '.choose .item', function() {
+                $(this).addClass("active").siblings().removeClass("active");
+            })
+
+            $(document).on('click', '.chooseul .item_li', function() {
+                $(this).addClass("active").siblings().removeClass("active");
+                var _flag = $(this).attr("data-flag");
+                $("body, html").animate({
+                    scrollTop: $("#"+_flag).offset().top - 155
+                }, 600)
+            })
+
+            $(window).scroll(function() {
+
+            })
+            fixDiv($(".chooseul"), "fixed_pc", 450);
+
+            function fixDiv(t, e, o) {
+                var n = 0;
+                $(window).scroll(function() {
+                    n = document.documentElement.scrollTop > 0 ? document.documentElement.scrollTop : document.body.scrollTop,
+                    n >= o ? t.addClass(e) : o > n && t.removeClass(e)
+                })
+            }
         }
     });
 })

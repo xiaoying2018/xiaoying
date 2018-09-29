@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="74px" viewBox="0 0 148 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="未标题-1_画板-1">
+                <rect id="Rectangle-path" fill-rule="nonzero" x="0" y="0" width="148" height="74"></rect>
+                <g id="Group" transform="translate(0.000000, 15.000000)">
+                    <circle id="Oval" transform="translate(28.506440, 15.287460) rotate(-13.285796) translate(-28.506440, -15.287460) " cx="28.50644" cy="15.28746" r="7.29973092"></circle>
+                    <path d="M40.2,4.6 L33.8,4.6 C30.3,2 26.2,0.6 21.5,0.6 C9.7,0.6 0.3,10.2 0.3,21.9 C0.3,33.8 9.8,43.3 21.5,43.3 C33.2,43.3 42.7,33.8 42.7,21.9 C42.7,18.4 41.8,15 40.1,11.9 L40.1,4.6 L40.2,4.6 Z M28.5,22.5 C24.5,22.5 21.2,19.2 21.2,15.2 C21.2,11.3 24.5,7.9 28.5,7.9 C32.5,7.9 35.8,11.2 35.8,15.2 C35.7,19.5 32.5,22.5 28.5,22.5 Z" id="Shape" fill="#F9D10B" fill-rule="nonzero"></path>
+                </g>
+                <g id="Group" transform="translate(48.000000, 19.000000)" fill="#333333" fill-rule="nonzero">
+                    <polygon id="Shape" points="17.9 4.9 20.6 18.8 22.9 17.9 20.2 4"></polygon>
+                    <polygon id="Shape" points="3.9 3.9 0.8 17.9 3 18.8 6.2 4.8"></polygon>
+                    <polygon id="Shape" points="13.6 0.6 13.6 0.5 11.1 0.5 11.1 20.4 8.8 20.4 8.8 22.8 13.6 22.8"></polygon>
+                </g>
+                <g id="Group" transform="translate(74.000000, 19.000000)" fill="#333333" fill-rule="nonzero">
+                    <polygon id="Shape" points="5.8 0.5 5.8 1.6 0.8 1.6 0.8 3.5 5.8 3.5 5.8 4.5 8.4 4.5 8.4 3.4 14.5 3.4 14.5 4.5 17 4.5 17 3.4 22.1 3.4 22.1 1.6 17 1.6 17 0.5 14.5 0.5 14.5 1.6 8.4 1.6 8.4 0.5"></polygon>
+                    <path d="M4,11 C4,11 18.7,11 18.6,11 L18.5,12 L15.1,12 L15.1,13.7 L20.9,13.7 L21.6,9.1 L10.8,9.1 L11.2,8.2 L8.4,7.8 L7.7,9.1 L1.5,9.1 L1.5,16.7 L19.7,16.7 L19.4,21 L10.9,21 L10.9,22.8 L21.7,22.8 L22.4,14.9 L4,14.9 L4,11 Z" id="Shape"></path>
+                    <polygon id="Shape" points="11 13.8 13.1 12.8 7.6 11.7 5.4 12.8"></polygon>
+                    <rect id="Rectangle-path" x="0.9" y="18" width="17.2" height="1.8"></rect>
+                    <polygon id="Shape" points="22 8.4 22 5.4 1.1 5.4 1.1 8.1 3.5 8.1 3.5 7.1 19.6 7.1 19.6 8.4"></polygon>
+                </g>
+                <path d="M119.3,39.5 L112.5,39.5 L112.5,30.3 L121.3,30.3 L121.3,20.8 C121.3,20.8 118.9,20.8 118.9,20.8 L118.9,27.9 L112.5,27.9 L112.5,19.9 L110,19.9 L110,27.9 L103.6,27.9 L103.6,20.8 L101.2,20.8 L101.2,30.3 L110,30.3 L110,39.5 L103.2,39.5 L103.2,33.2 L100.8,33.2 L100.8,41.9 L121.7,41.9 L121.7,33.2 L119.3,33.2 L119.3,39.5 Z" id="Shape" fill="#333333" fill-rule="nonzero"></path>
+                <g id="Group" transform="translate(126.000000, 19.000000)">
+                    <path d="M19.3,3.3 L2.7,3.3 L2.7,20.5 L19.3,20.5 L19.3,3.3 Z M17.8,7.5 L12.2,7.5 L12.2,9.9 L17.3,9.9 L17.3,12.3 L12.2,12.3 L12.2,16.4 L17.7,16.4 L17.7,18.6 L4.5,18.6 L4.5,16.4 L9.8,16.4 L9.8,12.3 L5,12.3 L5,9.9 L9.8,9.9 L9.8,7.5 L4.5,7.5 L4.5,5.1 L17.8,5.1 L17.8,7.5 Z M17.8,14.8 L15.5,15.4 L13.4,13.6 L15.8,13 L17.8,14.8 Z" id="Shape"></path>
+                    <polygon id="Shape" fill="#333333" fill-rule="nonzero" points="4.5 7.5 9.8 7.5 9.8 9.9 5 9.9 5 12.2 9.8 12.2 9.8 16.3 4.5 16.3 4.5 18.5 17.7 18.5 17.7 16.3 12.2 16.3 12.2 12.2 17.3 12.2 17.3 9.9 12.2 9.9 12.2 7.5 17.8 7.5 17.8 5.1 4.5 5.1"></polygon>
+                    <path d="M0.3,22.8 L21.7,22.8 L21.7,0.9 L0.3,0.9 L0.3,22.8 Z M2.6,3.3 L19.2,3.3 L19.2,20.5 L2.6,20.5 L2.6,3.3 Z" id="Shape" fill="#333333" fill-rule="nonzero"></path>
+                    <polygon id="Shape" fill="#333333" fill-rule="nonzero" points="13.4 13.6 15.4 15.5 17.8 14.8 15.7 13"></polygon>
+                </g>
+                <polygon id="Shape" fill="#333333" fill-rule="nonzero" points="58.2 45.5 56.6 45.5 54.2 49.2 51.7 45.3 50.2 45.7 53.5 50.4 49.9 55.8 51.4 55.8 54.2 51.5 57.1 55.9 58.5 55.5 55 50.3"></polygon>
+                <rect id="Rectangle-path" fill="#333333" fill-rule="nonzero" x="60.2" y="45.4" width="1.4" height="10.3"></rect>
+                <g id="Group" transform="translate(63.000000, 45.000000)">
+                    <polygon id="Shape" points="3.4 6.4 6.7 6.4 5.1 2.1"></polygon>
+                    <path d="M4.3,0.4 L0.3,10.7 L1.7,10.7 L2.9,7.6 L7.1,7.6 L8.3,10.8 L9.6,10.5 L5.6,0.4 L4.3,0.4 Z M3.4,6.4 L5,2.1 L6.6,6.4 L3.4,6.4 Z" id="Shape" fill="#333333" fill-rule="nonzero"></path>
+                </g>
+                <g id="Group" transform="translate(73.000000, 45.000000)">
+                    <ellipse id="Oval" cx="5.3" cy="5.6" rx="3.3" ry="4"></ellipse>
+                    <path d="M5.3,0.3 C2.4,0.3 0.5,2.5 0.5,5.6 C0.5,8.7 2.3,10.9 5.2,10.9 C8.1,10.9 10,8.7 10,5.6 C10,2.4 8.2,0.3 5.3,0.3 Z M5.3,9.6 C3.3,9.6 2,8 2,5.6 C2,3.2 3.3,1.6 5.3,1.6 C7.3,1.6 8.6,3.2 8.6,5.6 C8.6,8 7.4,9.6 5.3,9.6 Z" id="Shape" fill="#333333" fill-rule="nonzero"></path>
+                </g>
+                <polygon id="Shape" fill="#333333" fill-rule="nonzero" points="87.9 50.3 85 45.3 83.5 45.6 87.2 51.6 87.2 55.7 88.6 55.7 88.6 51.6 92.3 45.4 90.8 45.4"></polygon>
+                <rect id="Rectangle-path" fill="#333333" fill-rule="nonzero" x="93.9" y="45.4" width="1.4" height="10.3"></rect>
+                <polygon id="Shape" fill="#333333" fill-rule="nonzero" points="104.6 53.1 99.2 45.4 97.9 45.4 97.9 55.7 99.2 55.7 99.2 47.7 104.8 55.7 105.9 55.7 105.9 45.4 104.6 45.4"></polygon>
+                <path d="M112.6,51.4 L115,51.4 L115,54.1 C114.4,54.4 113.8,54.6 112.9,54.6 C110.6,54.6 109.4,53 109.4,50.6 C109.4,48.2 110.6,46.6 112.8,46.6 C114,46.6 115,47 115.7,47.6 L115.9,46.2 C115.1,45.7 114.2,45.3 112.8,45.3 C109.7,45.3 107.9,47.5 107.9,50.6 C107.9,53.7 109.6,55.9 112.9,55.9 C114.2,55.9 115.5,55.5 116.3,54.9 L116.3,50.1 L112.4,50.1 L112.6,51.4 Z" id="Shape" fill="#333333" fill-rule="nonzero"></path>
+                <rect id="Rectangle-path" fill="#333333" fill-rule="nonzero" x="118.4" y="53.9" width="1.5" height="1.8"></rect>
+                <polygon id="Shape" fill="#333333" fill-rule="nonzero" points="128.7 53.1 123.3 45.4 122.1 45.4 122.1 55.7 123.3 55.7 123.3 47.7 129 55.7 130 55.7 130 45.4 128.7 45.4"></polygon>
+                <polygon id="Shape" fill="#333333" fill-rule="nonzero" points="133.9 51 137.3 51 137.1 49.7 133.9 49.7 133.9 46.7 138 46.7 138 45.4 132.5 45.4 132.5 55.7 138.2 55.7 138.2 54.4 133.9 54.4"></polygon>
+                <polygon id="Shape" fill="#333333" fill-rule="nonzero" points="139.2 45.4 139.2 46.7 142.4 46.7 142.4 55.7 143.8 55.7 143.8 46.7 147.2 46.7 147 45.4"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

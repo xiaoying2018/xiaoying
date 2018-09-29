@@ -1,0 +1,146 @@
+/*设置或检索对象的缩放比例*/
+.clearfix {
+  zoom: 1;
+}
+/*快速浮动*/
+.pull-left{
+  float: left !important;
+}
+.pull-right{
+  float: right !important;
+}
+/*前后清除浮动*/
+.clearfix::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.clearfix::before {
+  content: " ";
+  display: table;
+  clear: both;
+}
+/*设置元素的显示和隐藏*/
+.show {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+}
+.invisible {
+  visibility: hidden;
+}
+/*所有img标签设置100%*/
+img{
+  width: 100%;
+  height: 100%;
+  border:0;
+  vertical-align:middle;
+}
+li{
+  list-style:none
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+/*设置字体为苹方黑体-准-简*/
+@font-face {
+  font-family: myFirstFont;
+  src: url('../../fonts/苹方黑体-准-简.ttf');
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  font-family: myFirstFont;
+  background:#fff;
+}
+/*网站主题个别突出字体颜色*/
+.color{
+  color:#f7d237;
+}
+/*网站主题背景颜色*/
+.bgcolor{
+  color:#f7d237;
+}
+/*网站的内容显示区域宽度*/
+.content{
+  max-width: 1920px;
+  width: 100%;
+  min-width: 1080px;
+}
+.content_box{
+  width: 1080px;
+  margin: 0 auto
+}
+/*重置各个浏览器的不同*/
+body,
+p,
+h1,
+h2,
+h3,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+input {
+  margin: 0;
+  padding: 0;
+}
+/*文字超出隐藏显示...*/
+p.nowrap{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/*img图片放大*/
+.imgh:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+/*css左右放大缩小动画*/
+@-webkit-keyframes discount {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1); }
+  50% {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7); }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1); }
+}
+@keyframes discount {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1); }
+  50% {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7); }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1); }
+}
+/*css左右摇摆动画*/
+@-webkit-keyframes shake /* Safari 和 Chrome */ {
+  0% {
+    -webkit-transform: rotate(-40deg); }
+  50% {
+    -webkit-transform: rotate(40deg); }
+  100% {
+    -webkit-transform: rotate(-40deg); }
+}
+@keyframes shake {
+  0% {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg); }
+  50% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg); }
+  100% {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg); }
+}

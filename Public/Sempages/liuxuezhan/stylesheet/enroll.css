@@ -1,0 +1,122 @@
+body {
+  font-family: "Microsoft Yahei", "PingFang SC", Tahoma, Helvetica, Arial, "SimSun", sans-serif;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+html body {
+  background-image: url(../img/enrollbg.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+html body .container {
+  width: 1050px;
+  margin: 0 auto;
+  position: relative;
+}
+html body .container .paper {
+  position: absolute;
+  top: 0;
+  right: -180px;
+}
+html body .container .inner {
+  position: relative;
+  top: 180px;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+html body .container .inner h3 {
+  font-size: 36px;
+  color: #E64340;
+  line-height: 36px;
+  text-align: center;
+  display: inline-block;
+  background-color: #FFFDF5;
+  padding: 0 10px;
+  padding-bottom: 10px;
+}
+html body .container .inner .border {
+  height: 2px;
+  background-color: #E64340;
+  width: 100%;
+  display: block;
+  margin-top: -2px;
+}
+html body .container .inner h4 {
+  font-size: 24px;
+  color: #E64340;
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+html body .container .inner .inputDv {
+  width: 520px;
+  margin: 20px auto;
+}
+html body .container .inner .inputDv .labeltitle {
+  font-size: 18px;
+  color: #333333;
+  width: 120px;
+  display: block;
+  line-height: 38px;
+  text-align: right;
+  margin-right: 10px;
+}
+html body .container .inner .inputDv input {
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: 5px;
+  width: 320px;
+  padding: 10px;
+  outline: none;
+  font-size: 18px;
+  color: #333333;
+  display: block;
+  line-height: 26px;
+}
+html body .container .xy_btn {
+  background: #E64340;
+  box-shadow: 0 3px 13px 0 rgba(178, 36, 33, 0.3);
+  border-radius: 100px;
+  font-size: 18px;
+  color: #FFFDF5;
+  width: 200px;
+  height: 44px;
+  line-height: 44px;
+  margin: 0 auto;
+  margin-top: 30px;
+  cursor: pointer;
+}
+html body .container .enrollinfo {
+  position: relative;
+  top: 180px;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+html body .container .enrollinfo h3 {
+  font-size: 18px;
+  color: #E64340;
+  text-align: left;
+  border-bottom: 1px solid #EFEFEF;
+  padding-bottom: 15px;
+}
+html body .container .enrollinfo table {
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 14px;
+  color: #666666;
+  margin-top: 10px;
+}
+html body .container .enrollinfo table td {
+  padding-top: 10px;
+  vertical-align: top;
+}
+html body .container .enrollinfo table .s_title {
+  color: #333333;
+  width: 60px;
+}

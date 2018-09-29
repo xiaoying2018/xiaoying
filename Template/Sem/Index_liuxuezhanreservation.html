@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="renderer" content="webkit" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>小莺出国日本留学全国巡回讲座</title>
+    <link rel="stylesheet" href="__PUBLIC__/Sempages/liuxuezhan/stylesheet/reset.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/Sempages/liuxuezhan/stylesheet/reservation.css?v=201807300941">
+    <script src="__PUBLIC__/Sempages/liuxuezhan/js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+    <script src="http://crm.xiaoying.net/Public/js/xiaoying_form.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="__PUBLIC__/Sempages/liuxuezhan/js/html5shiv.min.js"></script>
+      <script src="__PUBLIC__/Sempages/liuxuezhan/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="app">
+        <div id="reservation">
+            <img src="__PUBLIC__/Sempages/liuxuezhan/img/bg_circle2.png" alt="" class="bg_circle2">
+            <img src="__PUBLIC__/Sempages/liuxuezhan/img/bg1_circle.png" alt="" class="bg_circle1">
+            <img src="__PUBLIC__/Sempages/liuxuezhan/img/m_logo.png" alt="" class="logo">
+            <div class="main clearfix">
+                <img src="__PUBLIC__/Sempages/liuxuezhan/img/m_title.png" alt="" class="title">
+                <div class="leftPart">
+                    <img src="__PUBLIC__/Sempages/liuxuezhan/img/map.png" alt="" class="map">
+                    <ul class="city">
+                        <li v-for="n in city" :class="n.rename" @click="showenroll(n.name)">
+                            <strong><em class="city-canada"><i v-text="n.name" @click="showenroll(n.name)"></i><font></font></em></strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rightPart">
+                    <p class="os_title">
+                        点击左边城市，进行提前预约；  <br />
+                        预约人数最多的前 4 座城市，<br />
+                        即为小莺<font id="month">9月</font>全国巡讲城市！
+                    </p>
+                    <p class="ob_title">
+                        若以上没有您希望的所在城市，请在下面输入 <br />
+                        您希望参加的城市，进行提前预约！
+                    </p>
+                    <p class="ob_city">
+                        希望参加的城市：<input type="text"  v-model="cityname" @keyup.enter="showenroll()" />
+                    </p>
+                    <img src="__PUBLIC__/Sempages/liuxuezhan/img/btn.png" alt="" class="btn" @click="showenroll()">
+                </div>
+            </div>
+        </div>
+
+        <div id="enrollDv">
+            <div class="shadow"></div>
+            <div class="container">
+                <img src="__PUBLIC__/Sempages/liuxuezhan/img/newpaper.png" alt="" class="paper">
+                <img src="__PUBLIC__/Sempages/liuxuezhan/img/close.png" alt="" class="close" @click="hideenroll()">
+                <div class="inner">
+                    <h3>小莺出国</h3>
+                    <div class="border"></div>
+                    <h4>日本留学展&nbsp;&nbsp;——&nbsp;&nbsp;<font v-text="cityname"></font></h4>
+                    <div class="xy_form">
+                        <div class="CRM_TEMPLET" data-templet="CRM_TEMPLET_INPUT" style="display: none;">
+                            <div class="inputDv clearfix">
+                                <span class="labeltitle left CRM_TEMPLET_NAME">姓名：</span>
+                                <input type="text" placeholder="请输入您的姓名" class="left">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xy_btn xy_submit">立即报名</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+    $(function(){
+        $("#month").text(getUrlParam('month')+"月");
+
+        var openHeader = new Vue({
+            el: '#app',
+            data: {
+                cityname:"",
+                city:[
+                    {name:"上海",rename:"shanghai"},
+                    {name:"大连",rename:"dalian"},
+                    {name:"济南",rename:"jinan"},
+                    {name:"西安",rename:"xian"},
+                    {name:"成都",rename:"chengdu"},
+                    {name:"长沙",rename:"changsha"},
+                    {name:"广州",rename:"guangzhou"},
+                    {name:"厦门",rename:"xiameng"},
+                    {name:"南昌",rename:"nanchang"},
+                    {name:"武汉",rename:"wuhan"},
+                    {name:"合肥",rename:"hefei"},
+                    {name:"南京",rename:"nanjing"},
+                    {name:"常州",rename:"changzhou"},
+                    {name:"无锡",rename:"wuxi"},
+                    {name:"苏州",rename:"suzhou"},
+                    {name:"嘉兴",rename:"jiaxing"},
+                    {name:"杭州",rename:"hangzhou"},
+                    {name:"绍兴",rename:"shaoxing"},
+                    {name:"宁波",rename:"ningbo"},
+                    {name:"温州",rename:"wenzhou"},
+
+
+                ]
+            },
+            methods: {
+                showenroll(item){
+                    if (item) {
+                        this.cityname =item;
+                    }
+                    if (this.cityname == '') {
+                        alert('请输入希望参加的城市');
+                        return false;
+                    }
+                    $("#enrollDv").fadeIn();
+                },
+                hideenroll(){
+                    $("#enrollDv").fadeOut();
+                }
+            },
+            mounted:function(){
+                var _this = this;
+                $(".xy_form").xiaoyingForm({
+                    parameter: [
+                        { errorMes: "姓名格式不正确", id: "XY_a01", rename: "姓名：", reg: "required", placeholder: "请输入您的姓名" },
+                        { errorMes: "电话格式不正确", id: "XY_a02", rename: "手机号码：", reg: "required" , placeholder: "请输入您的手机号码"},
+                        { errorMes: "请输入微信或QQ号", id: "XY_b11", rename: "微信/QQ：",reg:"required", placeholder: "请输入您的微信/QQ" },
+                    ],
+                    submitBtn: ".xy_btn",
+                    beforeSendData: function(_data,cb) {
+                        _data["XY_b29"] = _this.cityname;
+                        _data["XY_b21"] = '该同学希望报名'+$("#month").text()+'份的'+_this.cityname+'场次';
+                        cb(_data);
+                    },
+                    beforeLoadField: function(res) {
+                        return res;
+                    },
+                    afterLoadField: function() {},
+                    validatorError: function(mes, node) {
+                        alert(mes);
+                    },
+                    submitSuccess: function() {
+                        alert("申请成功！请等到老师与您联系");
+                    },
+                    submitError: function() {}
+                });
+            }
+        })
+    })
+    /**
+     * 获取浏览器对应参数
+     * @param  {[type]} name       [description]
+     * @param  {[type]} needdecoed [需要解码的参数]
+     * @return {[type]}            [description]
+     */
+    function getUrlParam(name, needdecoed) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var lh = window.location.search;
+        if (needdecoed) {
+            lh = decodeURI(window.location.search)
+        }
+        var r = lh.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+    </script>
+</body>
+
+</html>

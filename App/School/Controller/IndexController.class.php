@@ -33,4 +33,9 @@ class IndexController extends Controller
     {
         $this->display();
     }
+    public function Major()
+    {
+        $this->display();
+    }
+
 }

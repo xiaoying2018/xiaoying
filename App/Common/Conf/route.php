@@ -44,7 +44,10 @@ return [
         'school/kr'       =>  'School/Index/kr', //韩国大学
         'school/sg'       =>  'School/Index/sg', //新加坡大学
         'school/jp/detail'       =>  'School/Index/JpDetail', //日本大学学校详情
+        'school/major'       =>  'School/Index/Major', //日本大学学校专业详情
         'school/jpyy/detail'       =>  'School/Index/JpyyDetail', //日本语言学校详情
+
+
         'advantage'     =>  'Advantage/Index/index',
         'onlinemall'     =>  'OnlineMall/Index/index',
         'api/getgoods'     =>  'OnlineMall/Index/getProduct',// 

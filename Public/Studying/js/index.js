@@ -43,4 +43,10 @@ $(function() {
     $(".itemFill").click(function(){
         $(this).removeClass("correct wrong")
     })
+    var config = {
+        reset: true,
+        delay: 'always',
+        mobile: true,
+    }
+    window.sr = new scrollReveal(config);
 });

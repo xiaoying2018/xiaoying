@@ -119,13 +119,14 @@ $(function() {
 	            $(document).on('click','.month .owl-item',function(){
 	            	var _m = $(this).find("li").attr("data-m");
 	            	console.log("_m",_m);
-	            	if (_m < 7) {
+	            	if (_m < 10) {
 	                	alert(_m+'月展会已结束，请查看精彩回顾...')
 	                    pw.slide(6);
 	                }
-	                else if (_m == 9) {
-	                	window.open('./liuxuezhanreservation?month='+_m+'&goto='+getUrlParam('goto'));
-	                }else if (_m > 11) {
+	                // else if (_m == 9) {
+	                // 	window.open('./liuxuezhanreservation?month='+_m+'&goto='+getUrlParam('goto'));
+	                // }
+	                else if (_m > 11) {
 	                	window.open('./liuxuezhanreservation?month='+_m+'&goto='+getUrlParam('goto'));
 	                }
 	                else{
@@ -180,8 +181,8 @@ $(function() {
 	                $(".section" + _s).addClass("done");
 	                $("#head .ul li").eq(_s-1).addClass("active").siblings().removeClass("active");
 
-	                owl.trigger('to.owl.carousel', [7]);
-	                $(".owl_8 .li").eq(0).mouseenter();
+	                owl.trigger('to.owl.carousel', [9]);
+	                $(".owl_10 .li").eq(0).mouseenter();
 
 	                if (_s == 3 || _s == 1) {
 	                	$("#head").addClass("white");

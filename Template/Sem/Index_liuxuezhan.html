@@ -179,7 +179,7 @@
                             <div class="cover"></div>
                         </li>
                     </ul>
-                    <ul class="itemDate owl-carousel" v-for="(n,index) in date" v-show="index == 1" :class="'owl_'+n.month">
+                    <ul class="itemDate owl-carousel" v-for="(n,index) in date" v-show="index == 0" :class="'owl_'+n.month">
                         <li class="li" v-for="(s,index) in n.item" :data-name="s.s_name" :data-time="s.s_time" :data-address="s.s_address">
                             <div class="imgDv">
                                 <img :src="s.s_src" alt="">

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="ie lt-ie9 lt-ie8 lt-ie7" lang="zh-CN" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if IE 7]>
+<html class="ie lt-ie9 lt-ie8" lang="zh-CN" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if lt IE 10]>
+<html class="ie ltie10" lang="zh-CN" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>新加坡学校详情-小莺出国</title>
+    <link rel="stylesheet" href="__PUBLIC__/Common/css/reset.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/Common/css/common.css">
+    <link rel="stylesheet" href="__PUBLIC__/Open/css/animate.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/School/css/detail/jpyy.css">
+    <script type="text/javascript" src="__PUBLIC__/Open/js/jquery-1.9.1.min.js"></script>
+    <script src="../../Public/plugin/background-blur.js"></script>
+    <script src="/Public/Open/js/jqPaginator/jqPaginator.min.js"></script>
+</head>
+
+<body data-nav="jpyy">
+    <include file="./Template/Common/Index_header_home.html" />
+    <div id="jpyy_detail" class="marginTop">
+        <div class="topDeatailPart">
+            <div class="cover_banner_part"></div>
+            <div class="container maininfo clearfix">
+                <div class="left leftPart">
+                    <div class="imgDv">
+                        <img :src="tempimg" alt="" data-adaptive-background='1' data-description='grandpa' class="imgs">
+                    </div>
+                </div>
+                <div class="right rightPart">
+                    <p class="name">{{detail.name_cn}}</p>
+                    <a :href="detail.website" class="url_href" target="_blank">{{detail.website}}</a>
+                    <ul class="listinfo clearfix">
+                        <li class="itemli clearfix">
+                            <span class="s_title">学校性质：</span>
+                            <span class="s_content">暂无</span>
+                        </li>
+                        <li class="itemli clearfix">
+                            <span class="s_title">每年学费：</span>
+                            <span class="s_content">暂无</span>
+                        </li>
+                        <li class="itemli clearfix">
+                            <span class="s_title">学校电话：</span>
+                            <span class="s_content">暂无</span>
+                        </li>
+                        <li class="itemli clearfix">
+                            <span class="s_title">录取比例：</span>
+                            <span class="s_content">暂无</span>
+                        </li>
+                        <li class="itemli clearfix full">
+                            <span class="s_title">学校地址：</span>
+                            <span class="s_content">{{detail.address}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #f7f7f7;">
+            <div class="container clearfix detailInfo">
+                <div class="left leftDv">
+                    <ul class="chooseul">
+                        <li class="item_li active" data-flag="tab1">学校介绍</li>
+                        <li class="item_li" data-flag="tab3">学校图库</li>
+                        <li class="item_li" data-flag="tab5">留学攻略</li>
+                    </ul>
+                    <div class="maincontent" id="tab1">
+                        <div class="mm_main" v-if="detail.desc != null && detail.desc != ''">
+                            <div class="mm_header">
+                                <h3>学校简介</h3>
+                            </div>
+                            <div class="mm_content" v-html="detail.desc"></div>
+                        </div>
+                    </div>
+                    <div class="maincontent" id="tab3">
+                        <div class="schoolCircle">
+                            <p>{{detail.name_cn}}</p>
+                            <span>校区图片</span>
+                        </div>
+                        <ul class="imgUl" v-if="detail.despic && detail.despic.length > 0">
+                            <li class="img_li clearfix" v-for="(n,index) in detail.despic">
+                                <div class="imgDv">
+                                    <img :src="'http://manage.xiaoying.net'+n" alt="">
+                                    <span class="arrow"></span>
+                                </div>
+                                <div class="numDv">
+                                    <p>{{index+1}}</p>
+                                    <span class="circle"></span>
+                                </div>
+                            </li>
+                            <li class="border_li"></li>
+                        </ul>
+                        <div class="nodate_d" v-else>
+                            <img src="../../Public/ConsultantCertification/img/xiaoying_error.png" alt="">
+                            <p>小莺情报组拼命搜集资料中...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="maincontent" id="tab5">
+                        <ul class="newsListUl">
+                            <li v-for = "item in newsList" :key="item.id">
+                                <div class="imgDv">
+                                    <a :href="'/news/detail?id=' + item.id">
+                                        <img :src="item.picture" :alt="item.title">
+                                    </a>
+                                </div>
+                                <div class="contDv">
+                                    <h4>
+                                        <a :href="'/news/detail?id=' + item.id">{{item.title}}</a>
+                                    </h4>
+                                    <p class="time"><span></span>{{item.publishedtime}}</p>
+                                    <p class="newsDes">
+                                        <a :href="'/news/detail?id=' + item.id">{{item.des}}</a>
+                                    </p>
+                                    <div class="btnPart">
+                                        <a :href="'/news/detail?id=' + item.id">查看详情</a>
+                                        <ul class="clearfix">
+                                            <li>
+                                                <span></span>{{item.upsnum}}
+                                            </li>
+                                            <li>
+                                                <span></span>{{item.hits}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right rightDv">
+                    <include file="./Template/Zixun/Index_hotActivities.html" />
+                    <include file="./Template/Zixun/Index_parentsCare.html" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <include file="./Template/Common/Index_loading.html" />
+    <include file="./Template/Common/Index_footer.html" />
+    <script src="../../Public/School/js/detail_sg.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+</body>
+
+</html>

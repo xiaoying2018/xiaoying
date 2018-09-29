@@ -2,10 +2,6 @@ $(function() {
     var result = new Vue({
         el: '#jpyy_detail',
         data: {
-            //专业
-            cate:[],
-            //学历
-            xueli:[],
             request:{
                 type:"",
                 cate:"",
@@ -15,84 +11,12 @@ $(function() {
                 limit:15
             },
             newsList: [],
-            major:[],
         	tempimg:"",
         	detail:{}
         },
         filters:{
         },
         methods: {
-            //获取专业分类
-            getcate: function(){
-                var _this = this;
-                $.ajax({
-                    url:"http://manage.xiaoying.net/school/cate",
-                    type:"get",
-                    success:function(res){
-                        if (res) {
-                            _this.cate = res
-                        }
-                    }
-                })
-            },
-            //获取学历
-            getxueli: function(){
-                var _this = this;
-                $.ajax({
-                    url:"http://manage.xiaoying.net/school/xueli",
-                    type:"get",
-                    success:function(res){
-                        if (res) {
-                            _this.xueli = res
-                        }
-                    }
-                })
-            },
-            //获取专业列表
-            getzhuanye:function(){
-                var _this = this;
-                this.major = [];
-                $.ajax({
-                    url:"http://manage.xiaoying.net/school/schoolprogram",
-                    type:"get",
-                    data:_this.request,
-                    success:function(res){
-                        $("#jqPaginator").html("");
-                        if (res.status) {
-                            for(var i = 0; i < res.data.length; i++){
-                                if (res.data[i].zhaosheng == "") {
-                                    res.data[i].zhaosheng = '若干';
-                                }
-                            }
-                            if ( _this.request.page != 1) {
-                                $("body, html").animate({
-                                    scrollTop: $(".majorTitle").offset().top - 130
-                                }, 200)
-                            }
-                            if (res.count > 0) {
-                                $('#jqPaginator').jqPaginator({
-                                    totalCounts: parseInt(res.count),
-                                    pageSize: _this.request.limit,
-                                    visiblePages: 7,
-                                    currentPage: _this.request.page,
-                                    first: "<a>首页</a>",
-                                    last: "<a>末页</a>",
-                                    prev: "<a>上一页</a>",
-                                    page: "<a class='page'>{{page}}</a>",
-                                    next: "<a>下一页</a>",
-                                    onPageChange: function(num, type) {
-                                        if (type == "change") {
-                                            _this.request.page = num;
-                                            _this.getzhuanye();
-                                        }
-                                    }
-                                })
-                            }
-                            _this.major = res.data;
-                        }
-                    }
-                })
-            },
             //获取咨询
             getNewListData:function () {
                 var _this = this;
@@ -124,11 +48,14 @@ $(function() {
             getdata: function(_id){
                 var _this = this;
                 $.ajax({
-                    url:"http://manage.xiaoying.net/getschooldetail",
+                    url:"http://manage.xiaoying.net/getkoreadetail",
                     type:"get",
                     data: {id:_id},
                     success:function(res){
                     	if (res.status) {
+                            // if (res.data.despic) {
+                            //     res.data.despic = res.data.despic.split(',')
+                            // }
                             _this.detail = res.data;
 
                             if (_this.detail.academic_info) {
@@ -225,9 +152,6 @@ $(function() {
 			});
 			this.getdata(this.getQueryString('id'));
             this.request.id = this.getQueryString('id');
-            this.getcate();
-            this.getxueli();
-            this.getzhuanye();
             this.getNewListData();
 
             $(document).on('click', '.choose .item', function() {
@@ -238,7 +162,7 @@ $(function() {
                 $(this).addClass("active").siblings().removeClass("active");
                 var _flag = $(this).attr("data-flag");
                 $("body, html").animate({
-                    scrollTop: $("#"+_flag).offset().top - 155
+                    scrollTop: $("#"+_flag).offset().top - 185
                 }, 600)
             })
 

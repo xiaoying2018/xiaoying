@@ -65,7 +65,6 @@
                 <div class="left leftDv">
                     <ul class="chooseul">
                         <li class="item_li active" data-flag="tab1">学校介绍</li>
-                        <li class="item_li" data-flag="tab2">学校专业</li>
                         <li class="item_li" data-flag="tab3">学校图库</li>
                         <li class="item_li" data-flag="tab4">地理交通</li>
                         <li class="item_li" data-flag="tab5">留学攻略</li>
@@ -146,42 +145,6 @@
                             <div class="mm_content" v-html="detail.schoolgoods"></div>
                         </div>
                     </div>
-                    <div class="maincontent" id="tab2">
-                        <div class="lineDv choose clearfix">
-                            <span class="s_title">专业：</span>
-                            <div class="inputDv">
-                                <input type="text" placeholder="请输入专业名称" v-model="request.name" @keyup.13="change('name',request.name)">
-                                <i class="search" @click="change('name',request.name)"></i>
-                            </div>
-                        </div>
-                        <div class="lineDv choose clearfix">
-                            <span class="s_title">专业方向：</span>
-                            <ul class="listul">
-                                <li class="item active" @click="change('cate','')">不限</li>
-                                <li class="item" v-for="n in cate" @click="change('cate',n.id)">{{n.name}}</li>
-                            </ul>
-                        </div>
-                        <div class="lineDv choose clearfix">
-                            <span class="s_title">学历方向：</span>
-                            <ul class="listul">
-                                <li class="item active" @click="change('type','')">不限</li>
-                                <li class="item" v-for="n in xueli" @click="change('type',n.id)">{{n.type_name}}</li>
-                            </ul>
-                        </div>
-                        <h4 class="majorTitle">学部专业 Faculty major</h4>
-                        <ul class="majorListUl" v-if="major.length > 0">
-                            <li v-for="(n,index) in major">
-                                <div class="list1">{{(request.limit*(request.page-1))+index+1}}</div>
-                                <div class="list2">{{n.name_cn}}</div>
-                                <div class="list3">招生人数：{{n.zhaosheng}}</div>
-                                <div class="list4"><a href="javasctipt:;">免费申请</a></div>
-                            </li>
-                        </ul>
-                        <div id="jqPaginator" class="pageNav" style="display: block;"></div>
-                        <div class="nodate_d" v-else>
-                            <p style="margin: 20px 0; margin-top: 40px;">暂无{{detail.name_cn}}的相关专业资料...</p>
-                        </div>
-                    </div>
                     <div class="maincontent" id="tab3">
                         <div class="schoolCircle">
                             <p>{{detail.name_cn}}</p>
@@ -258,7 +221,7 @@
     </div>
     <include file="./Template/Common/Index_loading.html" />
     <include file="./Template/Common/Index_footer.html" />
-    <script src="../../Public/School/js/detail.js"></script>
+    <script src="../../Public/School/js/detail_jpyy.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
 </body>
 

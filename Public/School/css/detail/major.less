@@ -1,13 +1,30 @@
 @import url("../../../Zixun/css/function.less");
+
+.s_title{
+	width: 88px !important;
+}
+.s_content{
+	width: 130px !important;
+}
 .majorPart {
 	.detailInfo {
 		.leftDv {
 			background-color: #fff;
 			border-radius: 4px;
-			padding: 23px 26px 40px;
-			.choosemajorDV {
+			padding-top: 23px;
+			padding-bottom: 40px;
 				.choosemajorNav {
 					position: relative;
+					padding: 0 20px;
+	                &.fixed_pc {
+	                    display: block;
+	                    position: fixed;
+	                    top: 115px;
+	                    width: 833px;
+	                    background: #f9f9fa;
+	                    padding-top: 10px;
+	                    z-index: 111;
+	                }
 					ul {
 						position: relative;
 						z-index: 2;
@@ -17,23 +34,28 @@
 						font-size: 18px;
 						line-height: 50px;
 						color: #3d3c3c;
-						padding: 0 6px;
+						padding: 0 25px;
 						margin-right: 36px;
 						border-bottom: 3px solid transparent;
+						cursor: pointer;
 						&.active {
 							border-color: #fbda4c;
 						}
 					}
 					.greyLine {
+						
 						position: absolute;
 						bottom: 1px;
 						left: 0; 
-						width: 100%;
+						width: 94%;
+						left: 50%;
+						margin-left: -42%;
 						height: 1px; 
 						background-color: #e6e6e6;
 						margin-top: -2px;
 					}
 				}
+			.choosemajorDV {
 				
 				.itenListDv {
 					padding-top: 48px;

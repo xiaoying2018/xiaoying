@@ -17,11 +17,25 @@ $(function() {
             newsList: [],
             major:[],
         	tempimg:"",
-        	detail:{}
+        	detail:{},
+            sdata:{}
         },
         filters:{
         },
         methods: {
+            randomNum: function (minNum,maxNum) {
+                switch(arguments.length){ 
+                    case 1: 
+                        return parseInt(Math.random()*minNum+1,10); 
+                    break; 
+                    case 2: 
+                        return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
+                    break; 
+                        default: 
+                            return 0; 
+                        break; 
+                } 
+            },
             //获取咨询
             getNewListData:function () {
                 var _this = this;
@@ -58,7 +72,21 @@ $(function() {
                     data: {id:_id},
                     success:function(res){
                     	if (res.status) {
-                            console.log("xxx",res);
+
+                            if (res.data.schooldata.request_doclist) {
+                                res.data.schooldata.request_doclist = utily.escapeStringHTML(res.data.schooldata.request_doclist)
+                            }
+
+                            if (res.data.kaoshikemu) {
+                                res.data.kaoshikemu = utily.escapeStringHTML(res.data.kaoshikemu)
+                            }
+
+                            if (res.data.casedata) {
+                                for(var i = 0; i < res.data.casedata.length; i++){
+                                    res.data.casedata[i].img = '/Public/Case/img/ramandImg/'+_this.randomNum(1,10)+'.jpg';
+                                }
+                            }
+                            _this.sdata = res.data;
                     	}
                     }
                 })
@@ -103,18 +131,18 @@ $(function() {
                 $(this).addClass("active").siblings().removeClass("active");
             })
 
-            $(document).on('click', '.chooseul .item_li', function() {
+            $(document).on('click', '.choosemajorNav .item_li', function() {
                 $(this).addClass("active").siblings().removeClass("active");
                 var _flag = $(this).attr("data-flag");
                 $("body, html").animate({
-                    scrollTop: $("#"+_flag).offset().top - 155
+                    scrollTop: $("#"+_flag).offset().top - 185
                 }, 600)
             })
 
             $(window).scroll(function() {
 
             })
-            fixDiv($(".chooseul"), "fixed_pc", 450);
+            fixDiv($(".choosemajorNav"), "fixed_pc", 450);
 
             function fixDiv(t, e, o) {
                 var n = 0;

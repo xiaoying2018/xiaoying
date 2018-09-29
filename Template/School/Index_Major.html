@@ -34,28 +34,28 @@
                     </div>
                 </div>
                 <div class="right rightPart">
-                    <p class="name">{{detail.name_cn}}</p>
-                    <a :href="detail.website" class="url_href" target="_blank">{{detail.website}}</a>
+                    <p class="name">{{sdata.name_cn}}</p>
+                    <a v-if="sdata.schooldata" :href="sdata.schooldata.website" class="url_href" target="_blank">{{sdata.schooldata.website}}</a>
                     <ul class="listinfo clearfix">
                         <li class="itemli clearfix">
                             <span class="s_title">学校性质：</span>
-                            <span class="s_content">{{detail.xingzhi_name}}</span>
+                            <span v-if="sdata.xingzhi_name" class="s_content">{{sdata.schooldata.xingzhi_name}}</span>
                         </li>
                         <li class="itemli clearfix">
-                            <span class="s_title">每年学费：</span>
-                            <span class="s_content">{{detail.cost_fee}}万（日元）</span>
+                            <span class="s_title">专业所属：</span>
+                            <span class="s_content">{{sdata.suoshu}}</span>
                         </li>
                         <li class="itemli clearfix">
                             <span class="s_title">学校电话：</span>
-                            <span class="s_content">{{detail.contact}}</span>
+                            <span v-if="sdata.schooldata" class="s_content">{{sdata.schooldata.contact}}</span>
                         </li>
                         <li class="itemli clearfix">
-                            <span class="s_title">录取比例：</span>
-                            <span class="s_content">{{detail.competition}}%</span>
+                            <span class="s_title">选拔方式：</span>
+                            <span class="s_content">{{sdata.xuanba_fangshi}}</span>
                         </li>
                         <li class="itemli clearfix full">
                             <span class="s_title">学校地址：</span>
-                            <span class="s_content">{{detail.address}}</span>
+                            <span v-if="sdata.schooldata" class="s_content" style="width:370px  !important">{{sdata.schooldata.address}}</span>
                         </li>
                     </ul>
                 </div>
@@ -64,55 +64,54 @@
         <div style="background-color: #f7f7f7;">
             <div class="container clearfix detailInfo">
                 <div class="left leftDv">
+                <div class="choosemajorNav">
+                        <ul class="clearfix">
+                            <li class="item_li active" data-flag="tab1">精选成功案例</li>
+                            <li class="item_li" data-flag="tab3">入学条件</li>
+                            <li class="item_li" data-flag="tab4">考试科目</li>
+                        </ul>
+                        <span class="greyLine"></span>
+                    </div>
                     <div class="choosemajorDV">
-                        <div class="choosemajorNav">
-                            <ul class="clearfix">
-                                <li class="item_li active" data-flag="tab1">精选成功案例</li>
-                                <li class="item_li" data-flag="tab3">入学条件</li>
-                                <li class="item_li" data-flag="tab4">考试科目</li>
+                        
+                        <div class="itenListDv" id="tab1">
+                            <ul class="clearfix" v-if="sdata.casedata && sdata.casedata.length > 0">
+                                <li v-for="n in sdata.casedata">
+                                    <a href="javascript:;">
+                                        <div class="imgDv">
+                                            <div>
+                                                <img :src="n.img">
+                                            </div>
+                                        </div>
+                                        <ul class="desList">
+                                            <li>学生：<span>{{n.name}}</span></li>
+                                            <li>录取院校：<span>{{n.univ}} 经济学</span></li>
+                                            <li class="clearfix">
+                                                <div>{{n.score_jap}}</div> 
+                                                <div>{{n.score_en}}</div>
+                                            </li>
+                                            <li>毕业院校：<span>{{n.from_univ}}</span></li>
+                                        </ul>
+                                    </a>
+                                </li>
                             </ul>
-                            <span class="greyLine"></span>
+                            <div class="nodate_d" v-else style="margin-bottom: 40px;">
+                                <p>暂无相似案例...</p>
+                            </div>
                         </div>
-                        <div class="itenListDv">
-                            <ul class="clearfix">
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="imgDv">
-                                            <div>
-                                                <img src="../../Public/School/img/major.png">
-                                            </div>
-                                        </div>
-                                        <ul class="desList">
-                                            <li>学生：<span>王懿崚</span></li>
-                                            <li>录取院校：<span>东京大学 经济学</span></li>
-                                            <li class="clearfix">
-                                                <div>日语：<span>N1:113</span></div> 
-                                                <div>托福：<span>93</span></div>
-                                            </li>
-                                            <li>毕业院校：<span>上海理工大学</span></li>
-                                        </ul>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="imgDv">
-                                            <div>
-                                                <img src="../../Public/School/img/major.png">
-                                            </div>
-                                        </div>
-                                        <ul class="desList">
-                                            <li>学生：<span>王懿崚</span></li>
-                                            <li>录取院校：<span>东京大学 经济学</span></li>
-                                            <li class="clearfix">
-                                                <div>日语：<span>N1:113</span></div> 
-                                                <div>托福：<span>93</span></div>
-                                            </li>
-                                            <li>毕业院校：<span>上海理工大学</span></li>
-                                        </ul>
-                                    </a>
-                                </li>
-                                <li>2134</li>
-                            </ul>
+                        <div class="maincontent">
+                            <div class="mm_main" id="tab3" v-if="sdata.schooldata && sdata.schooldata.request_doclist">
+                                <div class="mm_header">
+                                    <h3>入学条件</h3>
+                                </div>
+                                <div class="mm_content"  v-html="sdata.schooldata.request_doclist"></div>
+                            </div>
+                            <div class="mm_main" id="tab4">
+                                <div class="mm_header">
+                                    <h3>考试科目</h3>
+                                </div>
+                                <div class="mm_content" v-html="sdata.kaoshikemu"></div>
+                            </div>
                         </div>
                     </div>
                     

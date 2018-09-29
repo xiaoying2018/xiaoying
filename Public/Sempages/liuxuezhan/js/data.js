@@ -117,14 +117,14 @@ var _s = [
             id:"112",
             s_name:"南京站",
             s_src:"Public/Sempages/liuxuezhan/img/nanjing.jpg",
-            s_time:"11月04日 14：00~16：00",
+            s_time:"11月04日 14：00~18：00",
             s_address:"南京市汉中路89号 金鹰皇冠假日酒店"
         },
         {
             id:"113",
             s_name:"北京站",
             s_src:"Public/Sempages/liuxuezhan/img/beijing.jpg",
-            s_time:"11月10日 14：00~16：00",
+            s_time:"11月10日 14：00~18：00",
             s_address:"中关村南大街1号 北京友谊宾馆"
         },
         {

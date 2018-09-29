@@ -58,7 +58,9 @@ $(function() {
                             // }
                             _this.detail = res.data;
 
-                           
+                            if (_this.detail.desc) {
+                                _this.detail.desc = utily.escapeStringHTML(res.data.desc)
+                            }
                         }
                     }
                 })

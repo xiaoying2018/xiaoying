@@ -38,19 +38,19 @@
                     <ul class="listinfo clearfix">
                         <li class="itemli clearfix">
                             <span class="s_title">学校性质：</span>
-                            <span class="s_content">{{detail.xingzhi_name}}</span>
+                            <span class="s_content">暂无</span>
                         </li>
                         <li class="itemli clearfix">
                             <span class="s_title">每年学费：</span>
-                            <span class="s_content">{{detail.cost_fee}}万（日元）</span>
+                            <span class="s_content">暂无</span>
                         </li>
                         <li class="itemli clearfix">
                             <span class="s_title">学校电话：</span>
-                            <span class="s_content">{{detail.contact}}</span>
+                            <span class="s_content">暂无</span>
                         </li>
                         <li class="itemli clearfix">
                             <span class="s_title">录取比例：</span>
-                            <span class="s_content">{{detail.competition}}%</span>
+                            <span class="s_content">暂无</span>
                         </li>
                         <li class="itemli clearfix full">
                             <span class="s_title">学校地址：</span>
@@ -69,11 +69,11 @@
                         <li class="item_li" data-flag="tab5">留学攻略</li>
                     </ul>
                     <div class="maincontent" id="tab1">
-                        <div class="mm_main" v-if="detail.description != null && detail.description != ''">
+                        <div class="mm_main" v-if="detail.desc != null && detail.desc != ''">
                             <div class="mm_header">
                                 <h3>学校简介</h3>
                             </div>
-                            <div class="mm_content" v-html="detail.description"></div>
+                            <div class="mm_content" v-html="detail.desc"></div>
                         </div>
                     </div>
                     <div class="maincontent" id="tab3">
@@ -81,8 +81,8 @@
                             <p>{{detail.name_cn}}</p>
                             <span>校区图片</span>
                         </div>
-                        <ul class="imgUl" v-if="detail.allpic && detail.allpic.length > 0">
-                            <li class="img_li clearfix" v-for="(n,index) in detail.allpic">
+                        <ul class="imgUl" v-if="detail.despic && detail.despic.length > 0">
+                            <li class="img_li clearfix" v-for="(n,index) in detail.despic">
                                 <div class="imgDv">
                                     <img :src="'http://manage.xiaoying.net'+n" alt="">
                                     <span class="arrow"></span>

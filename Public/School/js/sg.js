@@ -40,11 +40,9 @@ $(function() {
                         if (res.status) {
                             _this.lists = res.data;
                             _this.count = res.count
-                             if ( _this.request.page != 1) {
-                                $("body, html").animate({
-                                    scrollTop: $(".choosepart").offset().top - 130
-                                }, 200)
-                            }
+                            $("body, html").animate({
+                                scrollTop: $(".choosepart").offset().top - 130
+                            }, 200)
                             $("#jqPaginator").html("");
                             if (res.count > 0) {
                                 $('#jqPaginator').jqPaginator({

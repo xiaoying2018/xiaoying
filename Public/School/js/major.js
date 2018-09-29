@@ -22,77 +22,6 @@ $(function() {
         filters:{
         },
         methods: {
-            //获取专业分类
-            getcate: function(){
-                var _this = this;
-                $.ajax({
-                    url:"http://manage.xiaoying.net/school/cate",
-                    type:"get",
-                    success:function(res){
-                        if (res) {
-                            _this.cate = res
-                        }
-                    }
-                })
-            },
-            //获取学历
-            getxueli: function(){
-                var _this = this;
-                $.ajax({
-                    url:"http://manage.xiaoying.net/school/xueli",
-                    type:"get",
-                    success:function(res){
-                        if (res) {
-                            _this.xueli = res
-                        }
-                    }
-                })
-            },
-            //获取专业列表
-            getzhuanye:function(){
-                var _this = this;
-                this.major = [];
-                $.ajax({
-                    url:"http://manage.xiaoying.net/school/schoolprogram",
-                    type:"get",
-                    data:_this.request,
-                    success:function(res){
-                        $("#jqPaginator").html("");
-                        if (res.status) {
-                            for(var i = 0; i < res.data.length; i++){
-                                if (res.data[i].zhaosheng == "") {
-                                    res.data[i].zhaosheng = '若干';
-                                }
-                            }
-                            if ( _this.request.page != 1) {
-                                $("body, html").animate({
-                                    scrollTop: $(".majorTitle").offset().top - 130
-                                }, 200)
-                            }
-                            if (res.count > 0) {
-                                $('#jqPaginator').jqPaginator({
-                                    totalCounts: parseInt(res.count),
-                                    pageSize: _this.request.limit,
-                                    visiblePages: 7,
-                                    currentPage: _this.request.page,
-                                    first: "<a>首页</a>",
-                                    last: "<a>末页</a>",
-                                    prev: "<a>上一页</a>",
-                                    page: "<a class='page'>{{page}}</a>",
-                                    next: "<a>下一页</a>",
-                                    onPageChange: function(num, type) {
-                                        if (type == "change") {
-                                            _this.request.page = num;
-                                            _this.getzhuanye();
-                                        }
-                                    }
-                                })
-                            }
-                            _this.major = res.data;
-                        }
-                    }
-                })
-            },
             //获取咨询
             getNewListData:function () {
                 var _this = this;
@@ -124,72 +53,15 @@ $(function() {
             getdata: function(_id){
                 var _this = this;
                 $.ajax({
-                    url:"http://manage.xiaoying.net/getschooldetail",
+                    url:"http://manage.xiaoying.net/school/programdetail",
                     type:"get",
                     data: {id:_id},
                     success:function(res){
                     	if (res.status) {
-                            _this.detail = res.data;
-
-                            if (_this.detail.academic_info) {
-                                _this.detail.academic_info = utily.escapeStringHTML(res.data.academic_info)
-                            }
-                            if (_this.detail.zige) {
-                                _this.detail.zige = utily.escapeStringHTML(res.data.zige)
-                            }
-                            if (_this.detail.apply_method) {
-                                _this.detail.apply_method = utily.escapeStringHTML(res.data.apply_method)
-                            }
-                            
-                            if (_this.detail.request_en) {
-                                _this.detail.request_en = utily.escapeStringHTML(res.data.request_en)
-                            }
-                            if (_this.detail.request_lang) {
-                                _this.detail.request_lang = utily.escapeStringHTML(res.data.request_lang)
-                            }
-                            if (_this.detail.request_doclist) {
-                                _this.detail.request_doclist = utily.escapeStringHTML(res.data.request_doclist)
-                            }
-                            if (_this.detail.description) {
-                                _this.detail.description = utily.escapeStringHTML(res.data.description)
-                            }
-                            if (_this.detail.schoolhistory) {
-                                _this.detail.schoolhistory = utily.escapeStringHTML(res.data.schoolhistory)
-                            }
-                            if (_this.detail.schoolspecial) {
-                                _this.detail.schoolspecial = utily.escapeStringHTML(res.data.schoolspecial)
-                            }
-                            if (_this.detail.schoolmanage) {
-                                _this.detail.schoolmanage = utily.escapeStringHTML(res.data.schoolmanage)
-                            }
-                            if (_this.detail.schoolgoods) {
-                                _this.detail.schoolgoods = utily.escapeStringHTML(res.data.schoolgoods)
-                            }
-
-                            if (_this.detail.longitude && _this.detail.latitude) {
-                                _this.detail.longitude = parseFloat(_this.detail.longitude);
-                                _this.detail.latitude = parseFloat(_this.detail.latitude);
-                                _this.initmap();
-                            }
+                            console.log("xxx",res);
                     	}
                     }
                 })
-            },
-            initmap:function(){
-                var _this = this;
-                var _point = [_this.detail.longitude,_this.detail.latitude];
-                $("#baiduMap").show();
-                // 百度地图API功能
-                var map = new BMap.Map("baiduMap", {});
-                map.enableScrollWheelZoom(true);
-                var point = new BMap.Point(_point[0], _point[1]);
-                map.centerAndZoom(point, 50);
-                
-                //创建logo
-                var pt = new BMap.Point(_point[0], _point[1]);
-                var myIcon = new BMap.Icon("../../Public/Common/mappoint.png", new BMap.Size(95, 36));
-                var marker2 = new BMap.Marker(pt, { icon: myIcon }); // 创建标注
-                map.addOverlay(marker2);
             },
             getQueryString: function(name, needdecoed) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");

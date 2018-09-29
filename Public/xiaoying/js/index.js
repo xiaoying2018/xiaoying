@@ -236,7 +236,12 @@ $(function() {
 
 
                 new Swiper('.swiper-banner', {
+                    pagination: '.swipe-bannerr-pagination',
+                    // prevButton:'.swiper-banner-button-prev',
+                    // nextButton:'.swiper-banner-button-next',
+                    simulateTouch : false,
                     paginationClickable: true,
+                    // loop: true
                 });
                 new Swiper('.swiper-ad', {
                     // pagination: '.swiper-pagination',

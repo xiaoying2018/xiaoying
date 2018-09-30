@@ -192,6 +192,8 @@ $(function() {
                                     spaceBetween: 20,
                                     loop: true,
                                     autoplay: 3000,//可选选项，自动滑动
+                                    prevButton:'.swiper-ad-button-prev',
+                                    nextButton:'.swiper-ad-button-next',
                                 });
                             })
                         }

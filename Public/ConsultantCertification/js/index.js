@@ -2,7 +2,8 @@ $(function () {
 	//搜索
 	function search(condition) {
 
-		var resMobile = /^1[34578]\d{9}$/;  //手机号
+		var resMobile = /^1\d{10}$/;  //手机号
+		// var resMobile = /^1[34578]\d{9}$/;  //手机号
 		var resQQ = /^[1-9]\d{4,9}$/;	//QQ号
 		var resWechat = /^[a-zA-Z]([-_a-zA-Z0-9]{5,19})+$/;	//weixin
 

@@ -152,14 +152,18 @@
             </div> 
         </div>
         <div class="adpart">
-            <div class="container swiper-container swiper-ad">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="(n,index) in small_ad">
-                        <a :href="n.link_url" target="_blank">
-                            <img :src="'http://manage.xiaoying.net/Uploads/'+n.file_path" alt="">
-                        </a>
+            <div class="container swiper-ad-part">
+                <div class="swiper-container swiper-ad">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-for="(n,index) in small_ad">
+                            <a :href="n.link_url" target="_blank">
+                                <img :src="'http://manage.xiaoying.net/Uploads/'+n.file_path" alt="">
+                            </a>
+                        </div>
                     </div>
                 </div>
+                <div class="swiper-button-prev swiper-ad-button-prev"></div>
+                <div class="swiper-button-next swiper-ad-button-next"></div>
             </div>
         </div>
         <div class="threestep">

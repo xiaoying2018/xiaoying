@@ -176,7 +176,7 @@ var _hmt = _hmt || [];
                 getInfo: function() {
                 	var _this = this;
                 	$.ajax({
-                        url:"/api/profile",
+                        url:"http://class.xiaoying.net/api/profile",
                         type:"POST",
                         datatype:"json",
                         success:function(res){
@@ -267,6 +267,7 @@ var _hmt = _hmt || [];
             	if (utily.getStore('xy_nickname') && utily.getStore('xy_headpic') != '') {
             		this.info.nickname = utily.getStore('xy_nickname')
             		this.info.headpic = utily.getStore('xy_headpic')
+                    console.log("xxx",this.info.nickname,this.info.headpic);
         			this.flag = true;
             	}else{
                 	// this.getInfo();

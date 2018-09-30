@@ -449,9 +449,9 @@ $(function() {
     });
 
     //点击发送短信验证码
-    if ($("#sendMes") && $("#sendMes").length > 0) {
-        $(document).on('click', '#sendMes', function() {
-            utilystudying.sendMessage($(this));
-        });
-    }
+    // if ($("#sendMes") && $("#sendMes").length > 0) {
+    //     $(document).on('click', '#sendMes', function() {
+    //         utilystudying.sendMessage($(this));
+    //     });
+    // }
 })

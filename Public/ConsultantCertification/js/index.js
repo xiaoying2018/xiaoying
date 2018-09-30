@@ -21,7 +21,7 @@ $(function () {
 	            success:function(res){
 	                if (res.status) {
 	                	var info = res.info;
-	                	console.log(res.info);
+	                	// console.log(res.info);
 	                	$('.successPart').show().siblings().hide();
 	                	$('.address').text(info.address);
 	                	$('.department').text(info.department_name);

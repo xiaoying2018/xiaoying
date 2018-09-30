@@ -249,12 +249,17 @@ var _hmt = _hmt || [];
             },
             mounted:function() {
                 //初始化导航
-                $('.s_nav li').each(function () {
-                    var $nav = $(this).data('nav');
-                    if($('body').data('nav') == $nav) {
-                        $(this).addClass('active').siblings().removeClass('active');
-                    }
-                })
+                if(!$('body').data('nav')) {
+                    $('.s_nav li').removeClass('active');
+                    console.log($('body').data('nav'))
+                } else {
+                    $('.s_nav li').each(function () {
+                        var $nav = $(this).data('nav');
+                        if($('body').data('nav') == $nav) {
+                            $(this).addClass('active').siblings().removeClass('active');
+                        }
+                    })
+                }
                 $('.s_nav li').click(function () {
                     $(this).addClass('active').siblings().removeClass('active');
                 })

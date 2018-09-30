@@ -45,14 +45,14 @@ $(function() {
                     type:"get",
                     success: function(res) {
                         var array = res.data;
-                        // 'http://xiaoying.net'+item.picture
+                        // 'http://www.xiao-ying.net'+item.picture
                         for (var i = 0; i < array.length; i++) {
                             if(array[i].picture.indexOf('http') > -1) {
                                 array[i].picture = array[i].picture;
                             }else if(array[i].picture == '') {
                                 array[i].picture = '/Public/Zixun/img/img.jpg'
                             } else {
-                                array[i].picture = 'http://xiaoying.net'+ array[i].picture;
+                                array[i].picture = 'http://www.xiao-ying.net'+ array[i].picture;
                             }
                             array[i].publishedtime = _this.timestampToTime(array[i].publishedtime);
                         }

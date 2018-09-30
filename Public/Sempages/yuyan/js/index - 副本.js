@@ -829,22 +829,22 @@ $(function() {
                     "time":"2016年03月01日",
                     "num":"4973"
                 },{
-                    "href":"http://xiaoying.net/pinggu/",
+                    "href":"http://www.xiao-ying.net/pinggu/",
                     "imgUrl":"at2",
                     "time":"2016年02月12日",
                     "num":"18973"
                 },{
-                    "href":"http://xiaoying.net/newzh/",
+                    "href":"http://www.xiao-ying.net/newzh/",
                     "imgUrl":"at3",
                     "time":"2017年06月12日",
                     "num":"3967"
                 },{
-                    "href":"http://xiaoying.net/yuyanms/",
+                    "href":"http://www.xiao-ying.net/yuyanms/",
                     "imgUrl":"at4",
                     "time":"2017年02月12日",
                     "num":"968"
                 },{
-                    "href":"http://xiaoying.net/yuyanzl/",
+                    "href":"http://www.xiao-ying.net/yuyanzl/",
                     "imgUrl":"at5",
                     "time":"2017年05月08日",
                     "num":"672"
@@ -1038,7 +1038,7 @@ $(function() {
             headers: {
                 'X-CSRF-Token': "tmlannVmPKCZAKCPlmeYp_ZRR3oxq3FXpckFSGPJz50",
             },
-            url: "http://xiaoying.net/ajaxindex",
+            url: "http://www.xiao-ying.net/ajaxindex",
             type: "post",
             dataType: "json",
             data: {

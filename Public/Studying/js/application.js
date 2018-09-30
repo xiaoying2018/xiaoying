@@ -333,7 +333,7 @@ utilystudying.submit = function(_s,_baseJob) {
                 //     'X-CSRF-Token': $('meta[name="csrf-token"]')[0].content,
                 // },
                 type: 'POST',
-                url: "http://xiaoying.net/checkformsms",
+                url: "http://www.xiao-ying.net/checkformsms",
                 data: _job,
                 dataType: "json",
                 success: function(res) {

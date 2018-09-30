@@ -24,7 +24,7 @@ $(function() {
                 var settings = {
                   "async": true,
                   "crossDomain": true,
-                  "url": "http://xiaoying.net/sem_search?r=school&m=4",
+                  "url": "http://www.xiao-ying.net/sem_search?r=school&m=4",
                   "method": "GET"
                 }
                 $.ajax(settings).done(function (response) {
@@ -63,7 +63,7 @@ $(function() {
                 var settings = {
                   "async": true,
                   "crossDomain": true,
-                  "url": "http://xiaoying.net/sem_search?r=program&m=4",
+                  "url": "http://www.xiao-ying.net/sem_search?r=program&m=4",
                   "method": "GET"
                 }
                 $.ajax(settings).done(function (response) {
@@ -113,7 +113,7 @@ $(function() {
                 var settings = {
                   "async": true,
                   "crossDomain": true,
-                  "url": "http://xiaoying.net/sem_search?r=case",
+                  "url": "http://www.xiao-ying.net/sem_search?r=case",
                   "method": "GET"
                 }
                 $.ajax(settings).done(function (response) {

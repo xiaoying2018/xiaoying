@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="__PUBLIC__/Open/css/animate.min.css">
     <link rel="stylesheet" href="__PUBLIC__/studying/css/index.css">
     <script type="text/javascript" src="__PUBLIC__/Open/js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+    <script src="__PUBLIC__/Mall/js/scrollReveal.min.js"></script>
+    <script src="http://crm.xiaoying.net/Public/js/xiaoying_form.js"></script>
     <script src="__PUBLIC__/studying/js/index.js"></script>
     <script src="__PUBLIC__/studying/js/application.js"></script>
 </head>
@@ -71,48 +74,64 @@
                         <i class="icon"></i>
                     </div>
                 </div>
-                <h4 class="sTitle">目标信息</h4>
-                <div class="itemFill clearfix">
-                    <span class="ss_title field">当前专业</span>
-                    <select name="" id="currentMajor" class="chooseItem">
-                        <option value="">请选择</option>
-                    </select>
-                    <i class="icon"></i>
+                <div class="lineDv">
+                    <div class="s_title">
+                        <span>目标信息</span>
+                    </div>
+                    <div class="itemFill clearfix">
+                        <span class="ss_title field">当前专业</span>
+                        <select name="" id="currentMajor" class="chooseItem">
+                            <option value="">请选择</option>
+                        </select>
+                        <i class="icon"></i>
+                    </div>
+                    <div class="itemFill clearfix">
+                        <span class="ss_title field">目标专业</span>
+                        <select name="" id="targetMajor" class="chooseItem">
+                            <option value="">请选择</option>
+                        </select>
+                        <i class="icon"></i>
+                    </div>
                 </div>
-                <div class="itemFill clearfix">
-                    <span class="ss_title field">目标专业</span>
-                    <select name="" id="targetMajor" class="chooseItem">
-                        <option value="">请选择</option>
-                    </select>
-                    <i class="icon"></i>
-                </div>
-                <h4 class="sTitle">基础信息</h4>
-                <div class="itemFill clearfix">
-                    <span class="ss_title">姓名</span>
-                    <input type="text" id="name" class="input_form">
-                    <i class="icon"></i>
-                </div>
-                <div class="itemFill clearfix telPart">
-                    <span class="ss_title">手机</span>
-                    <input type="text" id="tel" maxlength="11" class="input_form w_310">
-                    <button id="sendMes" class="code_btn left">获取验证码</button>
-                    <i class="icon"></i>
-                </div>
-                <div class="itemFill clearfix">
-                    <span class="ss_title">验证码</span>
-                    <input type="text" id="mesCode" maxlength="11" class="input_form">
-                    <i class="icon"></i>
-                </div>
-                <div class="btnDv">
-                    <input id="confirmSubmit" type="button" class="submit" onclick="utilystudying.validatefield();" value="提交">
+                <div class="lineDv">
+                    <div class="s_title">
+                        <span>基础信息</span>
+                    </div>
+                    <div class="xy_form xy_studying">
+
+                        <div class="CRM_TEMPLET" data-templet="CRM_TEMPLET_INPUT" style="display: none;">
+                            <div class="itemFill clearfix">
+                                <span class="ss_title CRM_TEMPLET_NAME"></span>
+                                <input type="text" id="name" class="input_form">
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="CRM_TEMPLET" data-templet="CRM_TEMPLET_XY_a02" style="display: none;">
+                            <div class="itemFill clearfix telPart">
+                                <span class="ss_title">手机</span>
+                                <input type="text" id="tel" maxlength="11" class="input_form w_310">
+                                <button id="sendMes" class="code_btn left">获取验证码</button>
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="CRM_TEMPLET" data-templet="CRM_TEMPLET_XY_c02" style="display: none;">
+                            <div class="itemFill clearfix">
+                                <span class="ss_title">验证码</span>
+                                <input type="text" id="mesCode" maxlength="11" class="input_form">
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btnDv">
+                        <input id="confirmSubmit" type="button" class="submit xy_submit" value="提交">
+                    </div>
                 </div>
             </div>
         </div>
         <include file="./Template/Common/Index_loading.html" />
         <include file="./Template/Common/Index_footer.html" />
-        <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
-        <script src="__PUBLIC__/Mall/js/scrollReveal.min.js"></script>
-        <script src="../../Public/studying/js/index.js"></script>
 </body>
 
 </html>

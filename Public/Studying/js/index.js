@@ -49,4 +49,55 @@ $(function() {
         mobile: true,
     }
     window.sr = new scrollReveal(config);
+
+    $(".xy_studying").xiaoyingForm({
+        parameter: [{
+            errorMes: "姓名格式不正确",
+            id: "XY_a01",
+            rename: "姓名",
+            reg: "required",
+            placeholder: "请输入您的姓名"
+        },
+        {
+            errorMes: "电话格式不正确",
+            id: "XY_a02",
+            rename: "电话",
+            reg: "required",
+            placeholder: "请输入您的手机号"
+        },
+        {
+            errorMes: "验证码格式不正确",
+            id: "XY_c02",
+            reg: "required"
+        }],
+        sendMes: "#sendMes",
+        submitBtn: ".xy_submit",
+        beforeSendData: function(_data, cb) {
+            if (!utilystudying.validatefield()) {
+                return false
+            }else{
+                var _str = '日语能力:'+$("#japaneseAbility .active").text()+"。";
+                _str += '英语能力:'+$("#englishAbility .active").text()+"。";
+                _str += '当前学校:'+$("#currentSchool .active").text()+"。";
+                _str += 'GPA:'+$("#gpa .active").text()+"。";
+                _str += '在读年级:'+$("#grade option:selected").val()+"。";
+                _str += '当前专业:'+$("#currentMajor option:selected").val()+"。";
+                _str += '目标专业:'+$("#targetMajor option:selected").val()+"。";
+                _data["XY_b21"] = '该客户填写了新官网的留学申请表单。   具体信息如下'+_str
+                cb(_data);
+            }
+        },
+        beforeLoadField: function(res) {
+            return res;
+        },
+        afterLoadField: function() {
+        },
+        validatorError: function(mes, node) {
+            alert(mes);
+        },
+        submitSuccess: function() {
+            alert("申请成功！请等到老师与您联系");
+        },
+        submitError: function() {}
+    });
 });

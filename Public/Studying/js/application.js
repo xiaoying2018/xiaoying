@@ -249,10 +249,9 @@ utilystudying.validatefield = function() {
         }
     })
     if (_result) {
-        utilystudying.checkMessage(function() {
-            utilystudying.setDisabledBtn();
-            utilystudying.submit(_scroll, _j);
-        })
+        return true
+    }else{
+        return false
     }
 }
 
@@ -382,11 +381,11 @@ utilystudying.sendMessage = function(_element) {
             tel: _phonenum
         };
         $.ajax({
-            headers: {
-                'X-CSRF-Token': $('meta[name="csrf-token"]')[0].content,
-            },
+            // headers: {
+            //     'X-CSRF-Token': $('meta[name="csrf-token"]')[0].content,
+            // },
             type: "post",
-            url: "/sendformsms",
+            url: "http://xiao-ying.net/sendformsms",
             data: _data,
             success: function(result) {
                 if (result.success && result.data) {

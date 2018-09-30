@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="__PUBLIC__/Common/css/common.css">
     <link rel="stylesheet" href="__PUBLIC__/Open/css/animate.min.css">
     <link rel="stylesheet" href="../../Public/plugin/swiper3/swiper.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/xiaoying/css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/xiaoying/css/index.css?v=201809301027">
     <script type="text/javascript" src="__PUBLIC__/Open/js/jquery-1.9.1.min.js"></script>
     <script src="http://crm.xiaoying.net/Public/js/xiaoying_form.js"></script>
 </head>
@@ -49,61 +49,61 @@
             <div class="container clearfix centerPart">
                 <ul class="selectcity">
                     <li class="li">
-                        <a href="">
+                        <a href="javascript:;" onclick="_MEIQIA('showPanel')">
                             <img src="../../Public/xiaoying/img/nation/JP@2x.png" alt="">
                             <span>日本留学</span>
                         </a>
                     </li>
                     <li class="li">
-                        <a href="">
+                        <a href="javascript:;" onclick="_MEIQIA('showPanel')">
                             <img src="../../Public/xiaoying/img/nation/KR@2x.png" alt="">
                             <span>韩国留学</span>
                         </a>
                     </li>
                     <li class="li">
-                        <a href="">
+                        <a href="javascript:;" onclick="_MEIQIA('showPanel')">
                             <img src="../../Public/xiaoying/img/nation/US@2x.png" alt="">
                             <span>美国留学</span>
                         </a>
                     </li>
                     <li class="li">
-                        <a href="">
+                        <a href="javascript:;" onclick="_MEIQIA('showPanel')">
                             <img src="../../Public/xiaoying/img/nation/GB@2x.png" alt="">
                             <span>英国留学</span>
                         </a>
                     </li>
                     <li class="li">
-                        <a href="">
+                        <a href="javascript:;" onclick="_MEIQIA('showPanel')">
                             <img src="../../Public/xiaoying/img/nation/SG@2x.png" alt="">
                             <span>新加坡留学</span>
                         </a>
                     </li>
                     <li class="li">
-                        <a href="">
+                        <a href="javascript:;" onclick="_MEIQIA('showPanel')">
                             <img src="../../Public/xiaoying/img/nation/AU@2x.png" alt="">
                             <span>澳大利亚留学</span>
                         </a>
                     </li>
                     <li class="li">
-                        <a href="">
+                        <a href="javascript:;" onclick="_MEIQIA('showPanel')">
                             <img src="../../Public/xiaoying/img/nation/TH@2x.png" alt="">
                             <span>泰国留学</span>
                         </a>
                     </li>
                     <li class="li">
-                        <a href="">
+                        <a href="javascript:;" onclick="_MEIQIA('showPanel')">
                             <img src="../../Public/xiaoying/img/nation/NO@2x.png" alt="">
                             <span>挪威留学</span>
                         </a>
                     </li>
                     <li class="li">
-                        <a href="">
+                        <a href="javascript:;" onclick="_MEIQIA('showPanel')">
                             <img src="../../Public/xiaoying/img/nation/NZ@2x.png" alt="">
                             <span>新西兰留学</span>
                         </a>
                     </li>
                     <li class="li">
-                        <a href="">
+                        <a href="javascript:;" onclick="_MEIQIA('showPanel')">
                             <img src="../../Public/xiaoying/img/nation/HK@2x.png" alt="">
                             <span>香港留学</span>
                         </a>
@@ -154,9 +154,9 @@
         <div class="adpart">
             <div class="container swiper-container swiper-ad">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="(n,index) in 5">
-                        <a href="">
-                            <img :src="'../../Public/xiaoying/img/ad/'+parseInt(n)+'.jpg'" alt="">
+                    <div class="swiper-slide" v-for="(n,index) in small_ad">
+                        <a :href="n.link_url" target="_blank">
+                            <img :src="'http://manage.xiaoying.net/Uploads/'+n.file_path" alt="">
                         </a>
                     </div>
                 </div>
@@ -300,8 +300,7 @@
                             <div class="info">
                                 <p class="name">{{n.name}}</p>
                                 {{n.job}}<br />
-                                VIP课程主讲东京大学硕士<br />
-                                经济金融课程<br />
+                                <font :title="n.desc">{{n.desc}}</font><br />
                             </div>
                         </div>
                     </div>
@@ -402,7 +401,7 @@
 
     <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
     <script src="../../Public/plugin/swiper3/swiper.min.js"></script>
-    <script src="__PUBLIC__/xiaoying/js/index.js"></script>
+    <script src="__PUBLIC__/xiaoying/js/index.js?v=201809301027"></script>
 </body>
 
 </html>

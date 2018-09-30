@@ -1,1 +1,265 @@
-费用
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>留学费用 - 小莺出国</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Sempages/feiyong/css/global.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Sempages/feiyong/css/expenditure.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Sempages/feiyong/newindex/css/swiper.min.css" media="all" />
+    <script src="__PUBLIC__/Sempages/feiyong/plugins/jquery/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div class="header">
+    <a href=""><img src="__PUBLIC__/Sempages/feiyong/newheader/logo.svg"/></a>
+    <img src="__PUBLIC__/Sempages/feiyong/imgs/tel.png"/>
+</div>
+<!--<div class="banner">
+    <div>
+        <img src="__PUBLIC__/Sempages/feiyong/imgs/banner2.png"/>
+        <span class="butt2" onclick="_MEIQIA('showPanel')">马上咨询</span>
+    </div>
+
+</div>-->
+<div class="swiper-container swiper-container-horizontal">
+    <div class="swiper-wrapper" >
+        <div class="swiper-slide banner"><a href="/feiyong"><img style="height:500px;" src="__PUBLIC__/Sempages/feiyong/imgs/banner2.png" alt=""></a></div>
+        <div class="swiper-slide" ><a href="/duyan"><img src="__PUBLIC__/Sempages/feiyong/newindex/images/banner-01.jpg" alt=""></a></div>
+        <div class="swiper-slide" ><a href="/yuyan"><img src="__PUBLIC__/Sempages/feiyong/newindex/images/banner-02.jpg" alt=""></a></div>
+        <div class="swiper-slide" ><a href="/ztclk"><img src="__PUBLIC__/Sempages/feiyong/newindex/images/banner-03.jpg" alt=""></a></div>
+        <div class="swiper-slide" ><a href="/zhanhui2018"><img src="__PUBLIC__/Sempages/feiyong/newindex/images/banner-04.jpg" alt=""></a></div>
+
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div>
+</div>
+
+
+
+
+<div class="con_a">
+    <img src="__PUBLIC__/Sempages/feiyong/imgs/1.png"/>
+</div>
+<div class="con_b">
+    <div>
+        <img src="__PUBLIC__/Sempages/feiyong/imgs/title_2.png"/>
+        <img src="__PUBLIC__/Sempages/feiyong/imgs/h.png"/>
+    </div>
+</div>
+<div class="con_c">
+    <img src="__PUBLIC__/Sempages/feiyong/imgs/title_22.png"/>
+    <img src="__PUBLIC__/Sempages/feiyong/imgs/3.png"/>
+    <span  class="butt" onclick="_MEIQIA('showPanel')"> 咨询各院校详细收费</span>
+</div>
+<div class="con_d">
+    <div>
+        <img src="__PUBLIC__/Sempages/feiyong/imgs/fo1.png"/>
+        <span  class="butt1" onclick="_MEIQIA('showPanel')">咨询详情</span>
+    </div>
+
+</div>
+
+
+<style>
+    .footer p{
+        line-height:20px;
+    }
+
+    .swiper-slide a{
+        position: relative;
+        display: block;
+        width: 1200px;
+        height: 500px;
+        margin: 0 auto;
+    }
+    .swiper-slide{
+        overflow: hidden;
+        width:100% !important;
+    }
+    .swiper-slide a img{
+        position: absolute;
+        left: 50%;
+        margin-left: -960px;
+        width: 1920px;
+        height: 500px;
+    }
+
+</style>
+<div style="margin-top: 100px;">
+    <!--<h4 style="font-size: 30px; color: #000; text-align: center; font-weight: 600; margin-bottom: 70px">全国各地分校地址</h4>-->
+    <!-- todo 全国各分校地址 -->
+</div>
+<div class="footer">
+    <p> 全国统一电话：4000150170<br /></p>
+    <p> <a href='http://www.miitbeian.gov.cn' target='_blank'>苏ICP备17069390号 版权所有：苏州小莺教育科技有限公司</a></p>
+</div>
+
+
+
+
+<div class="fixed2">
+    <h3>日本留学费用评估</h3>
+    <div class="xy_form">
+        <div class="CRM_TEMPLET" data-templet="CRM_TEMPLET_SELECT" style="display: none;">
+            <p><font class="CRM_TEMPLET_NAME"></font>
+                <select id="txtcity" name="area" ></select>
+            </p>
+        </div>
+        <div class="CRM_TEMPLET" data-templet="CRM_TEMPLET_INPUT" style="display: none;">
+            <p><font class="CRM_TEMPLET_NAME"></font><input type="text" class="" /></p>
+        </div>
+    </div>
+    <button id="button" class="submit1 xy_submit">免费获得留学费用方案</button>
+</div>
+</body>
+<script src="http://crm.xiaoying.net/Public/js/xiaoying_form.js"></script>
+<script src="__PUBLIC__/Sempages/feiyong/newindex/js/swiper.min.js" charset="UTF-8"></script>
+<script>
+
+    $(".xy_form").xiaoyingForm({
+        parameter: [
+            { errorMes: "姓名格式不正确", id: "XY_a01", rename: "姓名", reg: "required", placeholder: "输入姓名" },
+            { errorMes: "电话格式不正确", id: "XY_a02", rename: "手机号码", reg: "required", placeholder: "输入电话" },
+            { errorMes: "QQ/微信格式不正确", id: "XY_b11", rename: "QQ/微信", reg: "required", placeholder: "QQ/微信" },
+            { errorMes: "请选择所在城市", id: "XY_b13", rename: "城市", reg: "required" },
+            { errorMes: "请选择报考专业", id:"XY_b10", rename: "报考专业", reg: "required"},
+            { errorMes: "请选择目前学历", id: "XY_b19", rename: "目前学历", reg: "required" },
+            { errorMes: "请选择出国年份", id: "XY_b09", rename: "出国年份", reg: "required" },
+        ],
+        submitBtn: ".xy_submit",
+        beforeSendData: function(_data,cb) {
+            cb(_data);
+        },
+        beforeLoadField:function(res){
+            for(var i = 0; i < res.length;i++){
+                if (res[i].FLAG == "XY_b10") {
+                    res[i]._v = "required|max:30";
+                    res[i].type = 2;
+                }
+            }
+            return res;
+        },
+        afterLoadField: function() {},
+        validatorError: function(mes, node) {
+            console.log("xxx", mes, node);
+            alert(mes);
+        },
+        submitSuccess: function() {
+            alert("申请成功！请等到老师与您联系");
+        },
+        submitError: function() {}
+    });
+
+
+    var mySwiper = new Swiper('.swiper-container',{
+        autoplay : 5000,
+        pagination : '.swiper-pagination',
+        paginationClickable :true,
+    })
+    function checkMobile(sMobile){
+        if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(sMobile))){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    function CheckAll()
+    {
+        if($("#names").val()=="")
+        {
+            msg('请填写姓名');
+            return ;
+        }
+        if( $("#mb").val()=="" || $("#mb").val().indexOf(' ')!=-1 || $("#mb").val().length !=11 || checkMobile($("#mb").val())==false )
+        {
+            msg('请填写正确的手机号码');
+            return ;
+        }
+        if($("#txtcity").val() == "")
+        {
+            msg('请填选择城市');
+            return ;
+        }
+        if($('.major').val() == "")
+        {
+            msg('请填写您的专业');
+            return ;
+        }
+        if($(".xl").val() == "")
+        {
+            msg('请填写您的学历');
+            return ;
+        }
+        if($("#txtyears").val() == "")
+        {
+            msg('请填写您的出国时间');
+            return ;
+        }
+        $(".submit1").attr('disabled','disabled');
+        var names = $("#names").val();
+        var mb = $("#mb").val();
+        var city = $("#txtcity").val();
+        var xl = $(".xl").val();
+        var major = $('.major').val();
+        var years = $("#txtyears").val();
+        $.ajax({
+            headers: {
+                'X-CSRF-Token': "{{ csrf_token('site') }}",
+            },
+            url:"/ajaxindex",
+            type:"post",
+            dataType:"json",
+            data:{
+                name:names,
+                tel:mb,
+                area:city,
+                xl:xl,
+                zy:major,
+                year:years,
+                from:location.href,
+            },
+            success:function(data)
+            {
+                if( data.status == true )
+                {
+                    msg('申请成功！请等到老师与您联系');
+                    location.href = location.href;
+                }
+                else
+                {
+                    msg(data.remark);
+                }
+            }
+        });
+    }
+
+
+    function msg( msg )
+    {
+        alert(msg);return ;
+    }
+
+    //百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?adb97d2c5a835681418c7b2bab31618a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+
+    //美恰插件代码
+    (function(m, ei, q, i, a, j, s) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
+        s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', 14353);
+</script>
+</html>

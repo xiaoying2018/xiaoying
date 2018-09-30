@@ -1,0 +1,1 @@
+var _Normal = "//openapi.vipabc.com/VMD/OfficalWebAPI/LandingPageAPI/LandingPageExtend";

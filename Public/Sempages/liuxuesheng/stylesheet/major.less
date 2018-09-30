@@ -1,0 +1,99 @@
+@import url("./function.less");
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    body {
+        width: 100%;
+        font: 100% "Microsoft Yahei", verdana;
+        background-color: #F6F6F6;
+        .breadUl{
+            width: 1050px;
+            margin: 15px auto;
+            margin-top: 30px;
+            li{
+                display: inline-block;
+                font-size: 16px;
+            }
+        }
+        .container {
+            width: 1050px;
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            .leftPart {
+                width: 660px;
+                float: left;
+                background: #FFFFFF;
+                border: 1px solid #D8D8D8;
+                padding: 10px 0;
+                .inner {
+                    width: 570px;
+                    margin: 0 auto;
+                    line-height: 36px;
+                    strong{
+                        font-weight: 600;
+                    }
+                }
+            }
+            .rightPart {
+                width: 330px;
+                padding: 0px 30px;
+                background: #FFFFFF;
+                border: 1px solid #D8D8D8;
+                float: right;
+                .inner {
+                    width: 270px;
+                    margin: 0 auto;
+                    .list {
+                        li {
+                            font-size: 14px;
+                            padding: 15px 0;
+                            border-top: 1px solid #EFEFEF;
+                            display: block;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            font{
+                                color: #a0a0a0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.titleDv {
+    font-size: 20px;
+    border-left: 4px solid #FBD92E;
+    padding-left: 10px;
+    color: #333333;
+    margin: 15px 0;
+}
+.bigtitleDv {
+    color: #333333;
+    text-align: center;
+    letter-spacing: 5px;
+    padding: 45px 0;
+    font-size: 0;
+    .border{
+        width: 80px;
+        background-color: #E1E1E1;
+        height: 1px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    span {
+        padding: 0 10px;
+        color: #000;
+        letter-spacing: 0;
+        font-size: 24px;
+        vertical-align: middle;
+    }
+}

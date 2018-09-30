@@ -1,0 +1,211 @@
+.section3 {
+    *{
+        box-sizing: border-box
+    }
+    .owl-stage{
+        margin:  0 auto;
+    }
+    .titleDv{
+        h3{
+            color: #000;
+        }
+    }
+    h4{
+        font-size: 20px;
+        color: #000;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        font-weight: normal;
+    }
+    .month{
+        border: 2px solid #000;
+        border-radius: 100px;
+        height: 60px;
+        width: 420px;
+        margin:0 auto;
+        display: block;
+        overflow: hidden;
+        margin-top: 40px;
+        .owl-item{
+            text-align: center;
+            &:hover{
+                cursor: pointer;
+            }
+            &.active{
+                &.center{
+                    li{
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+        .owl-prev{
+            top: 22px;
+            position: absolute;
+            left: 15px;
+            span{
+                background: url(/Public/Sempages/liuxuezhan/img/owl-left.png);
+                font-size: 0;
+                color: #000;
+                width: 21px;
+                height: 16px;
+                display: block;
+            }
+        }
+        .owl-next{
+            top: 22px;
+            position: absolute;
+            right: 15px;
+            span{
+                background: url(/Public/Sempages/liuxuezhan/img/owl-right.png);
+                font-size: 0;
+                color: #000;
+                width: 21px;
+                height: 16px;
+                display: block;
+            }
+        }
+        li{
+            font-size: 18px;
+            color:#000;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            
+        }
+    }
+    .itemDate{
+        // display: none;
+        .li{
+            width: 240px;
+            height: 250px;
+            
+            border: 4px solid #FBD92E;
+            margin: 30px 0;
+            
+            .imgDv{
+                overflow: hidden;
+                height: 130px;
+                width: 100%;
+                img{
+                    height: 130px;
+                    
+                    
+                }
+            }
+            .info{
+                padding: 10px 15px;
+                text-align: center;
+                p{
+                    font-size: 20px;
+                    color: #333333;
+                    margin: 10px 0;
+                    display: block;
+                }
+                a{
+                    border: 1px solid #333333;
+                    border-radius: 2px;
+                    font-size: 20px;
+                    color: #333333;
+                    width: 80%;
+                    display: block;
+                    margin: 0 auto;
+                    padding: 6px 0;
+                    margin-top: 17px;
+                    
+                }
+            }
+            &.active{
+                border: 4px solid #FBD92E;
+                cursor: pointer;
+                img{
+                }
+                .info{
+                    a{
+                        background: #FFCC00;
+
+                    }
+                }
+            }
+        }
+        .owl-item{
+            text-align: center;
+            &.active{
+                &.center{
+                    li{
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+        .owl-prev{
+            top: 135px;
+            position: absolute;
+            left: -65px;
+            span{
+                background: url("/Public/Sempages/liuxuezhan/img/w_left.png");
+                font-size: 0;
+                color: #000;
+                width: 31px;
+                height: 59px;
+                display: block;
+            }
+        }
+        .owl-next{
+            top: 135px;
+            position: absolute;
+            right: -65px;
+            span{
+                background: url("/Public/Sempages/liuxuezhan/img/w_right.png");
+                font-size: 0;
+                color: #000;
+                width: 31px;
+                height: 59px;
+                display: block;
+            }
+        }
+    }
+    .s_info{
+        margin-top: 20px;
+        text-align: center;
+        li{
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            width: 280px;
+            margin: 30px;
+            height: 149px;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            border-top: 2px solid #333;
+            border-left: 2px solid #333;
+            border-right: 2px solid #333;
+            img{
+                margin: 10px 0;
+            }
+            p{
+                color: #000;
+                font-size: 18px;
+                margin-top: 20px;
+                line-height: 26px;
+                padding: 0 20px;
+            }
+            .cover{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                opacity: 0.1;
+                background: #000;
+                display: none;
+            }
+        }
+    }
+}
+.month .owl-stage-outer{
+    background: #FFD900;
+}

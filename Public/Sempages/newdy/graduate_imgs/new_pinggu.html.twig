@@ -1,0 +1,258 @@
+{% extends 'TopxiaWebBundle::layout.html.twig' %}
+
+{% block keywords %}{{ setting('site.seo_keywords') }}{% endblock %}
+{% block description %}{{ setting('site.seo_description') }}{% endblock %}
+
+{% set appDownload = ( not custom | default(0) ) and ( is_ES_copyright() ) and ( setting("mobile").enabled|default(null) ) %}
+{% if appDownload %}
+    {% set bodyClass = 'homepage  has-app' %}
+{% else %}
+    {% set bodyClass = 'homepage' %}
+{% endif %}
+{% block content %}
+    <link href="{{ asset('assets/layui/css/layui.css') }}" rel="stylesheet" />
+
+    <style>
+    body {background:#fff}
+        .layui-elem-field legend{
+            border-bottom: none;
+            margin-bottom: 0px;
+            width: auto;
+        }
+        .form-description{
+            font-size: 14px;
+            line-height: 30px;
+        }
+        .layui-form-label{
+        }
+        .layui-input-block{
+        }
+    </style>
+<img src="/images/pinggu-bg.png" style="width:100%;margin-bottom:80px">
+    <fieldset class="layui-elem-field">
+        <legend><b>小莺出国: 签约直通日本名校</b></legend>
+        <div class="layui-field-box">
+            <div class="form-description col-md-12">
+                <p><span style="font-size:1.167em">小莺出国官方客服微信：<span style="color:#ff0000">xiaoyingriben</span></span></p>
+
+                <p><span style="font-size:1.167em">小莺学院官方主页：<a href="http://www.eggelite.com/college">http://www.eggelite.com/college</a></span></p>
+
+                <p><span style="font-size:1.167em">小莺出国2017日本留学展&amp;日本名校现场招生会：&nbsp;<a href="http://www.eggelite.com/talk">http://www.eggelite.com/talk</a></span></p>
+            </div>
+        </div>
+    </fieldset>
+
+    <form class="layui-form" action="" method="post">
+        {{ web_macro.flash_messages() }}
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" required lay-verify="required" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">手机</label>
+                <div class="layui-input-inline">
+                    <input type="tel" name="phone" lay-verify="phone" autocomplete="off" class="layui-input" placeholder="纸质材料将通过快递邮寄" >
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">预计出国年份</label>
+            <div class="layui-input-block">
+                <select name="year" lay-filter="aihao">
+                    <option value=""></option>
+                    <option value="1">2017</option>
+                    <option value="2">2018</option>
+                    <option value="3">2019</option>
+                    <option value="4">2020</option>
+                    <option value="5">2021</option>
+                </select>
+            </div>
+        </div>
+{#
+        <div class="layui-form-item" pane="">
+            <label class="layui-form-label">感兴趣的课程</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="1" title="短期游学"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>短期游学</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="2" title="语言学校/大学别科申请"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>语言学校/大学别科申请</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="3" title="研究生/旁听生申请"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>研究生/旁听生申请</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="4" title="SGU/G30英语课程申请"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>SGU/G30英语课程申请</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="5" title="日本名校中国招生考试课程"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>日本名校中国招生考试课程</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="6" title="学部文科"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>学部文科</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="7" title="学部理科"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>学部理科</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="8" title="大学院经济"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>大学院经济</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="9" title="大学院经营"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>大学院经营</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="10" title="大学院法学"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>大学院法学</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="11" title="大学院社会情报学"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>大学院社会情报学</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="12" title="大学院教育学"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>大学院教育学</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="13" title="大学院新闻传媒"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>大学院新闻传媒</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="大学院情报理工" title="大学院情报理工"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>大学院情报理工</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="14" title="大学院机械工程"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>大学院机械工程</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="15" title="艺术课程"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>艺术课程</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="16" title="博士课程"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>博士课程</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="17" title="夏季游学"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>夏季游学</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="18" title="艺术班"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>艺术班</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="19" title="大学院社会学"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>大学院社会学</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="20" title="外教日语口语" checked=""><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><span>外教日语口语</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="21" title="博士+文部省奖学金"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>博士+文部省奖学金</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="xq[]" lay-skin="primary" value="22" title="其他"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>其他</span><i class="layui-icon"></i></div>
+
+            </div>
+        </div>
+#}
+        <div class="layui-form-item" pane="">
+            <label class="layui-form-label">从哪里了解到我们</label>
+            <div class="layui-input-block">
+                <select name="xinx" lay-filter="aihao">
+                    <option value=""></option>
+                    <option value="1" title="微博" >微博</option>
+                    <option value="2" title="CCTalk">CCTalk</option>
+                    <option value="3" title="微信">微信</option>
+                    <option value="4" title="邮件">邮件</option>
+                    <option value="5" title="百度推广">百度推广</option>
+                    <option value="6" title="官网" >官网</option>
+                    <option value="7" title="闲鱼">闲鱼</option>
+                    <option value="8" title="豆瓣">豆瓣</option>
+                    <option value="9" title="线下展会">线下展会</option>
+                    <option value="10" title="朋友介绍">朋友介绍</option>
+                    <option value="11" title="机构推荐">机构推荐</option>
+                    <option value="12" title="QQ群">QQ群</option>
+                    <option value="13" title="百度贴吧">百度贴吧</option>
+                    <option value="14" title="其他途径">其他途径</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">微信/QQ号</label>
+            <div class="layui-input-block">
+                <input type="text" name="qq" required lay-verify="required" lay-verify="title" autocomplete="off" placeholder="部分学习资料通过QQ微信发送" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在院校</label>
+            <div class="layui-input-block">
+                <input type="text" name="yx" required lay-verify="required" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">就读专业</label>
+            <div class="layui-input-block">
+                <input type="text" name="zy" required lay-verify="required" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            </div>
+        </div>
+{#
+        <div class="layui-form-item">
+            <label class="layui-form-label">日语能力</label>
+            <div class="layui-input-block">
+                <input type="radio" name="nl" value="1" title="0基础" checked=""><div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon"></i><span>0基础</span></div>
+                <input type="radio" name="nl" value="2" title="N5"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>N5</span></div>
+                <input type="radio" name="nl" value="3" title="N3"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>N3</span></div>
+                <input type="radio" name="nl" value="4" title="N2"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>N2</span></div>
+                <input type="radio" name="nl" value="5" title="N1"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>N1</span></div>
+                <input type="radio" name="nl" value="6" title="其他"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>其他</span></div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">对日本留学了解程度</label>
+            <div class="layui-input-block">
+                <select name="cd" lay-filter="aihao">
+                    <option value=""></option>
+                    <option value="1">完全不了解小白一只</option>
+                    <option value="2">了解一些老司机求带</option>
+                    <option value="3">正在寻找留学机构</option>
+                    <option value="4">已经和留学机构签约</option>
+                    <option value="5">已拿到OFFER成为老司机</option>
+                </select>
+            </div>
+        </div>
+#}
+        <div class="layui-form-item">
+            <label class="layui-form-label">目前学历</label>
+            <div class="layui-input-block">
+                <select name="xl" lay-filter="aihao">
+                    <option value=""></option>
+                    <option value="4">本科大四</option>
+                    <option value="3">本科大三</option>
+                    <option value="2">本科大二</option>
+                    <option value="1">本科大一</option>
+                    <option value="10">大专大三</option>
+                    <option value="9">大专大二</option>
+                    <option value="8">大专大一</option>
+                    <option value="7">高三</option>
+                    <option value="6">高二</option>
+                    <option value="5">高一</option>
+                    <option value="1">其他</option>
+                </select>
+            </div>
+        </div>
+{#
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在地区</label>
+            <div class="layui-input-block">
+                <input type="text" name="dq" required lay-verify="required" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item" pane="">
+            <label class="layui-form-label">出国准备阶段预算</label>
+            <div class="layui-input-block">
+                <select name="yusu" lay-filter="aihao">
+                    <option value=""></option>
+                <option value="1" title="1-3万">1-3万</option>
+                <option value="2" title="3-6万">3-6万</option>
+                <option value="3" title="6-10万">6-10万</option>
+                <option value="4" title="10万以上只要能上名校都愿意花">10万以上只要能上名校都愿意花</option>
+                <option value="5" title="其他">其他</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">可能会考虑来我们学校咨询？</label>
+            <div class="layui-input-block">
+                <input type="radio" name="zx" value="1" title="上海中心校" checked=""><div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon"></i><span>上海中心校</span></div>
+                <input type="radio" name="zx" value="2" title="东京校" checked=""><div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon"></i><span>东京校</span></div>
+                <input type="radio" name="zx" value="3" title="北京校"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>北京校</span></div>
+                <input type="radio" name="zx" value="4" title="青岛校"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>青岛校</span></div>
+                <input type="radio" name="zx" value="5" title="成都校"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>成都校</span></div>
+                <input type="radio" name="zx" value="6" title="苏州校"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>苏州校</span></div>
+                <input type="radio" name="zx" value="7" title="广州校"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>广州校</span></div>
+                <input type="radio" name="zx" value="8" title="西安校"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>西安校</span></div>
+                <input type="radio" name="zx" value="9" title="其他"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>其他</span></div>
+            </div>
+        </div>
+#}
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">目标院校和专业/其他希望老师知道的信息/推荐的老师姓名或机构名称</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" name="nr" class="layui-textarea"></textarea>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('site') }}">
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="{{ asset('assets/layui/layui.js') }}"></script>
+    <script>
+        layui.use(['form'], function(){
+            var form = layui.form()
+                ,layer = layui.layer
+
+
+        });
+    </script>
+{% endblock %}

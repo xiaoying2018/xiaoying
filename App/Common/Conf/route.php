@@ -73,6 +73,7 @@ return [
 
         /* Mobile */
         'm' => 'Mobile/Index/index',// 手机主页
+        'm/meishu' => 'Mobile/Index/meishu',// 手机美术页
 
 
     ],

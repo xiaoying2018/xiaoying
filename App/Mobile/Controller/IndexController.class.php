@@ -10,4 +10,9 @@ class IndexController extends Controller
         $this->display();
     }
 
+    public function meishu()
+    {
+        $this->display();
+    }
+
 }

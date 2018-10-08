@@ -86,4 +86,10 @@ class IndexController extends Controller
         $this->display();
     }
 
+    // 美术页面
+    public function meishu()
+    {
+        $this->display();
+    }
+
 }

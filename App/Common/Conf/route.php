@@ -67,6 +67,7 @@ return [
         'liuxuezhanreservation' => 'Sem/Index/liuxuezhanreservation',// 留学展报名页
         'ribenliuxue' => 'Sem/Index/ribenliuxue',// 日本留学
         'feiyong' => 'Sem/Index/feiyong',// 费用
+        'meishu' => 'Sem/Index/meishu',// 美术页
 
 
 

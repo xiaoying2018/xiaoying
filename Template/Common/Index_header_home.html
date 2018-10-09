@@ -146,7 +146,7 @@ var _hmt = _hmt || [];
         </ul>
     </div>
     <div class="overlay_city"></div>
-
+    <div id="rightPart"></div>
 </div>
 <script src="__PUBLIC__/tool.js"></script>
 <script type="text/javascript">
@@ -328,6 +328,16 @@ var _hmt = _hmt || [];
                         }
                     }else{
                             $(".navGroup").removeClass("scrollDown");
+                    }
+                })
+
+
+                $("#rightPart").click(function(){
+                    if (!$(this).hasClass("open")) {
+                        $(this).addClass("open")
+                    }else{
+                        $(this).removeClass("open")
+                        _MEIQIA('showPanel');
                     }
                 })
                 

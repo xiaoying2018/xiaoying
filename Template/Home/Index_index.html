@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="__PUBLIC__/Common/css/common.css">
     <link rel="stylesheet" href="__PUBLIC__/Open/css/animate.min.css">
     <link rel="stylesheet" href="../../Public/plugin/swiper3/swiper.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/xiaoying/css/index.css?v=201809301027">
+    <link rel="stylesheet" href="__PUBLIC__/xiaoying/css/index.css?v=201810091017">
     <script type="text/javascript" src="__PUBLIC__/Open/js/jquery-1.9.1.min.js"></script>
     <script src="http://crm.xiaoying.net/Public/js/xiaoying_form.js"></script>
 </head>
@@ -350,14 +350,16 @@
                     海外院校授权<br />
                     <font class="en">OVERSEAS COLLEGE AUTHORIZATION</font>
                 </div>
-                <div class="main">
-                    <div class="swiper-container swiper-shouquan">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-for="n in shouquan">
-                                <div class="imgDv">
-                                    <img :src="'../../Public/xiaoying/img/shouquan/'+n.imgUrl+'.jpg'" alt="">
+                <div class="main_t">
+                    <div class="main">
+                        <div class="swiper-container swiper-shouquan">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" v-for="n in shouquan">
+                                    <div class="imgDv">
+                                        <img :src="'../../Public/xiaoying/img/shouquan/'+n.imgUrl+'.jpg'" alt="">
+                                    </div>
+                                    <p class="name">{{n.name}}</p>
                                 </div>
-                                <p class="name">{{n.name}}</p>
                             </div>
                         </div>
                     </div>
@@ -405,7 +407,7 @@
 
     <script src="/Public/js/vue.min.js"></script>
     <script src="../../Public/plugin/swiper3/swiper.min.js"></script>
-    <script src="__PUBLIC__/xiaoying/js/index.js?v=201809301027"></script>
+    <script src="__PUBLIC__/xiaoying/js/index.js?v=201810091017"></script>
 </body>
 
 </html>

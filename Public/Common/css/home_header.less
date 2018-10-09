@@ -562,3 +562,22 @@ select {
         .transform(rotate(-10deg));
     }
 }
+#rightPart{
+    position: fixed;
+    right: 0%;
+    top: 40%;
+    width: 204px;
+    height: 242px;
+    background-image: url("../../Common/right_chat.png");
+    width: 204px;
+    height: 242px;
+    background-size: cover;
+    display: block;
+    z-index: 999;
+    .transition();
+    &.open{
+        background-image: url("../../Common/right_chat_full.png");
+        width: 204px;
+        height: 453px;
+    }
+}

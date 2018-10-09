@@ -418,24 +418,7 @@ $(function() {
 
             _this.getData();
 
-            //热门活动轮播初始化
-            var mySwiper = new Swiper('.swiper-container', {
-                pagination: '.pagination',
-                loop: true,
-                // autoplay: 3000,
-                autoplayDisableOnInteraction: false,
-                grabCursor: true,
-                paginationClickable: true
-            })
-            $('.arrow-left').on('click', function(e) {
-                e.preventDefault()
-                mySwiper.swipePrev()
-            });
-            $('.arrow-right').on('click', function(e) {
-                e.preventDefault()
-                mySwiper.swipeNext()
-            });
-
+            
         }
     });
 })

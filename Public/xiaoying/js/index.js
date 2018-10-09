@@ -283,7 +283,7 @@ $(function() {
 
                 new Swiper('.swiper-shouquan', {
                     // pagination: '.team-swiper-pagination',
-                    slidesPerView: 4,
+                    slidesPerView: 7,
                     paginationClickable: true,
                     spaceBetween: 20,
                     autoplay:3000

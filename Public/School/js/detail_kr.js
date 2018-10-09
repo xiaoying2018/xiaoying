@@ -71,11 +71,20 @@ $(function() {
                             if (_this.detail.request_en) {
                                 _this.detail.request_en = utily.escapeStringHTML(res.data.request_en)
                             }
+                            if (_this.detail.student) {
+                                _this.detail.student = utily.escapeStringHTML(res.data.student)
+                            }
                             if (_this.detail.request_lang) {
                                 _this.detail.request_lang = utily.escapeStringHTML(res.data.request_lang)
                             }
+                            if (_this.detail.requret_fee) {
+                                _this.detail.requret_fee = utily.escapeStringHTML(res.data.requret_fee)
+                            }
                             if (_this.detail.request_doclist) {
                                 _this.detail.request_doclist = utily.escapeStringHTML(res.data.request_doclist)
+                            }
+                            if (_this.detail.desc) {
+                                _this.detail.desc = utily.escapeStringHTML(res.data.desc)
                             }
                             if (_this.detail.description) {
                                 _this.detail.description = utily.escapeStringHTML(res.data.description)

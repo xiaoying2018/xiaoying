@@ -115,9 +115,11 @@ $(function() {
         loop:true,
         margin:10,
         nav:true,
+        center:true,
         dots:false
     })
     jiyu.on('changed.owl.carousel', function(event) {
+      
        console.log("xxx",event.item.index);
        if (event.item.index == 4) {
         $(".jydesc").html("真诚，努力，自信。在车站的书店里寻找中介喜欢的点是我进美大常做的事。带着相机与速写本，在代官山蜂窝冰激淋里画着插画，想象着有一天可以成为空间设计师是最难忘的回忆。无论何时都要对世界充满好奇，无论何时多要相信自己。画品亦人品，学画先学做人。")

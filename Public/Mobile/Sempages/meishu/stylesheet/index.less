@@ -121,7 +121,7 @@ input {
 		position: relative;
 		overflow: hidden;
 		width: 100%;
-		padding-top: 36.8%;
+		padding-top: 35.8%;
 		background-color: #fff;
 		&>div {
 			position: absolute;
@@ -129,16 +129,18 @@ input {
 			left: 0;
 			width: 100%;
 			z-index: 3;
-			padding-top: 36.8%;
+			padding-top: 37.8%;
 			overflow-x: auto;
 			.listDv {
 				position: absolute;
 				top: 50%;
 				left: 0;
+				width: 100%;
 			}
 			.line {
 				position: relative;
-				width: 576px;
+				width: 153.6%;
+				// width: 576px;
 				height: 1px;
 				background-color: #ffd900;
 				.processItem {
@@ -152,28 +154,37 @@ input {
 						font-size: 1rem;
 					}
 					&:nth-of-type(1) {
-						left: 10px;
+						left: 1.736%;
+						// left: 10px;
+
 					}
 					&:nth-of-type(2) {
-						left: 75px;
+						left: 13.02%;
+						// left: 75px;
 					}
 					&:nth-of-type(3) {
-						left: 140px;
+						left: 24.3%;
+						// left: 140px;
 					}
 					&:nth-of-type(4) {
-						left: 205px;
+						left: 35.6%;
+						// left: 205px;
 					}
 					&:nth-of-type(5) {
-						left: 270px;
+						left: 46.875%;
+						// left: 270px;
 					}
 					&:nth-of-type(6) {
-						left: 335px;
+						left: 58.16%;
+						// left: 335px;
 					}
 					&:nth-of-type(7) {
-						left: 400px;
+						left: 69.44%;
+						// left: 400px;
 					}
 					&:nth-of-type(8) {
-						left: 465px;
+						left: 80.73%;
+						// left: 465px;
 					}
 				}
 				.processItem:nth-of-type(2n-1) {
@@ -285,12 +296,26 @@ input {
 		position: relative;
 		.owl-item{
 			width: 30%;
+			padding: 1% 0;
 			.imgDv{
+				position: relative;
 				width: 80%;
 				margin: 0 auto;
+				padding-top: 80%;
 				text-align: center;
 				img{
+					position: absolute;
+					top: 0;
+					left: 0;
 					width: 100%;
+					height: 100%;
+					border: 1px solid #ffd900;
+					box-sizing: border-box;
+				}
+			}
+			&.center {
+				.slideitem {
+					.transform(scale(1.2));
 				}
 			}
 		}
@@ -449,15 +474,27 @@ input {
 		position: relative;
 		.owl-item{
 			width: 30%;
+			padding: 1% 0;
 			.imgDv{
+				position: relative;
 				width: 80%;
+				padding-top: 80%;
 				margin: 0 auto;
 				text-align: center;
 				border-radius: 50%;
 				overflow: hidden;
 				img{
+					position: absolute;
+					top: 0;
+					left: 0;
 					width: 100%;
-					display: block;
+					height: 100%;
+					box-sizing: border-box;
+				}
+			}
+			&.center {
+				.slideitem {
+					.transform(scale(1.2));
 				}
 			}
 		}

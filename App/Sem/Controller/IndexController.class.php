@@ -92,4 +92,10 @@ class IndexController extends Controller
         $this->display();
     }
 
+    // 合作机构数据录入页面
+    public function luru()
+    {
+        $this->display();
+    }
+
 }

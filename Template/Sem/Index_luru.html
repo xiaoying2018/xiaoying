@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>数据录入</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Sempages/luru/css/_form.css"/>
+</head>
+<style>
+    #description {
+        width: 407px;
+        font-family: 微软雅黑;
+        font-size: 15px;
+    }
+</style>
+<body>
+<div class="_form">
+    <div class="inb">
+        <p><label>姓名</label><input id="_form_name" type="text" placeholder="请输入姓名"></p>
+        <p><label>手机</label><input id="_form_phone" type="text" placeholder="请输入电话"></p>
+        <div class="form_select _city">
+            <label>所在城市</label>
+            <p><input id="_form_city" value="" readonly="readonly" type="text" placeholder="请选择"/> <span
+                    class="fa fa-caret-down Arrow"></span></p>
+            <ul>
+
+            </ul>
+        </div>
+        <div class="form_select level_jp">
+            <label>日语能力</label>
+            <p><input id="_form_level_jp" value="" readonly="readonly" type="text" placeholder="请选择"/><span
+                    class="fa fa-caret-down Arrow"></span></p>
+            <ul>
+
+            </ul>
+        </div>
+        <p><label>所在学校</label><input id="_form_school" type="text" placeholder="请输所在学校"></p>
+        <div class="form_select expect_major">
+            <label>目标专业</label>
+            <p><input id="_form_major" readonly="readonly" type="text" value="" placeholder="请选择"/><span
+                    class="fa fa-caret-down Arrow"></span></p>
+            <ul>
+
+            </ul>
+        </div>
+        <p><label>英语能力</label><input type="text" id="_form_en" value="" placeholder="请输英语能力"></p>
+
+        <p><label>目标学校</label><input type="text" id="expect_school" placeholder="请输目标学校"></p>
+
+        <p><label>QQ/微信</label><input id="_form_qq" type="text" placeholder="请输入QQ/微信"></i></p>
+        <p><label>所在专业</label><input id="now_major" type="text" placeholder="请输入所在专业"></i></p>
+
+        <div class="form_select _grade">
+            <label>所在年级</label>
+            <p><input id="_form_grade" value="" readonly="readonly" type="text" placeholder="请选择"/> <span
+                    class="fa fa-caret-down Arrow"></span></p>
+            <ul>
+
+            </ul>
+        </div>
+        <div>
+            <label> 备注</label>
+            <textarea name="" rows="5" id="description" style="resize: none"></textarea>
+        </div>
+        <button class="y_button" onclick="Checktwo();">提交信息</button>
+    </div>
+
+</div>
+</body>
+<script src="__PUBLIC__/Sempages/luru/js/jquery-3.2.0.min.js"></script>
+<script>
+    var select_option = {
+        expect_major: ["经管", "法政国际关系", "社会科学", "日语类", "情报理工", "机械", "建筑", "环境", "医药", "融合学科", "艺术", "其他"],
+        _level: ["S", "A", "B", "C", "Z"],
+        _city: ["北京", "天津", "上海", "重庆", "河北", "山西", "辽宁", "吉林", "黑龙江", "江苏", "浙江", "安徽", "福建", "江西", "山东", "河南", "湖北", "湖南", "广东", "海南", "四川", "贵州", "云南", "陕西", "甘肃", "青海", "台湾", "内蒙", "广西", "西藏", "宁夏", "新疆", "香港", "澳门", "海外"],
+        _grade: ["博士研究生", "硕士研究生", "本科大四", "本科大三", "本科大二", "本科大一", "专科大三", "专科大二", "专科大一", "高三", "高二", "高一", "初中及以下"],
+        level_jp: ["0基础", "N5", "N4", "N3", "N2", "N1"]
+    }
+
+    $()
+
+    function _option(a, b) {
+        for (var i = 0; i < b.length; i++) {
+            a.append(
+                "<li data_val =" + (i + 1) + ">" + b[i] + "</li>"
+            )
+        }
+    }
+
+    _option($(".expect_major ul"), select_option.expect_major)
+    _option($("._level ul"), select_option._level)
+    _option($("._city ul"), select_option._city)
+    _option($("._grade ul"), select_option._grade)
+    _option($(".level_jp ul"), select_option.level_jp)
+
+
+    //表单下拉展开
+    $(".form_select>p").click(function () {
+        $(".Arrow").removeClass("fa-caret-up");
+        $(".form_select>ul").slideUp("fast")
+        if ($(this).parent().find("ul").is(":hidden")) {
+            $(this).parent().find("ul").slideDown("fast");
+            $(this).find(".Arrow").removeClass("fa-caret-down");
+            $(this).find(".Arrow").addClass("fa-caret-up");
+        } else {
+            $(this).parent().find("ul").slideUp("fast");
+            $(".Arrow").removeClass("fa-caret-up");
+            $(".Arrow").addClass("fa-caret-down");
+        }
+    })
+    //下拉菜单选择
+    $(".form_select>ul>li").click(function () {
+        $(".form_select>ul>li").removeClass("active_option");
+        $(this).parent().parent().find("input").val($(this).text());
+        $(this).parent().parent().find("input").attr("data_text", $(this).attr("data_val"));
+        $(this).addClass("active_option");
+        $(this).parent().slideUp("fast");
+        $(".Arrow").removeClass("fa-caret-up");
+        $(".Arrow").addClass("fa-caret-down");
+    })
+
+    //点击空白下拉隐藏
+    $(document).bind("click", function (e) {
+        var target = $(e.target); //e.target获取触发事件的元素
+
+        if (target.closest(".form_select,.form_select>input").length == 0) {
+            //进入if则表明点击的不是#phone,#first元素中的一个
+            $(".form_select>ul").slideUp("fast");
+            $(".fa-caret-up").removeClass("fa-caret-up");
+            $(".Arrow").addClass("fa-caret-down");
+        }
+        ;
+
+        e.stopPropagation();
+    });
+
+    function getQueryString(name, needdecoed) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var lh = window.location.search;
+        if (needdecoed) {
+            lh = decodeURI(window.location.search)
+        }
+        var r = lh.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return "";
+    }
+
+    //点击立即报名
+    function Checktwo() {
+
+        Sub($(".y_button"),
+            $("#_form_name"),
+            $("#_form_phone"),
+            $("#_form_school"),
+            $("#_form_major"),
+            $("#_form_en"),
+            $("#expect_school"),
+            $("#_form_level_jp"),
+            $("#_form_qq"),
+            $("#now_major"),
+            $("#_form_city"),
+            $("#_form_grade"),
+            $("#description"))
+
+    }
+
+    //		function checkMobile(sMobile) {
+    //			if(!(/(^1[3|4|5|7|8|9]\d{9}$)|(^09\d{8}$)/.test(sMobile))) {
+    //				return false;
+    //			} else {
+    //				return true;
+    //			}
+    //		}
+
+    function Sub(obj, a, b, c, d, e, f, g, h, i, j, k, l) {
+        if (a.val() == "") {
+            msg('请填写您的姓名');
+            return;
+        }
+        if (b.val() == "") {
+            msg('请填写正确的手机号码');
+            return;
+        }
+        if (j.val() == "") {
+            msg('请填选择所在城市');
+            return;
+        }
+
+        // obj.html('正在提交...');
+        // obj.prop('onclick', null).off('click');
+        // $(obj).attr('disabled', 'disabled');
+        var a = a.val();
+        var b = b.val();
+        var c = c.val();
+        var d = d.val();
+        var e = e.val();
+        var f = f.val();
+        var g = g.val();
+        var h = h.val();
+        var i = i.val();
+        var j = j.val();
+        var k = k.val();
+        var l = l.val();
+        var _channel = getQueryString("jg");
+        console.log(_channel)
+        $.ajax({
+            url: "http://crm.xiaoying.net/index.php/api/jigou/leads/create",
+            type: "POST",
+            dataType: "json",
+            data: {
+                name: a,
+                mobile: b,
+                now_university: c,
+                expect_major: d,
+                level_en: e,
+                expect_university: f,
+                level_jp: g,
+                crm_qq: h,
+                now_major: i,
+                crm_city: j,
+                grade: k,
+                description: l,
+                jg_code: _channel,
+                crm_url: location.href
+            },
+            success: function (data) {
+                if (data.status == true) {
+                    msg('申请成功！请等到老师与您联系');
+                    $("input,textarea").val("")
+                } else {
+                    msg(data.msg);
+                }
+            }
+        });
+    }
+
+    function msg(msg) {
+        alert(msg);
+        return;
+    }
+</script>
+
+</html>

@@ -69,6 +69,8 @@ return [
         'feiyong' => 'Sem/Index/feiyong',// 费用
         'meishu' => 'Sem/Index/meishu',// 美术页
 
+        'luru' => 'Sem/Index/luru',// 录入 (非推广页)  -  合作机构数据录入页面
+
 
 
         /* Mobile */

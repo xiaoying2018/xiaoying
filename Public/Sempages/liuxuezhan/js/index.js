@@ -152,7 +152,7 @@ $(function() {
 
 	            var pw = new pageSwitch('app', {
 	                duration: 1000,
-	                start: 6,
+	                start: 5,
 	                direction: 1,
 	                loop: false,
 	                ease: 'ease',

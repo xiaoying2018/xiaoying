@@ -143,7 +143,7 @@ $(function() {
                 var _this = this;
                 $.ajax({
                     url:"http://manage.xiaoying.net/article/contentssearch",
-                    data:{limit:5},
+                    data:{limit:5,countryid:1},
                     type:"get",
                     success:function(res){
                         if (res.code == 0) {

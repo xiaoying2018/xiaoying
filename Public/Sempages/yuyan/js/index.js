@@ -1,16 +1,16 @@
-$(function() {
+$(function () {
 
     // if (window.location.href.indexOf("xiaoying") > 0) {
     //     $("footer a").html("粤ICP备17035939号");
     // }
 
-    $(".fixedLeft").click(function(){
+    $(".fixedLeft").click(function () {
         $(".fixedLeft").addClass("click");
         $(".b_formPart").addClass("show");
         $(".b_formPart").removeClass("old");
     });
 
-    $(".closeb").click(function(){
+    $(".closeb").click(function () {
         $(".fixedLeft").removeClass("click");
         $(".b_formPart").removeClass("show");
         if (!$("html").hasClass("ltie10")) {
@@ -23,16 +23,16 @@ $(function() {
         data: {
             schoolData: [{
 
-                    "imgUrl": "1028",
-                    "type": "hot",
-                    "name": "千驮谷日本语学校",
-                    "guimo": "739",
-                    "chinese": "456",
-                    "year": "1970",
-                    "location": "东京都",
-                    "hot": "98",
-                    "url": "http://lang.xiao-ying.net/qtg"
-                },
+                "imgUrl": "1028",
+                "type": "hot",
+                "name": "千驮谷日本语学校",
+                "guimo": "739",
+                "chinese": "456",
+                "year": "1970",
+                "location": "东京都",
+                "hot": "98",
+                "url": "http://lang.xiao-ying.net/qtg"
+            },
                 {
                     "imgUrl": "1039",
                     "type": "hot",
@@ -727,63 +727,75 @@ $(function() {
                     "url": "http://www.eggelite.com/school/1184"
                 }
             ],
-            teacherData:[
+            teacherData: [
                 {
-                    "name":"崔峰云",
-                    "des":"崔老师是一位真正的背景很牛的大神，一路开挂上了东大的建筑学专业，全日本最牛建筑学之一，对建筑发自内心的热爱让崔老师的课程充满激情。",
-                    "num":"181"
+                    "name": "崔峰云",
+                    "des": "崔老师是一位真正的背景很牛的大神，一路开挂上了东大的建筑学专业，全日本最牛建筑学之一，对建筑发自内心的热爱让崔老师的课程充满激情。",
+                    "num": "181"
                 }
             ]
         }
     });
-    
+
     var stars_app = new Vue({
         el: '.stars',
         data: {
-            teacherData:[
+            teacherData: [
+                // {
+                //     "name": "远山智久博士",
+                //     "title": "经济学博士",
+                //     "des": "日本经济经营私塾第一人，著有【弱点克服】系列等多部日本院生考试辅导圣经级教材，被誉为经济学之神。",
+                //     "num": "220",
+                //     "imgUrl": "t1"
+                // },
+                // {
+                //     "name": "陈远英",
+                //     "title": "总校校长 东京大学硕士",
+                //     "des": "6年一线教学与咨询经验，东京第一代华人私塾课程主讲。学员案例丰富特别是TOP5顶级日语大学学员数量极多。擅长面试,留考文综数学,大学院经济金融商科, 研究计划书辅导",
+                //     "num": "278",
+                //     "imgUrl": "t5"
+                // },
                 {
-                    "name":"远山智久博士",
-                    "title":"经济学博士",
-                    "des":"日本经济经营私塾第一人，著有【弱点克服】系列等多部日本院生考试辅导圣经级教材，被誉为经济学之神。",
-                    "num":"220",
-                    "imgUrl":"t1"
-                },{
-                    "name":"王文博士",
-                    "title":"商学博士",
-                    "des":"东京最受欢迎的经营学老师之一，具备多年教学经验，知识体系十分完善，真正把经营学讲的透彻其实很难，但是王文老师做到了。",
-                    "num":"180",
-                    "imgUrl":"t2"
-                },{
-                    "name":"刘铭",
-                    "title":"农学修士",
-                    "des":"刘老师上课很有感觉，就是那种站在讲台上把控一切的感觉，这源于老师的实力和丰富经验, 才会自然形成的气场",
-                    "num":"172",
-                    "imgUrl":"t3"
-                },{
-                    "name":"崔峰云",
-                    "title":"建筑学修士",
-                    "des":"崔老师是一位真正的背景很牛的大神，一路开挂上了东大的建筑学专业，全日本最牛建筑学之一，对建筑发自内心的热爱让崔老师的课程充满激情。",
-                    "num":"181",
-                    "imgUrl":"t4"
+                    "name": "王文博士",
+                    "title": "商学博士",
+                    "des": "东京最受欢迎的经营学老师之一，具备多年教学经验，知识体系十分完善，真正把经营学讲的透彻其实很难，但是王文老师做到了。",
+                    "num": "180",
+                    "imgUrl": "t2"
                 },
                 {
-                    "name":"陈远英",
-                    "title":"总校校长 东京大学硕士",
-                    "des":"6年一线教学与咨询经验，东京第一代华人私塾课程主讲。学员案例丰富特别是TOP5顶级日语大学学员数量极多。擅长面试,留考文综数学,大学院经济金融商科, 研究计划书辅导",
-                    "num":"278",
-                    "imgUrl":"t5"                    
-                },{
-                    "name":"远山智久博士",
-                    "title":"经济学博士",
-                    "des":"日本经济经营私塾第一人，著有【弱点克服】系列等多部日本院生考试辅导圣经级教材，被誉为经济学之神。",
-                    "num":"220",
-                    "imgUrl":"t1"
-                },{
-                    "name":"王文博士",
-                    "title":"商学博士",
-                    "des":"东京最受欢迎的经营学老师之一，具备多年教学经验，知识体系十分完善，真正把经营学讲的透彻其实很难，但是王文老师做到了。",
-                    "num":"180",
-                    "imgUrl":"t2"
+                    "name": "刘铭",
+                    "title": "农学修士",
+                    "des": "刘老师上课很有感觉，就是那种站在讲台上把控一切的感觉，这源于老师的实力和丰富经验, 才会自然形成的气场",
+                    "num": "172",
+                    "imgUrl": "t3"
+                },
+                {
+                    "name": "崔峰云",
+                    "title": "建筑学修士",
+                    "des": "崔老师是一位真正的背景很牛的大神，一路开挂上了东大的建筑学专业，全日本最牛建筑学之一，对建筑发自内心的热爱让崔老师的课程充满激情。",
+                    "num": "181",
+                    "imgUrl": "t4"
+                },
+                {
+                    "name": "王文博士",
+                    "title": "商学博士",
+                    "des": "东京最受欢迎的经营学老师之一，具备多年教学经验，知识体系十分完善，真正把经营学讲的透彻其实很难，但是王文老师做到了。",
+                    "num": "180",
+                    "imgUrl": "t2"
+                },
+                {
+                    "name": "刘铭",
+                    "title": "农学修士",
+                    "des": "刘老师上课很有感觉，就是那种站在讲台上把控一切的感觉，这源于老师的实力和丰富经验, 才会自然形成的气场",
+                    "num": "172",
+                    "imgUrl": "t3"
+                },
+                {
+                    "name": "崔峰云",
+                    "title": "建筑学修士",
+                    "des": "崔老师是一位真正的背景很牛的大神，一路开挂上了东大的建筑学专业，全日本最牛建筑学之一，对建筑发自内心的热爱让崔老师的课程充满激情。",
+                    "num": "181",
+                    "imgUrl": "t4"
                 }
             ]
         }
@@ -792,31 +804,31 @@ $(function() {
     var shouquan_app = new Vue({
         el: '.shouquan',
         data: {
-            shouquanData:[
+            shouquanData: [
                 {
-                    "name":"早稻田EDU学校",
-                    "imgUrl":"jz1"
-                },{
-                    "name":"千驮谷日本语学校",
-                    "imgUrl":"jz2"
-                },{
-                    "name":"ARC日本语学校",
-                    "imgUrl":"jz3"
-                },{
-                    "name":"MANABI学校",
-                    "imgUrl":"jz4"
-                },{
-                    "name":"KCP日本语学校",
-                    "imgUrl":"jz5"
-                },{
-                    "name":"京东国际文化学院",
-                    "imgUrl":"jz6"
-                },{
-                    "name":"早稻田EDU学校",
-                    "imgUrl":"jz1"
-                },{
-                    "name":"千驮谷日本语学校",
-                    "imgUrl":"jz2"
+                    "name": "早稻田EDU学校",
+                    "imgUrl": "jz1"
+                }, {
+                    "name": "千驮谷日本语学校",
+                    "imgUrl": "jz2"
+                }, {
+                    "name": "ARC日本语学校",
+                    "imgUrl": "jz3"
+                }, {
+                    "name": "MANABI学校",
+                    "imgUrl": "jz4"
+                }, {
+                    "name": "KCP日本语学校",
+                    "imgUrl": "jz5"
+                }, {
+                    "name": "京东国际文化学院",
+                    "imgUrl": "jz6"
+                }, {
+                    "name": "早稻田EDU学校",
+                    "imgUrl": "jz1"
+                }, {
+                    "name": "千驮谷日本语学校",
+                    "imgUrl": "jz2"
                 }
             ]
         }
@@ -825,45 +837,45 @@ $(function() {
     var activity_app = new Vue({
         el: '.activeity',
         data: {
-            actData:[
+            actData: [
                 {
-                    "href":"https://static.meiqia.com/dist/standalone.html?eid=14353",
-                    "imgUrl":"at1",
-                    "time":"2016年03月01日",
-                    "num":"4973"
-                },{
-                    "href":"/pinggu",
-                    "imgUrl":"at2",
-                    "time":"2016年02月12日",
-                    "num":"18973"
-                },{
-                    "href":"/newzh",
-                    "imgUrl":"at3",
-                    "time":"2017年06月12日",
-                    "num":"3967"
-                },{
-                    "href":"/yuyanms",
-                    "imgUrl":"at4",
-                    "time":"2017年02月12日",
-                    "num":"968"
-                },{
-                    "href":"/yuyanzl",
-                    "imgUrl":"at5",
-                    "time":"2017年05月08日",
-                    "num":"672"
+                    "href": "https://static.meiqia.com/dist/standalone.html?eid=14353",
+                    "imgUrl": "at1",
+                    "time": "2016年03月01日",
+                    "num": "4973"
+                }, {
+                    "href": "/pinggu",
+                    "imgUrl": "at2",
+                    "time": "2016年02月12日",
+                    "num": "18973"
+                }, {
+                    "href": "/newzh",
+                    "imgUrl": "at3",
+                    "time": "2017年06月12日",
+                    "num": "3967"
+                }, {
+                    "href": "/yuyanms",
+                    "imgUrl": "at4",
+                    "time": "2017年02月12日",
+                    "num": "968"
+                }, {
+                    "href": "/yuyanzl",
+                    "imgUrl": "at5",
+                    "time": "2017年05月08日",
+                    "num": "672"
                 }
             ]
-        }  
+        }
     });
 
     var containerEl = document.querySelector('.popular_school');
     var mixer = mixitup(containerEl, {
         "animation": {
-        "duration": 599,
-        "nudge": true,
-        "reverseOut": true,
-        "effects": "fade scale(0.38) translateZ(-100px) stagger(30ms)"
-    },
+            "duration": 599,
+            "nudge": true,
+            "reverseOut": true,
+            "effects": "fade scale(0.38) translateZ(-100px) stagger(30ms)"
+        },
         load: {
             filter: '.hot'
         },
@@ -877,19 +889,26 @@ $(function() {
 
 
     var tl = new TimelineLite,
-        mySplitText = new SplitText(".moveFont", { type: "words,chars" }),
+        mySplitText = new SplitText(".moveFont", {type: "words,chars"}),
         chars = mySplitText.chars;
 
-    TweenLite.set("#quote", { perspective: 600 });
+    TweenLite.set("#quote", {perspective: 600});
 
-    tl.staggerFrom(chars, 0.8, { opacity: 0, scale: 0, y: 80, rotationX: 180, transformOrigin: "0% 50% -50", ease: Back.easeOut }, 0.03, "+=0");
+    tl.staggerFrom(chars, 0.8, {
+        opacity: 0,
+        scale: 0,
+        y: 80,
+        rotationX: 180,
+        transformOrigin: "0% 50% -50",
+        ease: Back.easeOut
+    }, 0.03, "+=0");
 
     $(".activity-info").flexslider({
         animation: "slide",
         animationLoop: true,
         itemWidth: 200,
         itemMargin: 30,
-        slideshowSpeed:3000,
+        slideshowSpeed: 3000,
         directionNav: true,
         controlNav: false
     });
@@ -905,7 +924,7 @@ $(function() {
         itemWidth: 240,
         itemMargin: 30,
         animationLoop: true,
-        slideshowSpeed:3000,
+        slideshowSpeed: 3000,
         controlNav: false
     });
 
@@ -914,12 +933,12 @@ $(function() {
         animationLoop: true,
         itemWidth: 155,
         itemMargin: 24,
-        slideshowSpeed:3000,
+        slideshowSpeed: 3000,
         directionNav: true,
         controlNav: false
     });
 
-    $(".imgul .acrionDc").mouseenter(function() {
+    $(".imgul .acrionDc").mouseenter(function () {
         var tl;
         $(".showDv").fadeOut();
         if (typeof(tl) == "object") {
@@ -934,7 +953,7 @@ $(function() {
         $(this).parent().find(".showDv").fadeIn();
 
         var _num = $el.children().length;
-        tl.fromTo($el.children().eq(_num-1), 0.4, {
+        tl.fromTo($el.children().eq(_num - 1), 0.4, {
             height: "0%",
             opacity: 0
         }, {
@@ -944,7 +963,7 @@ $(function() {
         });
 
         //开始每一项动画
-        for(var i = 0; i < _num-1; i++){
+        for (var i = 0; i < _num - 1; i++) {
             tl.fromTo($el.children().eq(i), 0.2, {
                 y: "-10px",
                 opacity: 0
@@ -956,7 +975,7 @@ $(function() {
         }
     });
 
-    $(".showDv .listul .itemli span").mouseenter(function() {
+    $(".showDv .listul .itemli span").mouseenter(function () {
         $(".showDv .listul .itemli").removeClass("active disabled");
         if ($(this).parent().find(".content").length == 0) {
             $(this).parent().addClass("disabled");
@@ -966,27 +985,29 @@ $(function() {
 
 
         var $quote = $(this).parent().find(".content p"),
-            mySplitText = new SplitText($quote, {type:"words"}),
-            splitTextTimeline = new TimelineLite();mySplitText.split({type:"words"}) 
-          $(mySplitText.words).each(function(index,el){
-            splitTextTimeline.from($(el), 0.7, {opacity:0, force3D:true}, index * 0.01);
-            splitTextTimeline.from($(el), 0.7, {scale:index % 2 == 0  ? 0 : 2, ease:Back.easeOut}, index * 0.01); 
-          });
+            mySplitText = new SplitText($quote, {type: "words"}),
+            splitTextTimeline = new TimelineLite();
+        mySplitText.split({type: "words"})
+        $(mySplitText.words).each(function (index, el) {
+            splitTextTimeline.from($(el), 0.7, {opacity: 0, force3D: true}, index * 0.01);
+            splitTextTimeline.from($(el), 0.7, {scale: index % 2 == 0 ? 0 : 2, ease: Back.easeOut}, index * 0.01);
+        });
     });
 
     //弹出层
-    $(".showHide").click(function(){
+    $(".showHide").click(function () {
         var _flag = $(this).data("flag");
-        $(".sweet-overlay ,#"+_flag).addClass("active");
+        $(".sweet-overlay ,#" + _flag).addClass("active");
     });
-    $(".close").click(function(){
+    $(".close").click(function () {
         $(".sweet-overlay,.sweet-alert").removeClass("active");
     });
-    $(".btn").click(function(){
+    $(".btn").click(function () {
         validateForm($(this));
     });
 
-    var tel_reg = /^1\d{10}$/; 
+    var tel_reg = /^1\d{10}$/;
+
     //提交报名表数据
     function validateForm(el) {
         var _btn = el.children();
@@ -1026,17 +1047,20 @@ $(function() {
             setInitBtn(_btn);
             alert('请输入所在城市。');
             return false;
-        }else{
-            sendData(_form,_btn);
+        } else {
+            sendData(_form, _btn);
         }
     }
-    function setDisBtn(btn){
-        $(btn).addClass("disabled").attr("disabled","disabled");
+
+    function setDisBtn(btn) {
+        $(btn).addClass("disabled").attr("disabled", "disabled");
     }
-    function setInitBtn(btn){
+
+    function setInitBtn(btn) {
         $(btn).removeClass("disabled").removeAttr("disabled");
     }
-    function sendData(_form,_btn){
+
+    function sendData(_form, _btn) {
         $.ajax({
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]')[0].content,
@@ -1054,21 +1078,21 @@ $(function() {
                 area: _form.find(".area").val(),
                 from: location.href
             },
-            success: function(data) {
-                if(data.status == true) {
+            success: function (data) {
+                if (data.status == true) {
                     alert('申请成功！请等到老师与您联系');
-                    _btn.html('提交成功！'); 
+                    _btn.html('提交成功！');
                 } else {
                     setInitBtn(_btn);
                     alert(data.remark);
                 }
             },
-            error:function(){
+            error: function () {
                 alert('您当前网络不稳定，请稍后再试。');
             }
         });
     }
-    
+
 
     Carousel.init($("#carousel"));
     $("#carousel").init();

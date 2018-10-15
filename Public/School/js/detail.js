@@ -214,6 +214,7 @@ $(function() {
             }
         },
         mounted: function() {
+            console.log('111');
             var _this = this;
             var _s = Math.round(Math.random()*5+1);
             this.tempimg = '../../Public/Common/img/school/random'+_s+'.jpg';

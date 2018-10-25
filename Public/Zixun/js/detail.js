@@ -52,6 +52,13 @@ var app = new Vue({
 						_this.newsDetailInfo = obj;
 						_this.vote = obj.upsnum;
 						_this.reads = obj.hits;
+						_this.$nextTick(function(){
+							$(".detailsContPart img").each(function(){
+								if ($(this).attr("src").indexOf('ueditor/php/upload/image') > -1) {
+									$(this).attr("src","http://manage.xiaoying.net/"+$(this).attr("src"));
+								}
+							})
+						})
 					}
 				}
 			})

@@ -48,6 +48,7 @@ var app = new Vue({
 						var obj = res.data;
 						obj.source = obj.source?obj.source:'网络';
 						obj.publishedtime = _this.timestampToTime(obj.publishedtime);
+						obj.body = utily.escapeStringHTML(obj.body)
 						_this.newsDetailInfo = obj;
 						_this.vote = obj.upsnum;
 						_this.reads = obj.hits;

@@ -15,7 +15,6 @@ var app = new Vue({
 	methods: {
 		getNewsNavData () {
 			var _this = this;
-			console.log('localStorage.cateid',localStorage.cateid,localStorage.cateidSec);
 
 			$.ajax({
 				url: "http://manage.xiaoying.net/article/catesearch",
@@ -39,7 +38,6 @@ var app = new Vue({
 		getData() {
 			var _this = this;
 			var id = _this.getQueryString('id');
-			console.log(id)
 			$.ajax({
 				url:"http://manage.xiaoying.net/article/detailsearch?id=" + id,
 				type:"GET",
@@ -56,6 +54,11 @@ var app = new Vue({
 							$(".detailsContPart img").each(function(){
 								if ($(this).attr("src").indexOf('ueditor/php/upload/image') > -1) {
 									$(this).attr("src","http://manage.xiaoying.net/"+$(this).attr("src"));
+								}else if($(this).attr("src").indexOf('files/defaul') > -1){
+									$(this).attr("src","http://www.xiao-ying.net/"+$(this).attr("src"));
+								}
+								if ($(this).width() > 700) {
+									$(this).attr("width","100%");
 								}
 							})
 						})
@@ -83,8 +86,6 @@ var app = new Vue({
 				success: function (res) {
 					if (res.status) {
 						_this.vote++
-					}else {
-						console.log(res.msg);
 					}
 				},
 				error: function (res) {
@@ -94,19 +95,17 @@ var app = new Vue({
 	    },
 	    setReads() {
 	    	var _this = this;
-			var id = _this.getQueryString('id');
+			var _id = _this.getQueryString('id');
 			$.ajax({
 				url:"http://manage.xiaoying.net/reads",
 				type:"POST",
 				data: {
-					id: id
+					id: _id
 				},
 				dataType: 'json',
 				success: function (res) {
 					if (res.status) {
 						_this.reads++
-					}else {
-						console.log(res.msg);
 					}
 				},
 				error: function (res) {
@@ -129,8 +128,7 @@ var app = new Vue({
 		var _this = this;
 		_this.getNewsNavData();
 		_this.getData();
-
-		// _this.setReads();
+		_this.setReads();
 
 		//热门活动轮播初始化
 		var mySwiper = new Swiper('.swiper-container',{

@@ -8,7 +8,6 @@ var app = new Vue({
 			vote: 0, //点赞数
 			reads: 0 //阅读量
 			
-			
 		}
 	},
 	
@@ -50,6 +49,13 @@ var app = new Vue({
 						_this.newsDetailInfo = obj;
 						_this.vote = obj.upsnum;
 						_this.reads = obj.hits;
+						var _html = "";
+						if (res.data.tags && res.data.tags.length > 0) {
+							for(var i = 0; i < res.data.tags.length; i++){
+								_html += "<li><a href='/news?hot="+res.data.tags[i].id+"'>"+res.data.tags[i].tagname+"</a></li>"
+							}
+							$(".hotFlagList").html(_html);
+						}
 						_this.$nextTick(function(){
 							$(".detailsContPart img").each(function(){
 								if ($(this).attr("src").indexOf('ueditor/php/upload/image') > -1) {

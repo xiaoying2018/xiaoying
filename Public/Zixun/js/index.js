@@ -26,7 +26,6 @@ var app = new Vue({
 	methods: {
 		getNewsNavData () {
 			var _this = this;
-			console.log('localStorage.cateid',localStorage.cateid,localStorage.cateidSec);
 
 			$.ajax({
 				url: "http://manage.xiaoying.net/article/catesearch",
@@ -87,7 +86,7 @@ var app = new Vue({
 						if(array[i].picture.indexOf('http') > -1) {
 							array[i].picture = array[i].picture;
 						}else if(array[i].picture == '') {
-							array[i].picture = '../../../static/images/news/img.jpg'
+							array[i].picture = '/Public/Zixun/img/img.jpg'
 						} else {
 							array[i].picture = 'http://www.xiao-ying.net'+ array[i].picture;
 						}
@@ -114,7 +113,56 @@ var app = new Vue({
 							if (getCurrent>=1 && getCurrent <= total) {
 								localStorage.page = api.getCurrent();
 								_this.request.page = localStorage.page;
-								console.log(_this.request.page);
+								_this.getNewListData();
+							}
+						}
+					});
+				}
+			})
+		},
+		getHotListData(_t){
+			var _this = this;
+			var _tags = _t;
+			$.ajax({
+				url: "http://manage.xiaoying.net/article/getarticlebytags",
+				type:"GET",
+				data:{
+					tags:_tags
+				},
+				success: function(res) {
+					var array = res.data;
+					// 'http://www.xiao-ying.net'+item.picture
+					for (var i = 0; i < array.length; i++) {
+						if(array[i].picture.indexOf('http') > -1) {
+							array[i].picture = array[i].picture;
+						}else if(array[i].picture == '') {
+							array[i].picture = '/Public/Zixun/img/img.jpg'
+						} else {
+							array[i].picture = 'http://www.xiao-ying.net'+ array[i].picture;
+						}
+						array[i].publishedtime = _this.timestampToTime(array[i].publishedtime);
+					}
+					_this.newsList = array;
+
+					_this.newsTotal= res.count;
+					_this.pageCount =  _this.newsTotal%_this.request.limit?(parseInt(_this.newsTotal/_this.request.limit) + 1 ):parseInt(_this.newsTotal/_this.request.limit);
+
+					$('.pageBox').pagination({
+						pageCount: _this.pageCount,
+						showData: _this.request.limit,
+						current:  _this.request.page,
+						homePage: '首页',
+						endPage: '末页',
+						isHide: true,
+						count: 2,
+						activeCls: 'active',
+						coping: true,
+						callback: function (api) {
+							var getCurrent = api.getCurrent();
+							var total = api.getPageCount();
+							if (getCurrent>=1 && getCurrent <= total) {
+								localStorage.page = api.getCurrent();
+								_this.request.page = localStorage.page;
 								_this.getNewListData();
 							}
 						}
@@ -162,7 +210,6 @@ var app = new Vue({
 				_this.getNewListData();
 			} else {
 				//点击全部
-				console.log(2)
 				_this.request.cateid = localStorage.cateid;
 				localStorage.cateidSec = '';
 				_this.getNewListData();
@@ -179,15 +226,24 @@ var app = new Vue({
 	        var s = date.getSeconds();
 	        return Y+M+D;
 	        // return Y+M+D+h+m+s;
-	    }
+	    },
+	    getQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return unescape(r[2]); return null;
+	  	}
 	},
 	mounted () {
 		var _this = this;
-		_this.request.page = localStorage.page?localStorage.page:1
 		//初始化一级分类
-		_this.getNewsNavData();
-		// 初始化课程列表
-		_this.getNewListData();
+		if (_this.getQueryString('hot') == null) {
+			_this.request.page = localStorage.page?localStorage.page:1
+			_this.getNewsNavData();
+			// 初始化课程列表
+			_this.getNewListData();
+		}else{
+			_this.getHotListData(_this.getQueryString('hot'));
+		}
 
 
 		

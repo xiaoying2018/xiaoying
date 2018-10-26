@@ -54,9 +54,11 @@ var app = new Vue({
 							$(".detailsContPart img").each(function(){
 								if ($(this).attr("src").indexOf('ueditor/php/upload/image') > -1) {
 									$(this).attr("src","http://manage.xiaoying.net/"+$(this).attr("src"));
-								}else if($(this).attr("src").indexOf('files/defaul') > -1){
+								}
+								else if($(this).attr("src").indexOf('files/defaul') > -1){
 									$(this).attr("src","http://www.xiao-ying.net/"+$(this).attr("src"));
-								}else if($(this).attr("src").indexOf('Public/blog') > -1){
+								}
+								else if($(this).attr("src").indexOf('Public/blog') > -1){
 									var _src = $(this).attr("src").replace('Public/blog','files/blog')
 									$(this).attr("src","http://www.xiao-ying.net/"+_src);
 								}
@@ -147,6 +149,5 @@ var app = new Vue({
 			e.preventDefault()
 			mySwiper.swipeNext()
 		});
-		
 	}
 })

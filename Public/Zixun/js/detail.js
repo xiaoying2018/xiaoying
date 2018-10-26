@@ -56,9 +56,9 @@ var app = new Vue({
 									$(this).attr("src","http://manage.xiaoying.net/"+$(this).attr("src"));
 								}else if($(this).attr("src").indexOf('files/defaul') > -1){
 									$(this).attr("src","http://www.xiao-ying.net/"+$(this).attr("src"));
-								}
-								if ($(this).width() > 700) {
-									$(this).attr("width","100%");
+								}else if($(this).attr("src").indexOf('Public/blog') > -1){
+									var _src = $(this).attr("src").replace('Public/blog','files/blog')
+									$(this).attr("src","http://www.xiao-ying.net/"+_src);
 								}
 							})
 						})

@@ -5,6 +5,11 @@
 
 var app = new Vue({
 	el: '#zixun',
+	filters:{
+		filterdes(_val){
+			return utily.escapeStringHTML(_val);
+		}
+	},
 	data () {
 		return {
 			nav: 'news',
@@ -81,14 +86,19 @@ var app = new Vue({
 				type:"GET",
 				success: function(res) {
 					var array = res.data;
-					// 'http://www.xiao-ying.net'+item.picture
+					// 'http://www.xiao-ying.net'+item.thumb
 					for (var i = 0; i < array.length; i++) {
-						if(array[i].picture.indexOf('http') > -1) {
-							array[i].picture = array[i].picture;
-						}else if(array[i].picture == '') {
-							array[i].picture = '/Public/Zixun/img/img.jpg'
-						} else {
-							array[i].picture = 'http://www.xiao-ying.net'+ array[i].picture;
+						if(array[i].thumb.indexOf('public://') > -1) {
+							array[i].thumb = array[i].thumb.replace('public://','http://www.xiao-ying.net/files/');
+						}
+						else if(array[i].thumb.indexOf('/blog') > -1) {
+							array[i].thumb = array[i].thumb.replace('/blog','http://www.xiao-ying.net/files/blog');
+						}
+						else if(array[i].thumb == '') {
+							array[i].thumb = '/Public/Zixun/img/img.jpg'
+						}
+						else {
+							array[i].thumb = 'http://manage.xiaoying.net'+ array[i].thumb;
 						}
 						array[i].publishedtime = _this.timestampToTime(array[i].publishedtime);
 					}
@@ -131,14 +141,14 @@ var app = new Vue({
 				},
 				success: function(res) {
 					var array = res.data;
-					// 'http://www.xiao-ying.net'+item.picture
+					// 'http://www.xiao-ying.net'+item.thumb
 					for (var i = 0; i < array.length; i++) {
-						if(array[i].picture.indexOf('http') > -1) {
-							array[i].picture = array[i].picture;
-						}else if(array[i].picture == '') {
-							array[i].picture = '/Public/Zixun/img/img.jpg'
+						if(array[i].thumb.indexOf('public://') > -1) {
+							array[i].thumb = array[i].thumb.replace('public://','http://www.xiao-ying.net/files/');
+						}else if(array[i].thumb == '') {
+							array[i].thumb = '/Public/Zixun/img/img.jpg'
 						} else {
-							array[i].picture = 'http://www.xiao-ying.net'+ array[i].picture;
+							array[i].thumb = 'http://manage.xiaoying.net'+ array[i].thumb;
 						}
 						array[i].publishedtime = _this.timestampToTime(array[i].publishedtime);
 					}

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="__PUBLIC__/Common/css/reset.min.css">
     <link rel="stylesheet" href="__PUBLIC__/Common/css/common.css">
     <link rel="stylesheet" href="__PUBLIC__/Open/css/animate.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/Zixun/css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/Zixun/css/index.css?v=201810300949">
     <script type="text/javascript" src="__PUBLIC__/Open/js/jquery-1.9.1.min.js"></script>
 </head>
 
@@ -47,7 +47,7 @@
                             <li v-for = "item in newsList" :key="item.id">
                                 <div class="imgDv">
                                     <a :href="'/news/detail?id=' + item.id">
-                                        <img :src="item.picture" :alt="item.title">
+                                        <img :src="item.thumb" :alt="item.title">
                                     </a>
                                 </div>
                                 <div class="contDv">
@@ -56,7 +56,7 @@
                                     </h4>
                                     <p class="time"><span></span>{{item.publishedtime}}</p>
                                     <p class="newsDes">
-                                        <a :href="'/news/detail?id=' + item.id">{{item.des}}</a>
+                                        <a :href="'/news/detail?id=' + item.id" v-html="$options.filters.filterdes(item.des)"></a>
                                     </p>
                                     <div class="btnPart">
                                         <a :href="'/news/detail?id=' + item.id">查看详情</a>
@@ -86,7 +86,7 @@
     <include file="./Template/Common/Index_footer.html" />
     <script src="/Public/js/vue.min.js"></script>
     <script type="text/javascript" src="../../Public/Zixun/js/jquery.pagination.js"></script>
-    <script type="text/javascript" src="../../Public/Zixun/js/index.js?v=12"></script>
+    <script type="text/javascript" src="../../Public/Zixun/js/index.js?v=201810300920"></script>
 </body>
 
 </html>

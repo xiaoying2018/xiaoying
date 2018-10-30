@@ -19,7 +19,7 @@ return [
         /* PC */
         '/' => 'Home/Index/index',     // 主页
 
-        'school' => 'School/Index/index',// 院校库
+        'school' => 'School/Index/jp',// 院校库
         'school/jpyy'       =>  'School/Index/jpyy', //日本语言学校
         'school/jp'       =>  'School/Index/jp', //日本大学
         'school/kr'       =>  'School/Index/kr', //韩国大学

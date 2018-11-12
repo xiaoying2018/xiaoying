@@ -231,25 +231,31 @@ span {
     }
     .threestep {
         padding: 80px 0;
+        padding-bottom: 0;
         .mi_circle {
-            width: 665px;
-            height: 417px;
-            background-image: url(../img/mi_circle.png);
-            background-size: contain;
-            background-repeat: no-repeat;
+            // width: 665px;
+            // height: 417px;
+            // background-image: url(../img/mi_circle.png);
+            // background-size: contain;
+            // background-repeat: no-repeat;
 
             .ul {
                 position: relative;
                 padding: 50px 60px;
+                font-size:0;
                 .li {
                     margin-bottom: 40px;
+                    width: 277px;
+                    display: inline-block;
+                    vertical-align: top;
+                    padding: 0 40px;
+                    text-align: center;
                     .circleDv {
-                        width: 64px;
-                        height: 64px;
+                        width: 96px;
+                        height: 96px;
                         .border-radius(50%);
                         position: relative;
-                        border: 2px solid;
-                        float: left;
+                        margin: 0 auto;
                         .xy_icon {
                             position: absolute;
                             top: 0;
@@ -261,11 +267,10 @@ span {
                     }
                     &.a {
                         .circleDv {
-                            border-color: #f30c0b;
                             .xy_icon {
-                                background-image: url("../img/red.png");
-                                width: 32px;
-                                height: 28px;
+                                background-image: url("../img/red.png?v=201811121207");
+                                width: 96px;
+                                height: 96px;
                             }
                         } // &:hover{
                         //  .circleDv{
@@ -274,12 +279,12 @@ span {
                         // }
                     }
                     &.b {
+                        margin: 0 120px;
                         .circleDv {
-                            border-color: #00c29a;
                             .xy_icon {
-                                background-image: url("../img/green.png");
-                                width: 32px;
-                                height: 30px;
+                                background-image: url("../img/green.png?v=201811121207");
+                                width: 96px;
+                                height: 96px;
                             }
                         } // &:hover{
                         //  .circleDv{
@@ -289,11 +294,10 @@ span {
                     }
                     &.c {
                         .circleDv {
-                            border-color: #0099e5;
                             .xy_icon {
-                                background-image: url("../img/blue.png");
-                                width: 36px;
-                                height: 29px;
+                                background-image: url("../img/blue.png?v=201811121207");
+                                width: 96px;
+                                height: 96px;
                             }
                         } // &:hover{
                         //  .circleDv{
@@ -302,17 +306,15 @@ span {
                         // }
                     }
                     p {
-                        float: left;
-                        width: 360px;
                         font-size: 16px;
                         color: #383838;
-                        margin-left: 30px;
                         line-height: 26px;
                         font {
                             font-size: 18px;
+                            line-height: 26px;
                             color: #000000;
                             display: block;
-                            margin-bottom: 10px;
+                            margin: 20px 0;
                             font-weight: 600;
                         }
                     }

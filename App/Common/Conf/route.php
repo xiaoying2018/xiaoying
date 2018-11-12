@@ -76,6 +76,9 @@ return [
         /* Mobile */
         'm' => 'Mobile/Index/index',// 手机主页
         'm/meishu' => 'Mobile/Index/meishu',// 手机美术页
+        'm/onlinemall' => 'Mobile/Index/onlinemall',// 手机网上商城
+        'm/advantage' => 'Mobile/Index/advantage',// 手机核心优势
+
 
 
     ],

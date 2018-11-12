@@ -15,4 +15,15 @@ class IndexController extends Controller
         $this->display();
     }
 
+    public function onlinemall()
+    {
+        $this->display();
+    }
+
+    public function advantage()
+    {
+        $this->display();
+    }
+
+
 }

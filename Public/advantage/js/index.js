@@ -16,13 +16,14 @@ $(function(){
             //     job: "精英首席学术研究顾问",
             //     desc: "东京大学金融工学。师从野村证券首席战略分析师新井富雄老师。8年私塾讲师经手案例近万人，擅长TOP10顶尖名校升学。"
             // }, 
+            // {
+            //     s_job:"金牌讲师",
+            //     img: "http://vip.xiaoying.net/img/teacher/small/jym.jpg",
+            //     name: "简依梦",
+            //     job: "精英计划高级学术顾问",
+            //     desc: "御茶水女子大学社会学，私塾社会学大学院课程主讲，行业经验丰富，深受学员喜爱。擅长SGU英文项目/院生直考课程/研究生申请等项目，顶级院校升学辅导案例众多。"
+            // }, 
             {
-                s_job:"金牌讲师",
-                img: "http://vip.xiaoying.net/img/teacher/small/jym.jpg",
-                name: "简依梦",
-                job: "精英计划高级学术顾问",
-                desc: "御茶水女子大学社会学，私塾社会学大学院课程主讲，行业经验丰富，深受学员喜爱。擅长SGU英文项目/院生直考课程/研究生申请等项目，顶级院校升学辅导案例众多。"
-            }, {
                 s_job:"金牌讲师",
                 img: "http://vip.xiaoying.net/img/teacher/small/zxm.jpg",
                 name: "赵旭鸣",
